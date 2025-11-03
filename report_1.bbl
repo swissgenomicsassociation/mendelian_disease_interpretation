@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Lavrichenko et~al.(2025)Lavrichenko, Engdal, Marvig, Jemt, Vignes,
+  Almusa, Saether, Briem, Caceres, Elvarsd{\'o}ttir, G{\'i}slason,
+  Haanp{\"a}{\"a}, Henmyr, Hotakainen, Kaasinen, Kanninga, Khan, {Lie-Nielsen},
+  Madsen, M{\"a}hler, Maqbool, Neethiraj, Nyr{\'e}n, Paavola, Pruisscher,
+  Sheng, Singh, Srivastava, Stautland, Andreasen, De~Boer, Vang, Wirta, and
+  Bagger]{2025lavrichenkoRecommendationsBioinformaticsClinical}
+Ksenia Lavrichenko, Emilie~Sofie Engdal, Rasmus~L. Marvig, Anders Jemt,
+  Jone~Marius Vignes, Henrikki Almusa, Kristine~Bilgrav Saether, Eir{\'i}kur
+  Briem, Eva Caceres, Edda~Mar{\'i}a Elvarsd{\'o}ttir, Magn{\'u}s~Halld{\'o}r
+  G{\'i}slason, Maria~K. Haanp{\"a}{\"a}, Viktor Henmyr, Ronja Hotakainen, Eevi
+  Kaasinen, Roan Kanninga, Sofia Khan, Mary~Gertrude {Lie-Nielsen},
+  Majbritt~Busk Madsen, Niklas M{\"a}hler, Khurram Maqbool, Ramprasad
+  Neethiraj, Karl Nyr{\'e}n, Minna Paavola, Peter Pruisscher, Ying Sheng,
+  Ashish~Kumar Singh, Aashish Srivastava, Thomas~K. Stautland, Daniel~T.
+  Andreasen, Esmee Ten~Berk De~Boer, S{\o}ren Vang, Valtteri Wirta, and
+  Frederik~Otzen Bagger.
+\newblock Recommendations for bioinformatics in clinical practice.
+\newblock \emph{Genome Medicine}, 17\penalty0 (1):\penalty0 124, October 2025.
+\newblock ISSN 1756-994X.
+\newblock \doi{10.1186/s13073-025-01543-4}.
+
+\end{thebibliography}

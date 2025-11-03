@@ -1,0 +1,336 @@
+\input{head.tex}
+
+\begin{document}
+
+\newcounter{myboxcounter}
+\newcommand{\boxlabel}[1]{%
+  \refstepcounter{myboxcounter}%
+  \label{#1}%
+}
+
+\title{Report}
+
+% in your preamble, before \author:
+\newcommand{\QUANT}{1}
+%\newcommand{\GHI}{2}
+%\newcommand{\KISPIIMM}{3}
+% \newcommand{\METAB}{4}
+%\newcommand{\LEEDS}{5}
+\newcommand{\IPSNEO}{6}
+
+\author[\QUANT]{Quant Group} 
+%\author[\GHI]{Simon Boutry}% \textsuperscript{†}}
+%\author[\GHI]{Ali Saadat}% \textsuperscript{†}} \textsuperscript{†}}
+%\author[\KISPIIMM]{Maarja Soomann}% \textsuperscript{†}} \textsuperscript{†}}
+%\author[\KISPIIMM]{Johannes Trück}
+%\author[\GHI]{Jacques Fellay}
+\author[\IPSNEO]{Dylan Lawless *%\thanks{Addresses for correspondence: \href{mailto:Dylan.Lawless@kispi.uzh.ch}{Dylan.Lawless@kispi.uzh.ch}}
+}
+% \textsuperscript{†}
+\affil[\QUANT]{The quantitative omic epidemiology group.} 
+%\affil[\GHI]{Global Health Institute, School of Life Sciences, École Polytechnique Fédérale de Lausanne, Switzerland.}
+%\affil[\KISPIIMM]{Division of Immunology and the Children’s Research Center, University Children’s Hospital Zurich, University of Zurich, Zurich, Switzerland.}
+%\affil[\LEEDS]{Leeds Institute of Rheumatic and Musculoskeletal Medicine, University of Leeds, Leeds, UK.}
+\affil[\IPSNEO]{Department of Intensive Care and Neonatology, University Children's Hospital Zurich, University of Zurich, Zurich, Switzerland.}
+
+\maketitle
+\justify
+
+\clearpage
+%  \linenumbers
+\begin{abstract} 
+
+\noindent \textbf{Background}:
+
+\vspace{1em}
+
+\noindent \textbf{Methods}:
+
+\vspace{1em}
+
+\noindent \textbf{Results}:
+
+\vspace{1em}
+
+\noindent \textbf{Conclusions}:
+\footnote{
+\noindent * Addresses for correspondence: \href{mailto:Dylan.Lawless@uzh.ch}{Dylan.Lawless@uzh.ch}.\\
+% \noindent  \textsuperscript{† }These authors contributed equally and are listed alphabetically.\\
+\textbf{Availability:} This data is integrated in 
+\url{https://iei-genetics.github.io}.
+%available under the MIT licence.
+% \url{https://github.com/TheQuantGroup/QauntGroup}.
+}
+\vfill
+\end{abstract}
+
+
+%TEAM
+%TEAM
+%Ioannis
+%Xenarios
+%Chief Data Analytics Officer
+%
+%CONTACT
+%Lorenzo Cerutti
+%Bioinformatician
+%
+%CONTACT
+%Arnaud Hungler
+%Head of IT
+%
+%CONTACT
+%Katrin Männik
+%Head of Genomics Strategy
+%
+%CONTACT
+%Ilya Kolpakov
+%Data and Analytics Engineer
+%
+%CONTACT
+%Arkadiy Shevrikuko
+%Software Engineer
+%
+%CONTACT
+
+\section{Introduction}
+
+
+\section{Preference for established standards}
+
+% See \url{https://www.ncpi-acc.org} for NIH Cloud Platform Interoperability.
+
+Automation, interoperability, and reproducibility in genomics rely on the use of internationally recognised standards rather than isolated or proprietary tools. Validated frameworks enable traceable, comparable, and scalable handling of genomic and phenotypic data across research and clinical contexts \cite{2024duyzendImprovingPrenatalDiagnosis}.
+
+Core standards include the \textbf{Variant Call Format (VCF)}, \textbf{Binary Alignment Map (BAM/CRAM)}, and the \textbf{Phenopacket Schema} from the \textbf{Global Alliance for Genomics and Health (GA4GH)}. The \textbf{Human Phenotype Ontology (HPO)} and \textbf{Orphanet Rare Disease Ontology (ORDO)} support structured phenotyping and disease mapping, while the \textbf{Beacon protocol} enables federated search across distributed datasets without sharing raw data.
+
+Using such standards ensures long-term compatibility, supports automation, and improves accuracy through consistent validation and version control. Tools such as \textit{Exomiser}, \textit{LIRICAL}, and \textit{PhenIX} show how ontology-based approaches enable automated, phenotype-driven variant prioritisation. For cloud analysis, platforms like \textbf{Terra} and pipelines such as \textbf{GATK} provide transparent, reproducible environments aligned with GA4GH and international data-sharing frameworks.
+
+
+
+
+
+%
+%
+%
+%only a handful of papers are essential to reference explicitly if the goal is to anchor your section in established, standards-based genomics rather than the broader prenatal literature.
+%
+%Here are the **core stand-out references** worth including, grouped by purpose:
+%
+%**1. Foundational standards and interoperability**
+%
+%* Jacobsen JOB et al., *Nat Biotechnol*, 2022 — Phenopacket schema (GA4GH).
+%* Rambla J et al., *Hum Mutat*, 2022 — Beacon v2 and federated data discovery.
+%* Robinson PN et al., *Am J Hum Genet*, 2008 — Human Phenotype Ontology (HPO).
+%* Pavan S et al., *PLoS One*, 2017 — Orphanet Rare Disease Ontology (ORDO).
+%* McKenna A et al., *Genome Res*, 2010 — GATK framework for standardised variant calling.
+%
+%**2. Phenotype-driven variant interpretation and standardised automation**
+%
+%* Smedley D et al., *Nat Protoc*, 2015 — Exomiser: integrated, phenotype-driven prioritisation.
+%* Robinson PN et al., *Am J Hum Genet*, 2020 — LIRICAL: interpretable likelihood-ratio framework.
+%* Kelly C et al., *Trends Genet*, 2022 — Overview of phenotype-aware prioritisation methods.
+%
+%**3. Aggregated data and clinical implementation exemplars**
+%
+%* 100,000 Genomes Project Pilot Investigators, *N Engl J Med*, 2021 — clinical implementation of large-scale rare disease genomics.
+%* Wright CF et al., *N Engl J Med*, 2023 — current benchmark for genomic diagnosis in rare paediatric disease.
+%
+%**4. Prenatal aggregation and ontology extension (for context, not methods)**
+%
+%* Duyzend MH et al., *Prenat Diagn*, 2024 — synthesis on standards and aggregation in prenatal genomics.
+%
+%A brief reference list citing only these papers will cover all necessary foundations: standard data models (GA4GH, HPO, ORDO), interoperable exchange (Beacon, Phenopackets), validated variant analysis frameworks (Exomiser, LIRICAL, GATK), and real-world evidence of aggregated, standardised implementation (100kGP, Wright et al., 2023).
+%
+%Anything beyond these would largely repeat or contextualise rather than expand the standards argument.
+
+\section{Structured variant annotation and automation of interpretation}
+
+% See \url{https://va-spec.ga4gh.org/en/latest/examples/acmg-variant-pathogenicity-statement-with-evidence.html} for example. 
+
+Variant interpretation has traditionally relied on expert review and rule-based systems such as the ACMG/AMP criteria, where evidence is manually classified into discrete levels (e.g. “strong”, “moderate”, “supporting”). While this provides clinical transparency, it limits scalability and does not easily incorporate quantitative or experimental data generated outside the sequencing pipeline.  
+
+Structured annotation frameworks, such as the \textbf{GA4GH Variant Annotation (VA) specification}, provide a way to formalise how evidence supports or refutes pathogenicity, linking statements to their provenance and strength. Rather than a human-readable label alone, each assertion is represented as a computable object that connects a variant, a condition, and all supporting evidence lines. These may include cohort allele frequencies, functional assays, or other study results, each qualified by method, direction, and strength of support. This structure allows integration of diverse evidence types while retaining traceability to original data sources.  
+
+Such a model enables a shift from categorical to quantitative reasoning. A variant’s pathogenicity statement can accumulate weighted evidence from multiple domains: ACMG-derived criteria, \textit{in vitro} functional data (e.g. MAVE), RNA and protein evidence, population studies, or model organism data. Each evidence line can be standardised using controlled vocabularies and shared identifiers, allowing aggregation across studies and automated computation of posterior probabilities.  
+
+Tools such as \textit{Exomiser} and \textit{LIRICAL} illustrate early automation based on ACMG-compatible logic and phenotype-driven scoring. Extending these with the GA4GH VA model allows incorporation of continuous, probabilistic evidence rather than threshold-based categories. This approach transforms variant classification from interpretive judgment into quantifiable inference, reducing subjective variability and supporting automated re-evaluation as new evidence emerges.  
+
+By representing all evidence as structured, machine-interpretable data with defined provenance, the GA4GH framework provides a foundation for fully automatable, transparent, and continuously updatable variant interpretation.
+
+
+\section{Qualifying variant protocol design and standardised approaches}
+
+Variant interpretation depends on how whole genome data are prepared and analysed. Each step, from sequencing and variant calling to annotation and filtering, defines what can be detected or missed. A qualifying variant (QV) protocol makes these steps explicit by describing the rules that determine variant inclusion and interpretation \cite{2025lawlessApplicationQualifyingVariants}.
+
+A standard QV protocol should specify the sequencing method, genome build, and tools used; the quality thresholds for coverage and genotype confidence; the genomic regions or panels considered; and the annotation or classification systems applied. Defining these parameters in a structured QV file separates logic from execution, allowing reproducible, auditable workflows. Each file has a version and checksum, linking it directly to analysis outputs.  
+
+This standardisation ensures that variant findings are traceable and comparable across studies. It also supports automated pipelines that integrate multiple evidence sources, such as population, functional, and multiomic data, in line with frameworks like the GA4GH Variant Annotation model. The result is consistent, transparent, and quantifiable variant interpretation.
+
+\section{Compliance and accreditation framework}
+
+Genomic data processing and analysis in Switzerland are governed by national and international legal standards designed to ensure data protection, traceability, and clinical reliability. The primary legal framework is the \textbf{Federal Act on Data Protection (FADP, SR~235.1)}, which regulates the processing of personal and sensitive data, including genetic information. Key obligations under the FADP include lawful processing (Arts.~6, 31), the establishment of Data Processing Agreements between controllers and processors (Art.~9), the implementation of technical and organisational safeguards such as encryption and access logging (Art.~8), maintenance of records of processing activities (Art.~12), breach notification procedures (Art.~24), and regulated cross-border data transfers requiring adequacy decisions or safeguards (Arts.~16–18).  
+
+Under Swiss law, platforms that store or share genomic data are typically considered \textit{data processors}, not \textit{medical devices}, unless marketed for diagnostic, therapeutic, or monitoring purposes. In such cases, the regulatory scope shifts from the FADP to the \textbf{Medical Devices Ordinance (MedDO, SR~812.213)} or the \textbf{In Vitro Diagnostic Medical Devices Ordinance (IvDO, SR~812.219)}, corresponding to the EU’s \textbf{MDR~2017/745} and \textbf{IVDR~2017/746}. Medical device classification is determined by intended use and requires conformity assessment, a Technical File, risk management under \textbf{ISO~14971}, and registration in \textbf{swissdamed}.
+
+For non-medical genomic infrastructure, compliance with FADP and, where applicable, the \textbf{General Data Protection Regulation (GDPR)} is sufficient. GDPR may apply when data from EU subjects are processed (Art.~3). Voluntary alignment with international standards such as \textbf{ISO~27001} for information security and \textbf{ISO~15189} for quality management in medical laboratories is recommended to enhance transparency and interoperability across research, clinical, and industrial settings.
+
+\subsection{Accreditation standards}
+
+Accreditation provides verifiable assurance that laboratory and computational processes meet international quality benchmarks. The \textbf{ISO~15189} standard defines competence and quality management requirements for medical laboratories, encompassing both wet-lab and analytical bioinformatics activities. Laboratories accredited under ISO~15189 operate with validated procedures, documented workflows, and reproducible performance metrics suitable for clinical-grade diagnostics.
+
+Within Switzerland, the \textit{Health~2030~Genome~Center} represents a reference implementation. Its ISO~15189-accredited Diagnostic Sequencing Platform (DSP) delivers whole-genome, whole-exome, and RNA-seq services under a certified quality system, including validated fast-turnaround workflows capable of data delivery within seven days of sample receipt. This demonstrates that high-quality accreditation and rapid clinical response can be achieved concurrently.
+
+Accreditation should extend beyond laboratory sequencing to cover computational analysis, data management, and quality assurance frameworks. Validation, reproducibility testing, version control, and full documentation of pipelines must form part of the accredited quality management system. Laboratories and institutions that align with ISO~15189 or equivalent frameworks ensure that genomic data in Switzerland remain verifiable, comparable, and suitable for both clinical and research integration at national and international levels.
+
+
+
+\section{Recommendations for bioinformatics in clinical practice}
+
+Clinical bioinformatics forms the analytical backbone of genomic medicine. It bridges raw sequencing data and clinical interpretation, and its reliability determines the accuracy of every downstream result. To maintain national consistency and international credibility, Switzerland should adopt a harmonised framework for sequencing-based clinical bioinformatics aligned with the recommendations of the Nordic Alliance for Clinical Genomics (NACG)
+\cite{2025lavrichenkoRecommendationsBioinformaticsClinical}. While the NACG framework was developed for the Nordic region, its principles provide an appropriate foundation for Swiss implementation. The key recommendations, summarised in their Table~1, outline the operational, technical, and quality criteria expected of any accredited clinical bioinformatics unit.
+
+The Swiss Genomics Association endorses the core sentiment of these recommendations: that clinical bioinformatics must operate at the same professional and regulatory standards as accredited medical laboratories. Bioinformatics pipelines should be validated, reproducible, and transparent, with defined responsibilities for quality management, data integrity, and patient safety. Use of the GRCh38/hg38 reference genome, strict version control, and structured documentation of analytical steps are expected across all clinical operations. Pipelines must be tested systematically, covering unit, integration, and end-to-end validation, and benchmarked against established reference datasets such as Genome in a Bottle (GIAB) and SEQC2, supplemented by local recall testing of verified clinical samples.
+
+From an infrastructure perspective, secure, isolated computing environments are essential, with preference for air-gapped, clinical-grade high-performance systems. Software should be encapsulated in containerised or environment-controlled frameworks to ensure reproducibility and auditable traceability. Version-controlled source code, accompanied by peer-reviewed updates and complete change logs, is mandatory for clinical deployment.
+
+Data integrity and identity verification are further non-negotiable components. File hashing, sample fingerprinting, and checks for sex, ancestry, and relatedness provide safeguards against sample mix-ups or data corruption. In-house databases of recurrent or artefactual variant calls should be maintained to filter false positives, particularly for structural variants.
+
+Finally, the Association emphasises that clinical bioinformatics is not solely a computational discipline but a multidisciplinary field requiring expertise in software engineering, data management, human genetics, and quality assurance. Sustainable national implementation depends on cross-site collaboration, shared reference datasets, and continual alignment with evolving ISO and GA4GH standards.
+
+Together, these principles define the expected Swiss standard for clinical bioinformatics: evidence-based, reproducible, securely managed, and accredited under frameworks equivalent to ISO~15189. Adhering to these practices will ensure that genomic analysis in Switzerland remains accurate, auditable, and of enduring public value.
+
+
+\begin{table}[ht]
+\centering
+\caption{Recommendations for sequencing-based clinical bioinformatics. Reproduced based on \citet{2025lavrichenkoRecommendationsBioinformaticsClinical}
+.}
+\label{tab:bioinformatics_recommendations}
+\begin{tabular}{p{0.95\linewidth}}
+\toprule
+\textbf{1.} Genome build \textbf{hg38} is the national reference for alignment. \\
+\textbf{2.} Standard analyses: SNV, CNV, SV, STR, LOH, variant annotation, PRS (optional), and for cancer, TMB, HRD, MSI. \\
+\textbf{3.} Use multiple tools for structural variant calling. \\
+\textbf{4.} Apply in-house datasets to filter recurrent or false-positive SV calls. \\
+\textbf{5.} Use air-gapped, clinical-grade HPC and IT systems. \\
+\textbf{6.} Operate under ISO~15189 or equivalent accreditation. \\
+\textbf{7.} Employ standardised file formats and terminologies. \\
+\textbf{8.} Document and test pipelines for accuracy and reproducibility. \\
+\textbf{9.} Subject production code to manual review and testing. \\
+\textbf{10.} Manage all code and documentation under strict version control (e.g.\ Git). \\
+\textbf{11.} Validate pipelines with GIAB (germline) and SEQC2 (somatic) truth sets, plus local recall tests. \\
+\textbf{12.} Conduct unit, integration, system, and end-to-end tests. \\
+\textbf{13.} Verify data integrity using file hashing (e.g.\ MD5, SHA1). \\
+\textbf{14.} Confirm sample identity via fingerprinting or inferred traits. \\
+\textbf{15.} Encapsulate software using containers or controlled environments. \\
+\textbf{16.} Maintain multidisciplinary teams covering software, data, QA, and human genetics expertise. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+
+\section{Conclusion}
+
+
+\section*{Acknowledgements}
+
+\section*{Contributions}
+DL designed the analyses and wrote the manuscript.
+
+\section*{Competing interest}
+\noindent
+The authors declare no competing interest. 
+
+\section*{Ethics statement}
+\noindent
+This study only used data which was previously published and publicly available, as cited in the manuscript.
+
+\section*{Data availability}
+The data used in this manuscript is derived from open sources which are cited in methods. The data generated is available from ...
+
+\section*{Funding}
+
+% \clearpage
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+
+
+\section*{Acronyms}
+\renewenvironment{description}%
+  {\list{}{\labelwidth0pt\itemindent-\leftmargin
+    \parsep-1em\itemsep0pt\let\makelabel\descriptionlabel}}
+  {\endlist}
+\begin{acronym}
+\acro{acmg}[ACMG]{American College of Medical Genetics and Genomics}%
+\acro{acat}[ACAT]{Aggregated Cauchy Association Test}%
+\acro{ad}[AD]{Autosomal Dominant}%
+  \acro{af}[AF]{Allele Frequency}
+ \acro{aid}[AID]{Autoinflammatory Disorders}
+ \acro{anova}[ANOVA]{Analysis of Variance}
+ \acro{ar}[AR]{Autosomal Recessive}
+ \acro{bmf}[BMF]{Bone Marrow Failure}
+ \acro{cd}[CD]{Complement Deficiencies}
+ \acro{ci}[CI]{Confidence Interval}
+ \acro{cri}[CrI]{Credible Interval}
+ \acro{cid}[CID]{Immunodeficiencies affecting Cellular and Humoral Immunity}
+ \acro{cid+}[CID+]{Combined Immunodeficiencies with Associated or Syndromic Features}
+ \acro{cf}[CF]{Cystic Fibrosis}
+ \acro{cftr}[\textit{CFTR}]{Cystic Fibrosis Transmembrane Conductance Regulator}
+ \acro{cvid}[CVID]{Common Variable Immunodeficiency}
+  \acro{dclre1c}[\textit{DCLRE1C}]{DNA Cross-Link Repair 1C}
+ \acro{dbnsfp}[dbNSFP]{database for Non-Synonymous Functional Predictions}
+ \acro{ge}[GE]{Genomics England} 
+ \acro{gnomad}[gnomAD]{Genome Aggregation Database}
+ \acro{grch38}[GRCh38]{Genome Reference Consortium Human Build 38}
+\acro{gvcf}[gVCF]{genomic variant call format}
+ \acro{hgvs}[HGVS]{Human Genome Variation Society}
+ \acro{hpc}[HPC]{High-Performance Computing}
+ \acro{hsd}[HSD]{Honestly Significant Difference}
+ \acro{hwe}[HWE]{Hardy-Weinberg Equilibrium}
+ \acro{iei}[IEI]{Inborn Errors of Immunity}
+  \acro{ig}[Ig]{Immunoglobulin}
+ \acro{il2rg}[\textit{IL2RG}]{Interleukin 2 Receptor Subunit Gamma}
+ \acro{indel}[InDel]{Insertion/Deletion}
+ \acro{iuis}[IUIS]{International Union of Immunological Societies}
+ \acro{ld}[LD]{Linkage Disequilibrium}
+ \acro{loeuf}[LOEUF]{Loss-Of-function Observed/Expected Upper bound Fraction}
+ \acro{lof}[LOF]{Loss-of-Function}
+ \acro{moi}[MOI]{Mode of Inheritance}
+ \acro{nfkb1}[\textit{NFKB1}]{Nuclear Factor Kappa B Subunit 1}
+ \acro{omim}[OMIM]{Online Mendelian Inheritance in Man}
+ \acro{pad}[PAD]{Predominantly Antibody Deficiencies}
+ \acro{pid}[PID]{Primary Immunodeficiency}
+ \acro{pird}[PIRD]{Diseases of Immune Dysregulation}
+ \acro{ppi}[PPI]{Protein-Protein Interaction}
+ \acro{pli}[pLI]{Probability of being Loss-of-function Intolerant}
+ \acro{qc}[QC]{Quality Control}
+ \acro{rag1}[\textit{RAG1}]{Recombination activating gene 1}
+ \acro{scid}[SCID]{Severe Combined Immunodeficiency}
+ \acro{snv}[SNV]{Single Nucleotide Variant}
+ \acro{skat}[SKAT]{Sequence Kernel Association Test}
+ \acro{stringdb}[STRINGdb]{Search Tool for the Retrieval of Interacting Genes/Proteins}
+ \acro{tp}[TP]{true positive}
+\acro{fp}[FP]{false positive}
+\acro{tn}[TN]{true negative}
+\acro{fn}[FN]{false negative}
+\acro{tnfaip3}[\textit{TNFAIP3}]{Tumor necrosis factor, alpha-induced protein 3}
+ \acro{umap}[UMAP]{Uniform Manifold Approximation and Projection}
+ \acro{uniprot}[UniProt]{Universal Protein Resource} 
+ \acro{vcf}[VCF]{variant call format}
+ \acro{vep}[VEP]{Variant Effect Predictor}
+ \acro{vre}[VRE]{variant risk estimate}
+ \acro{xl}[XL]{X-Linked}
+\end{acronym}
+
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\beginsupplement
+\section{Supplemental} \label{Supplemental_text}
+
+Supplemental data are presented under the same headings that correspond to their relevant main text sections. 
+
+
+\end{document}
