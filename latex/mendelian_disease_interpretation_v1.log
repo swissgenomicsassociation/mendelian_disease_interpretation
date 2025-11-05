@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  5 NOV 2025 13:55
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  5 NOV 2025 13:59
  restricted system commands enabled.
 **mendelian_disease_interpretation_v1.tex
 (./mendelian_disease_interpretation_v1.tex
@@ -1357,14 +1357,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package acronym Info: Label `acro:wgs' newly defined as it shall be overridden
 although it is yet undefined on input line 173.
-
-Package acronym Warning: Acronym wgs is not defined on input line 173.
-
-
-Package acronym Warning: Acronym wgs is not defined on input line 173.
-
 Package acronym Info: Label `acro:ad' newly defined as it shall be overridden
-although it is yet undefined on input line 173.
+although it is yet undefined on input line 174.
+Package acronym Info: Label `acro:ar' newly defined as it shall be overridden
+although it is yet undefined on input line 174.
+Package acronym Info: Label `acro:xl' newly defined as it shall be overridden
+although it is yet undefined on input line 174.
 
 
 [3]
@@ -1374,12 +1372,12 @@ although it is yet undefined on input line 173.
 File: ../images/functional_evidence_uniprot.pdf Graphic file (type pdf)
 <use ../images/functional_evidence_uniprot.pdf>
 Package luatex.def Info: ../images/functional_evidence_uniprot.pdf  used on inp
-ut line 191.
+ut line 193.
 (luatex.def)             Requested size: 368.57964pt x 322.50253pt.
 
 
 Package natbib Warning: Citation `2024duyzendImprovingPrenatalDiagnosis' on pag
-e 5 undefined on input line 206.
+e 5 undefined on input line 208.
 
 
 
@@ -1388,7 +1386,7 @@ e 5 undefined on input line 206.
 [6<../images/functional_evidence_uniprot.pdf>]
 
 Package natbib Warning: Citation `2025lawlessApplicationQualifyingVariants' on 
-page 7 undefined on input line 267.
+page 7 undefined on input line 269.
 
 
 
@@ -1397,7 +1395,7 @@ page 7 undefined on input line 267.
 [8]
 
 Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
-linical' on page 9 undefined on input line 294.
+linical' on page 9 undefined on input line 296.
 
 
 
@@ -1406,11 +1404,11 @@ linical' on page 9 undefined on input line 294.
 [10]
 
 Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
-linical' on page 11 undefined on input line 310.
+linical' on page 11 undefined on input line 312.
 
 
 Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
-linical' on page 11 undefined on input line 310.
+linical' on page 11 undefined on input line 312.
 
 
 
@@ -1428,20 +1426,24 @@ Package natbib Warning: There were undefined citations.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `mendelian_disease_interpretation_v1.out' has
  not changed.
 (rerunfilecheck)             Checksum: 68E90A425C8BE559284FD00094F4858A;2642.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38848 strings out of 475506
+ 38854 strings out of 475506
  125240,1648299 words of node,token memory allocated
  1694 words of node memory still in use:
    31 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 5 kern, 1 penalty, 3 glyph, 
 85 attribute, 119 glue_spec, 85 attribute_list, 2 write, 24 pdf_literal, 1 pdf_a
 ction, 24 pdf_colorstack nodes
-   avail lists: 1:1,2:609,3:302,4:101,5:357,6:42,7:6832,8:45,9:388,10:17,11:752
- 60895 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:623,3:302,4:101,5:353,6:42,7:6822,8:45,9:390,10:17,11:752
+ 60901 multiletter control sequences out of 65536+600000
  110 fonts using 7776559 bytes
  121i,10n,117p,1031b,1002s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.ot
@@ -1455,7 +1457,7 @@ egular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8
 -regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroma
 n12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmr
 oman17-regular.otf>
-Output written on mendelian_disease_interpretation_v1.pdf (13 pages, 90118 bytes
+Output written on mendelian_disease_interpretation_v1.pdf (13 pages, 90074 bytes
 ).
 
 PDF statistics: 252 PDF objects out of 1000 (max. 8388607)
