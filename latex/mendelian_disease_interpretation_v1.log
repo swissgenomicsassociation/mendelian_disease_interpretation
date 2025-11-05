@@ -1,7 +1,7 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  3 NOV 2025 16:31
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  5 NOV 2025 13:20
  restricted system commands enabled.
-**report_1.tex
-(./report_1.tex
+**mendelian_disease_interpretation_v1.tex
+(./mendelian_disease_interpretation_v1.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -1134,8 +1134,8 @@ Package: authblk 2001/02/27 1.3 (PWD)
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 3.
 
-(./report_1.aux)
-\openout1 = report_1.aux
+(./mendelian_disease_interpretation_v1.aux)
+\openout1 = mendelian_disease_interpretation_v1.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1246,10 +1246,11 @@ nslations-basic-dictionary')
 Package translations Info: loading dictionary `translations-basic-dictionary' f
 or `english'. on input line 3.
 Package hyperref Info: Link coloring ON on input line 3.
- (./report_1.out) (./report_1.out)
+ (./mendelian_disease_interpretation_v1.out)
+(./mendelian_disease_interpretation_v1.out)
 \@outlinefile=\write4
 
-\openout4 = report_1.out
+\openout4 = mendelian_disease_interpretation_v1.out
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -1348,8 +1349,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-Package natbib Warning: Citation `2024duyzendImprovingPrenatalDiagnosis' on pag
-e 2 undefined on input line 103.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
@@ -1357,73 +1357,104 @@ e 2 undefined on input line 103.
 
 ]
 
-Package natbib Warning: Citation `2025lawlessApplicationQualifyingVariants' on 
-page 3 undefined on input line 164.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \vbox (121.55385pt too high) has occurred while \output is active []
 
 
 
 [3]
+<../images/functional_evidence_uniprot.pdf, id=121, 578.16pt x 505.89pt>
+File: ../images/functional_evidence_uniprot.pdf Graphic file (type pdf)
+<use ../images/functional_evidence_uniprot.pdf>
+Package luatex.def Info: ../images/functional_evidence_uniprot.pdf  used on inp
+ut line 158.
+(luatex.def)             Requested size: 368.57964pt x 322.50253pt.
+
+
+Package natbib Warning: Citation `2024duyzendImprovingPrenatalDiagnosis' on pag
+e 4 undefined on input line 173.
+
+
 
 [4]
 
-[5]
+[5<../images/functional_evidence_uniprot.pdf>]
 
 [6]
 
-[7] (./report_1.bbl
+Package natbib Warning: Citation `2025lawlessApplicationQualifyingVariants' on 
+page 7 undefined on input line 234.
 
-[8])
+
+
+[7]
+
+[8]
+
+Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
+linical' on page 9 undefined on input line 261.
+
+
+
+[9]
+
+Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
+linical' on page 10 undefined on input line 277.
+
+
+Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
+linical' on page 10 undefined on input line 277.
+
+
+
+[10]
+No file mendelian_disease_interpretation_v1.bbl.
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[9] (./report_1.aux)
+[11]
+
+[12] (./mendelian_disease_interpretation_v1.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `report_1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report_1.out':
-(rerunfilecheck)             Before: 84663538547244170B845F8CCA41BDEA;1652
-(rerunfilecheck)             After:  BAA0F57AB9BAAC59E8400B3CC5D06B3C;2023.
+Package rerunfilecheck Info: File `mendelian_disease_interpretation_v1.out' has
+ not changed.
+(rerunfilecheck)             Checksum: A2B060AE8217A5DD825826B5809AA1F6;2426.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38732 strings out of 475506
+ 38751 strings out of 475506
  125240,1648299 words of node,token memory allocated
- 1688 words of node memory still in use:
-   31 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 5 kern, 1 penalty, 3 glyph, 
-85 attribute, 119 glue_spec, 85 attribute_list, 2 write, 24 pdf_literal, 24 pdf_
-colorstack nodes
-   avail lists: 1:1,2:402,3:419,4:74,5:315,6:43,7:6818,8:30,9:363,10:21,11:752
- 60786 multiletter control sequences out of 65536+600000
- 109 fonts using 7650471 bytes
- 121i,10n,117p,1004b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1716 words of node memory still in use:
+   31 hlist, 2 vlist, 14 rule, 1 local_par, 7 glue, 5 kern, 1 penalty, 3 glyph, 
+87 attribute, 119 glue_spec, 87 attribute_list, 2 write, 24 pdf_literal, 1 pdf_a
+ction, 24 pdf_colorstack nodes
+   avail lists: 1:1,2:647,3:456,4:95,5:420,6:44,7:8475,8:45,9:437,10:17,11:695
+ 60800 multiletter control sequences out of 65536+600000
+ 110 fonts using 7776559 bytes
+ 121i,10n,117p,1031b,1000s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.ot
+f></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.
+otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regula
+r.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regu
+lar.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-b
+old.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-b
+old.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-r
+egular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8
+-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroma
+n12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmr
+oman17-regular.otf>
+Output written on mendelian_disease_interpretation_v1.pdf (12 pages, 86287 bytes
+).
 
-warning  (pdf backend): unreferenced destination with name 'subsection.4.1'
-</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.ot
-f></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.
-otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-itali
-c.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bol
-d.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bol
-d.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-reg
-ular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-r
-egular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman1
-2-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmrom
-an17-regular.otf>
-Output written on report_1.pdf (9 pages, 64098 bytes).
-
-PDF statistics: 203 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 131072)
- 320 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 244 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 131072)
+ 344 words of extra memory for PDF output out of 10000 (max. 100000000)
 

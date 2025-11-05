@@ -1,0 +1,19 @@
+meta qv_set_id="qv_rare_singlecase_interpretation_v1_20251105"
+meta version="1.0.0"
+meta title="Rare variant single case interpretation"
+meta created="2025-11-05"
+meta authors=DylanLawless
+
+criteria gnomad_flags logic=or desc="Variant has no gnomAD flags or will be reviewed in report generation"
+criteria gnomad_flags field=gnomad_flag operator==" value=NA
+criteria gnomad_flags field=gnomad_flag operator="in" value="AC0,AS-VQSR,InbreedingCoeff,RF,Not in exomes,Not in genomes,No data,Discrepant Frequencies,CHIP,Monoallelic,Only heterozygous,MNV,LCR,LC pLoF,pLoF Flag,NC Transcript,SEGDUP,Common low heteroplasmy"
+note "gnomAD flags are retained for review; presence of any flag requires explicit mention or justification in final causal report. For information see https://gnomad.broadinstitute.org/help"
+
+criteria acmg_criteria logic=or desc="Variant has no benign ACMG evidence or will be reviewed in report generation"
+criteria acmg_criteria field=ACMG_criteria operator="not_contains" value="B"
+criteria acmg_criteria field=ACMG_criteria operator="contains" value="BA1,BS1,BS2,BS3,BS4,BP1,BP2,BP3,BP4,BP5,BP6,BP7,BP8"
+
+note "ACMG benign evidence codes are retained for review; variants carrying these codes must be justified in the final causal interpretation report"
+note "For details on ACMG criteria see Richards et al. 2015, Li et al. 2017, Riggs et al. 2020, Tavtigian et al. 2020"
+note "Variants containing benign evidence codes (BA, BS, BP) are not excluded but must be explicitly reviewed in the final report"
+

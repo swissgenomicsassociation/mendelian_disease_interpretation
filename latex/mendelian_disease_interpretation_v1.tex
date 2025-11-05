@@ -8,7 +8,7 @@
   \label{#1}%
 }
 
-\title{Report}
+\title{Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease}
 
 % in your preamble, before \author:
 \newcommand{\QUANT}{1}
@@ -92,8 +92,78 @@
 %Software Engineer
 %
 %CONTACT
+\subsection{QV set preparation}
 
-\section{Introduction}
+Qualifying Variant (QV) sets define structured, reproducible variant interpretation rules using a transparent, machine-readable YAML format. Each QV file specifies metadata, filters, and evidence-based criteria in a simple key–value syntax, enabling precise replication of variant selection and interpretation logic across studies. QV sets can be composed interactively using the online \url{https://switzerlandomics.ch/pages/qv_builder/}, which provides an intuitive interface for defining rules, previewing YAML output, and ensuring consistency with established standards. This framework promotes FAIR data principles and harmonised variant interpretation for both research and clinical applications.
+
+
+\section{QV set for reporting}
+
+The \texttt{gnomad\_flags} rule ensures that all variants are retained for review rather than automatically excluded. For each variant in the patient-level dataset, the rule checks whether a gnomAD flag is present. Variants with no flag (\texttt{NA}) pass directly, while those carrying any recognised gnomAD flag (for example, \texttt{AS-VQSR}, \texttt{RF}, \texttt{LC pLoF}, or \texttt{SEGDUP}) also pass but are explicitly marked for downstream review. These flagged variants are not filtered out but instead require justification or comment in the final Mendelian report, ensuring transparency and traceability of interpretation decisions. Variants carrying unexpected or unlisted flags are held for manual inspection. This approach prevents premature exclusion of potentially causal variants while maintaining auditability of quality annotations.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{l l l X}
+\hline
+\textbf{variant\_id} & \textbf{gnomad\_flag} & \textbf{outcome} & \textbf{report\_action} \\
+\hline
+1 & NA & pass & include normally \\
+2 & LC pLoF & pass (flagged) & include with note: ``gnomAD LC pLoF – review interpretation.'' \\
+3 & UnknownFlag & fail & hold for manual review \\
+\hline
+\end{tabularx}
+\caption{Example application of the \texttt{gnomad\_flags} rule to patient variants. Long entries automatically wrap within the column width for compact layout.}
+\label{tab:gnomad_flags}
+\end{table}
+
+
+
+
+
+The \texttt{acmg\_criteria} rule interprets the condensed ACMG criteria column for each variant and flags variants that carry benign evidence. When a variant has passed upstream prioritisation tools such as Exomiser, the ACMG criteria are typically recorded in a single column as a list of applied evidence codes (for example, \texttt{PVS1, PM2, PP3}, or \texttt{BA1}). The downstream rule inspects this condensed string to determine whether it contains any benign evidence codes, recognised by the presence of the letter ``B'' (for example, \texttt{BA1}, \texttt{BS1--BS4}, or \texttt{BP1--BP8}). Variants with such codes are retained but marked for review, similar to those carrying gnomAD quality flags. This ensures that variants with benign evidence are not automatically excluded but instead require explicit assessment or justification in the final clinical interpretation.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{l l l X}
+\hline
+\textbf{variant\_id} & \textbf{ACMG\_criteria} & \textbf{outcome} & \textbf{report\_action} \\
+\hline
+1 & PVS1, PM2, PP3 & pass & include normally \\
+2 & PVS1, PM2, BA1 & pass (flagged) & include with note: ``contains benign ACMG evidence (BA1) – review interpretation.'' \\
+3 & BP4 & pass (flagged) & include with note: ``benign supporting evidence – verify consistency with phenotype.'' \\
+4 & PS2, PM5 & pass & include normally \\
+\hline
+\end{tabularx}
+\caption{Example application of the \texttt{acmg\_criteria} rule to patient variants. Variants containing benign ACMG evidence codes are retained but flagged for explicit review in the final report. Long entries automatically wrap within the column width for compact layout.}
+\label{tab:acmg_criteria}
+\end{table}
+
+
+
+
+\subsection{Functional evidence databases}
+
+Functional evidence from UniProt is integrated by detecting positional overlap between variant amino acid coordinates and annotated protein features recorded in UniProt GFF files. Each UniProt entry provides structured annotations describing biochemical, structural, and functional properties of the protein. For each variant, the affected residue position is compared against these annotated intervals, and any intersection is recorded as supporting evidence in the QV interpretation framework. This approach ensures that experimental and curated protein-level information contributes directly to variant interpretation and reporting (Fig.~\ref{fig:tnfaip3_evidence_tracks}).
+
+The annotated features used as evidence sources include catalytic and binding sites, metal and nucleotide binding regions, and other experimentally defined functional motifs. Structural features such as helices, beta strands, and coiled coils provide spatial context for potential conformational disruption. Domain- and family-level annotations, including domains, motifs, and topological regions, capture conserved structural organisation and functional domains. Additional layers include post-translational modification sites, mutagenesis data, and known sequence variants curated in UniProt. Processing and localisation signals (such as signal peptides, transit peptides, and cleavage products) and cautionary sequence annotations (for example, frameshifts or sequence uncertainty) are also recorded.
+
+By systematically linking these feature classes to variant coordinates, the framework records not only where functional or structural evidence exists, but also the type of information present—whether experimental, inferred, or computational. This enables each variant interpretation to transparently reflect the available molecular evidence supporting its classification.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.85\textwidth]{functional_evidence_uniprot.pdf}
+\caption{
+\textbf{Functional evidence tracks from UniProt annotations.}
+The example illustrates how protein-level features such as domains, motifs, and catalytic sites provide structured evidence supporting interpretation of coding variants. 
+Overlaps between variant positions and curated functional regions indicate potential mechanistic relevance, while the absence of overlap suggests limited or indirect evidence. 
+This evidence framework guides the strength of interpretation in clinical reporting, ensuring that well-supported variants are highlighted and uncertain findings are transparently qualified.
+}
+\label{fig:tnfaip3_evidence_tracks}
+\end{figure}
 
 
 \section{Preference for established standards}
