@@ -92,7 +92,32 @@
 %Software Engineer
 %
 %CONTACT
-\subsection{QV set preparation}
+
+
+
+
+\begin{tcolorbox}[
+  colback=red!5!white,
+  colframe=red!60!black,
+  title=\textcolor{white}{\textbf{LIVE PUBLIC WORKING DRAFT – NOT FINAL}},
+  fonttitle=\large\bfseries,
+  coltitle=white,
+  left=2mm, right=2mm, top=1mm, bottom=1mm,
+  boxrule=0.8pt,
+  sharp corners,
+  enhanced,
+  title filled=true,
+  colbacktitle=red!80!black
+]
+This document is a \textbf{live public working draft} and does not represent a completed or officially endorsed release.  
+All statements, analyses, and opinions are those of the authors and have not yet undergone joint committee review or external peer review.  
+Content is provided for transparency and collaborative development and may be revised substantially prior to publication.
+\end{tcolorbox}
+
+\vspace{1em}
+
+
+\section{QV set preparation}
 
 Qualifying Variant (QV) sets define structured, reproducible variant interpretation rules using a transparent, machine-readable YAML format. Each QV file specifies metadata, filters, and evidence-based criteria in a simple key–value syntax, enabling precise replication of variant selection and interpretation logic across studies. QV sets can be composed interactively using the online \url{https://switzerlandomics.ch/pages/qv_builder/}, which provides an intuitive interface for defining rules, previewing YAML output, and ensuring consistency with established standards. This framework promotes FAIR data principles and harmonised variant interpretation for both research and clinical applications.
 
@@ -143,9 +168,19 @@ The \texttt{acmg\_criteria} rule interprets the condensed ACMG criteria column f
 \end{table}
 
 
+\section{Pedigree and inheritance information}
+
+When pedigree data are available, \ac{wgs} enables direct evaluation of inheritance models for each variant. Genotypes are interpreted across proband and parents using standard representations such as \texttt{REF}, \texttt{HET}, and \texttt{HOM}, or equivalent encodings used in variant data formats (\texttt{0,1,2} in PLINK, \texttt{0/0}, \texttt{0/1}, \texttt{1/1}, or phased forms such as \texttt{0|1} in VCF). From these data, the inheritance pattern for each variant is determined, such as de novo, homozygous, heterozygous, or compound heterozygous, and this information is then evaluated in relation to the known gene–disease relationship.
+For example, the observed segregation pattern may provide supporting or contradictory evidence for an\ac{ad}, \ac{ar}, or \ac{xl} disease mechanism.
+
+Where genotype data are incomplete, inheritance may be inferred from clinical features, family history, or segregation information, but such cases are explicitly flagged as uncertain. Scenarios of incomplete penetrance, such as a heterozygous variant inherited from an unaffected parent, are also recorded because they influence the strength of causal interpretation.
+ Each inheritance assessment includes both the inferred pattern and the type of supporting evidence, ensuring that interpretative conclusions in the genetic report transparently reflect the available data and its confidence level.
 
 
-\subsection{Functional evidence databases}
+
+
+
+\section{Functional evidence databases}
 
 Functional evidence from UniProt is integrated by detecting positional overlap between variant amino acid coordinates and annotated protein features recorded in UniProt GFF files. Each UniProt entry provides structured annotations describing biochemical, structural, and functional properties of the protein. For each variant, the affected residue position is compared against these annotated intervals, and any intersection is recorded as supporting evidence in the QV interpretation framework. This approach ensures that experimental and curated protein-level information contributes directly to variant interpretation and reporting (Fig.~\ref{fig:tnfaip3_evidence_tracks}).
 
@@ -393,6 +428,7 @@ The data used in this manuscript is derived from open sources which are cited in
  \acro{vcf}[VCF]{variant call format}
  \acro{vep}[VEP]{Variant Effect Predictor}
  \acro{vre}[VRE]{variant risk estimate}
+  \acro{wgs}[WGS]{Whole Genome Sequencing}
  \acro{xl}[XL]{X-Linked}
 \end{acronym}
 

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  5 NOV 2025 13:20
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  5 NOV 2025 13:55
  restricted system commands enabled.
 **mendelian_disease_interpretation_v1.tex
 (./mendelian_disease_interpretation_v1.tex
@@ -1349,43 +1349,46 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
 [2
 
 ]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+Package acronym Info: Label `acro:wgs' newly defined as it shall be overridden
+although it is yet undefined on input line 173.
 
-Overfull \vbox (121.55385pt too high) has occurred while \output is active []
+Package acronym Warning: Acronym wgs is not defined on input line 173.
 
+
+Package acronym Warning: Acronym wgs is not defined on input line 173.
+
+Package acronym Info: Label `acro:ad' newly defined as it shall be overridden
+although it is yet undefined on input line 173.
 
 
 [3]
-<../images/functional_evidence_uniprot.pdf, id=121, 578.16pt x 505.89pt>
+
+[4]
+<../images/functional_evidence_uniprot.pdf, id=129, 578.16pt x 505.89pt>
 File: ../images/functional_evidence_uniprot.pdf Graphic file (type pdf)
 <use ../images/functional_evidence_uniprot.pdf>
 Package luatex.def Info: ../images/functional_evidence_uniprot.pdf  used on inp
-ut line 158.
+ut line 191.
 (luatex.def)             Requested size: 368.57964pt x 322.50253pt.
 
 
 Package natbib Warning: Citation `2024duyzendImprovingPrenatalDiagnosis' on pag
-e 4 undefined on input line 173.
+e 5 undefined on input line 206.
 
 
 
-[4]
+[5]
 
-[5<../images/functional_evidence_uniprot.pdf>]
-
-[6]
+[6<../images/functional_evidence_uniprot.pdf>]
 
 Package natbib Warning: Citation `2025lawlessApplicationQualifyingVariants' on 
-page 7 undefined on input line 234.
+page 7 undefined on input line 267.
 
 
 
@@ -1394,51 +1397,53 @@ page 7 undefined on input line 234.
 [8]
 
 Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
-linical' on page 9 undefined on input line 261.
+linical' on page 9 undefined on input line 294.
 
 
 
 [9]
 
-Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
-linical' on page 10 undefined on input line 277.
-
-
-Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
-linical' on page 10 undefined on input line 277.
-
-
-
 [10]
+
+Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
+linical' on page 11 undefined on input line 310.
+
+
+Package natbib Warning: Citation `2025lavrichenkoRecommendationsBioinformaticsC
+linical' on page 11 undefined on input line 310.
+
+
+
+[11]
 No file mendelian_disease_interpretation_v1.bbl.
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[11]
+[12]
 
-[12] (./mendelian_disease_interpretation_v1.aux)
+[13] (./mendelian_disease_interpretation_v1.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `mendelian_disease_interpretation_v1.out' has
  not changed.
-(rerunfilecheck)             Checksum: A2B060AE8217A5DD825826B5809AA1F6;2426.
+(rerunfilecheck)             Checksum: 68E90A425C8BE559284FD00094F4858A;2642.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38751 strings out of 475506
+ 38848 strings out of 475506
  125240,1648299 words of node,token memory allocated
- 1716 words of node memory still in use:
-   31 hlist, 2 vlist, 14 rule, 1 local_par, 7 glue, 5 kern, 1 penalty, 3 glyph, 
-87 attribute, 119 glue_spec, 87 attribute_list, 2 write, 24 pdf_literal, 1 pdf_a
+ 1694 words of node memory still in use:
+   31 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 5 kern, 1 penalty, 3 glyph, 
+85 attribute, 119 glue_spec, 85 attribute_list, 2 write, 24 pdf_literal, 1 pdf_a
 ction, 24 pdf_colorstack nodes
-   avail lists: 1:1,2:647,3:456,4:95,5:420,6:44,7:8475,8:45,9:437,10:17,11:695
- 60800 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:609,3:302,4:101,5:357,6:42,7:6832,8:45,9:388,10:17,11:752
+ 60895 multiletter control sequences out of 65536+600000
  110 fonts using 7776559 bytes
- 121i,10n,117p,1031b,1000s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,10n,117p,1031b,1002s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.ot
 f></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.
 otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regula
@@ -1450,11 +1455,11 @@ egular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8
 -regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroma
 n12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmr
 oman17-regular.otf>
-Output written on mendelian_disease_interpretation_v1.pdf (12 pages, 86287 bytes
+Output written on mendelian_disease_interpretation_v1.pdf (13 pages, 90118 bytes
 ).
 
-PDF statistics: 244 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 131072)
- 344 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 252 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 131072)
+ 352 words of extra memory for PDF output out of 10000 (max. 100000000)
 
