@@ -2,6 +2,7 @@
 %\documentclass[preprint,12pt,fleqn]{article}
 \documentclass[12pt]{article}
 \usepackage{ragged2e}
+\usepackage{float} % allows [H] placement
 
 % \usepackage{nopageno} % no page numbers
 \usepackage{placeins} % \FloatBarrier
@@ -130,6 +131,21 @@
     language=sh 
 }
 
+\lstdefinestyle{qvstyle}{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{gray!5},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  rulecolor=\color{gray!60},
+  linewidth=\textwidth
+}
+
 \usepackage{fontspec}
 
 \usepackage[printonlyused,withpage,nohyperlinks]{acronym}
@@ -142,7 +158,3 @@
 \renewcommand\Authfont{\normalsize}
 \renewcommand\Affilfont{\small}
 \setlength{\affilsep}{1em}
-
-%\usepackage{fontspec}
-%\usepackage{titlesec}
-%\setmainfont{SF Pro Text}

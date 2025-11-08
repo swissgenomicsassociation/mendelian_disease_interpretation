@@ -12,11 +12,12 @@
 
 % in your preamble, before \author:
 \newcommand{\QUANT}{1}
+\newcommand{\IPSNEO}{2}
+\newcommand{\SGA}{3}
 %\newcommand{\GHI}{2}
 %\newcommand{\KISPIIMM}{3}
 % \newcommand{\METAB}{4}
 %\newcommand{\LEEDS}{5}
-\newcommand{\IPSNEO}{6}
 
 \author[\QUANT]{Quant Group} 
 %\author[\GHI]{Simon Boutry}% \textsuperscript{†}}
@@ -24,34 +25,46 @@
 %\author[\KISPIIMM]{Maarja Soomann}% \textsuperscript{†}} \textsuperscript{†}}
 %\author[\KISPIIMM]{Johannes Trück}
 %\author[\GHI]{Jacques Fellay}
-\author[\IPSNEO]{Dylan Lawless *%\thanks{Addresses for correspondence: \href{mailto:Dylan.Lawless@kispi.uzh.ch}{Dylan.Lawless@kispi.uzh.ch}}
-}
+\author[\IPSNEO]{Dylan Lawless *}
+\author[\SGA]{the joint 
+SGA committee}
 % \textsuperscript{†}
 \affil[\QUANT]{The quantitative omic epidemiology group.} 
+\affil[\SGA]{The Swiss Genomics Association  commitee.}
 %\affil[\GHI]{Global Health Institute, School of Life Sciences, École Polytechnique Fédérale de Lausanne, Switzerland.}
 %\affil[\KISPIIMM]{Division of Immunology and the Children’s Research Center, University Children’s Hospital Zurich, University of Zurich, Zurich, Switzerland.}
 %\affil[\LEEDS]{Leeds Institute of Rheumatic and Musculoskeletal Medicine, University of Leeds, Leeds, UK.}
 \affil[\IPSNEO]{Department of Intensive Care and Neonatology, University Children's Hospital Zurich, University of Zurich, Zurich, Switzerland.}
 
 \maketitle
-\justify
+% \justify
+\raggedright
 
+\begin{tcolorbox}[
+  colback=red!5!white,
+  colframe=red!60!black,
+  title=\textcolor{white}{\textbf{DRAFT – NOT FINAL}},
+  fonttitle=\large\bfseries,
+  coltitle=white,
+  left=2mm, right=2mm, top=1mm, bottom=1mm,
+  boxrule=0.8pt,
+  sharp corners,
+  enhanced,
+  title filled=true,
+  colbacktitle=red!80!black
+]
+This document is a \textbf{live public working draft} and does not represent a completed or officially endorsed release.  
+All statements, analyses, and opinions are those of the authors and have not yet undergone joint committee review or external peer review.  
+Content is provided for transparency and collaborative development and may be revised substantially prior to publication.
+\end{tcolorbox}
+%\vspace{1em}
 \clearpage
+
 %  \linenumbers
-\begin{abstract} 
-
-\noindent \textbf{Background}:
-
-\vspace{1em}
-
-\noindent \textbf{Methods}:
-
-\vspace{1em}
-
-\noindent \textbf{Results}:
-
-\vspace{1em}
-
+\begin{abstract}
+\noindent
+This document aims to bridge clinical, research, and commercial domains by defining transparent, reproducible standards for genomic data interpretation and reporting. The framework integrates structured variant annotation, inheritance assessment, and functional evidence to support consistent and traceable decisions in clinical genomics. Emphasis is placed on automation, interoperability, and adherence to international standards to ensure that genomic interpretation remains accurate, reproducible, and aligned with both scientific and regulatory expectations. While more advanced analytical frameworks, including those using artificial intelligence or probabilistic inference, can build upon this foundation, this guideline defines the minimum technical and procedural standard required to ensure accuracy and transferability across domains.
+%\vspace{1em}
 \noindent \textbf{Conclusions}:
 \footnote{
 \noindent * Addresses for correspondence: \href{mailto:Dylan.Lawless@uzh.ch}{Dylan.Lawless@uzh.ch}.\\
@@ -96,125 +109,26 @@
 
 
 
-\begin{tcolorbox}[
-  colback=red!5!white,
-  colframe=red!60!black,
-  title=\textcolor{white}{\textbf{LIVE PUBLIC WORKING DRAFT – NOT FINAL}},
-  fonttitle=\large\bfseries,
-  coltitle=white,
-  left=2mm, right=2mm, top=1mm, bottom=1mm,
-  boxrule=0.8pt,
-  sharp corners,
-  enhanced,
-  title filled=true,
-  colbacktitle=red!80!black
-]
-This document is a \textbf{live public working draft} and does not represent a completed or officially endorsed release.  
-All statements, analyses, and opinions are those of the authors and have not yet undergone joint committee review or external peer review.  
-Content is provided for transparency and collaborative development and may be revised substantially prior to publication.
-\end{tcolorbox}
+\tableofcontents
 
-\vspace{1em}
+\section{Introduction} % Present and valid; defines motivation, scope, and national need for standards
 
+Genome sequencing is now routine in research, diagnostics, and commercial genomics, but the evidence supporting variant interpretations is recorded, structured, and justified in widely different ways. Algorithmic scores, proprietary rankings, or pathogenicity labels are often treated as conclusions rather than evidence, while key determinants of validity including sequence provenance, variant identity, inheritance logic, mechanism fit, population context, phenotype alignment, and contradictory observations are inconsistently captured or reported. This fragmentation limits reproducibility, weakens cumulative knowledge, and slows safe integration of AI-driven and cross-sector genomic innovation.
 
-\section{QV set preparation}
+The Swiss Genomics Association is building a national, open infrastructure for shared standards at the intersection of healthcare, research and industry. Our aim is not to replace existing frameworks or tools, but to define the evidential foundation they depend on: transparent, computable, and auditable variant interpretation that preserves biological nuance, remains interoperable across platforms, and retains full reasoning rather than only final labels. By establishing common expectations for evidence traceability, uncertainty, mechanistic reasoning, inheritance verification and phenotype grounding, this guideline enables consistent interpretation that can be exchanged, validated, and built upon by laboratories, companies, hospitals and researchers alike.
 
-Qualifying Variant (QV) sets define structured, reproducible variant interpretation rules using a transparent, machine-readable YAML format. Each QV file specifies metadata, filters, and evidence-based criteria in a simple key–value syntax, enabling precise replication of variant selection and interpretation logic across studies. QV sets can be composed interactively using the online \url{https://switzerlandomics.ch/pages/qv_builder/}, which provides an intuitive interface for defining rules, previewing YAML output, and ensuring consistency with established standards. This framework promotes FAIR data principles and harmonised variant interpretation for both research and clinical applications.
-
-
-\section{QV set for reporting}
-
-The \texttt{gnomad\_flags} rule ensures that all variants are retained for review rather than automatically excluded. For each variant in the patient-level dataset, the rule checks whether a gnomAD flag is present. Variants with no flag (\texttt{NA}) pass directly, while those carrying any recognised gnomAD flag (for example, \texttt{AS-VQSR}, \texttt{RF}, \texttt{LC pLoF}, or \texttt{SEGDUP}) also pass but are explicitly marked for downstream review. These flagged variants are not filtered out but instead require justification or comment in the final Mendelian report, ensuring transparency and traceability of interpretation decisions. Variants carrying unexpected or unlisted flags are held for manual inspection. This approach prevents premature exclusion of potentially causal variants while maintaining auditability of quality annotations.
-
-\begin{table}[h]
-\centering
-\renewcommand{\arraystretch}{1.2}
-\setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\linewidth}{l l l X}
-\hline
-\textbf{variant\_id} & \textbf{gnomad\_flag} & \textbf{outcome} & \textbf{report\_action} \\
-\hline
-1 & NA & pass & include normally \\
-2 & LC pLoF & pass (flagged) & include with note: ``gnomAD LC pLoF – review interpretation.'' \\
-3 & UnknownFlag & fail & hold for manual review \\
-\hline
-\end{tabularx}
-\caption{Example application of the \texttt{gnomad\_flags} rule to patient variants. Long entries automatically wrap within the column width for compact layout.}
-\label{tab:gnomad_flags}
-\end{table}
+This effort strengthens national coordination where common standards are still underdefined, ensuring genomic data remains clinically meaningful, scientifically reusable, and technically compatible with future care models, analytical innovation and AI-supported interpretation.
 
 
 
+\section{Background} % Missing; should summarise ACMG, ClinVar, Exomiser-style ranking, HGVS, existing gaps in auditability and evidence traceability
+
+\section{Principles of evidence-based variant interpretation} % Missing; state core principles: transparency, uncertainty, provenance, counter-evidence, reproducibility
 
 
-The \texttt{acmg\_criteria} rule interprets the condensed ACMG criteria column for each variant and flags variants that carry benign evidence. When a variant has passed upstream prioritisation tools such as Exomiser, the ACMG criteria are typically recorded in a single column as a list of applied evidence codes (for example, \texttt{PVS1, PM2, PP3}, or \texttt{BA1}). The downstream rule inspects this condensed string to determine whether it contains any benign evidence codes, recognised by the presence of the letter ``B'' (for example, \texttt{BA1}, \texttt{BS1--BS4}, or \texttt{BP1--BP8}). Variants with such codes are retained but marked for review, similar to those carrying gnomAD quality flags. This ensures that variants with benign evidence are not automatically excluded but instead require explicit assessment or justification in the final clinical interpretation.
-
-\begin{table}[h]
-\centering
-\renewcommand{\arraystretch}{1.2}
-\setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\linewidth}{l l l X}
-\hline
-\textbf{variant\_id} & \textbf{ACMG\_criteria} & \textbf{outcome} & \textbf{report\_action} \\
-\hline
-1 & PVS1, PM2, PP3 & pass & include normally \\
-2 & PVS1, PM2, BA1 & pass (flagged) & include with note: ``contains benign ACMG evidence (BA1) – review interpretation.'' \\
-3 & BP4 & pass (flagged) & include with note: ``benign supporting evidence – verify consistency with phenotype.'' \\
-4 & PS2, PM5 & pass & include normally \\
-\hline
-\end{tabularx}
-\caption{Example application of the \texttt{acmg\_criteria} rule to patient variants. Variants containing benign ACMG evidence codes are retained but flagged for explicit review in the final report. Long entries automatically wrap within the column width for compact layout.}
-\label{tab:acmg_criteria}
-\end{table}
-
-
-\section{Pedigree and inheritance information}
-
-When pedigree data are available, \ac{wgs} enables direct evaluation of inheritance models for each variant. Genotypes are interpreted across proband and parents using standard representations such as \texttt{REF}, \texttt{HET}, and \texttt{HOM}, or equivalent encodings used in variant data formats (\texttt{0,1,2} in PLINK, \texttt{0/0}, \texttt{0/1}, \texttt{1/1}, or phased forms such as \texttt{0|1} in VCF). From these data, the inheritance pattern for each variant is determined, such as de novo, homozygous, heterozygous, or compound heterozygous, and this information is then evaluated in relation to the known gene–disease relationship.
-For example, the observed segregation pattern may provide supporting or contradictory evidence for an\ac{ad}, \ac{ar}, or \ac{xl} disease mechanism.
-
-Where genotype data are incomplete, inheritance may be inferred from clinical features, family history, or segregation information, but such cases are explicitly flagged as uncertain. Scenarios of incomplete penetrance, such as a heterozygous variant inherited from an unaffected parent, are also recorded because they influence the strength of causal interpretation.
- Each inheritance assessment includes both the inferred pattern and the type of supporting evidence, ensuring that interpretative conclusions in the genetic report transparently reflect the available data and its confidence level.
-
-
-
-
-
-\section{Functional evidence databases}
-
-Functional evidence from UniProt is integrated by detecting positional overlap between variant amino acid coordinates and annotated protein features recorded in UniProt GFF files. Each UniProt entry provides structured annotations describing biochemical, structural, and functional properties of the protein. For each variant, the affected residue position is compared against these annotated intervals, and any intersection is recorded as supporting evidence in the QV interpretation framework. This approach ensures that experimental and curated protein-level information contributes directly to variant interpretation and reporting (Fig.~\ref{fig:tnfaip3_evidence_tracks}).
-
-The annotated features used as evidence sources include catalytic and binding sites, metal and nucleotide binding regions, and other experimentally defined functional motifs. Structural features such as helices, beta strands, and coiled coils provide spatial context for potential conformational disruption. Domain- and family-level annotations, including domains, motifs, and topological regions, capture conserved structural organisation and functional domains. Additional layers include post-translational modification sites, mutagenesis data, and known sequence variants curated in UniProt. Processing and localisation signals (such as signal peptides, transit peptides, and cleavage products) and cautionary sequence annotations (for example, frameshifts or sequence uncertainty) are also recorded.
-
-By systematically linking these feature classes to variant coordinates, the framework records not only where functional or structural evidence exists, but also the type of information present—whether experimental, inferred, or computational. This enables each variant interpretation to transparently reflect the available molecular evidence supporting its classification.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.85\textwidth]{functional_evidence_uniprot.pdf}
-\caption{
-\textbf{Functional evidence tracks from UniProt annotations.}
-The example illustrates how protein-level features such as domains, motifs, and catalytic sites provide structured evidence supporting interpretation of coding variants. 
-Overlaps between variant positions and curated functional regions indicate potential mechanistic relevance, while the absence of overlap suggests limited or indirect evidence. 
-This evidence framework guides the strength of interpretation in clinical reporting, ensuring that well-supported variants are highlighted and uncertain findings are transparently qualified.
-}
-\label{fig:tnfaip3_evidence_tracks}
-\end{figure}
-
-
-\section{Preference for established standards}
-
-% See \url{https://www.ncpi-acc.org} for NIH Cloud Platform Interoperability.
-
-Automation, interoperability, and reproducibility in genomics rely on the use of internationally recognised standards rather than isolated or proprietary tools. Validated frameworks enable traceable, comparable, and scalable handling of genomic and phenotypic data across research and clinical contexts \cite{2024duyzendImprovingPrenatalDiagnosis}.
-
-Core standards include the \textbf{Variant Call Format (VCF)}, \textbf{Binary Alignment Map (BAM/CRAM)}, and the \textbf{Phenopacket Schema} from the \textbf{Global Alliance for Genomics and Health (GA4GH)}. The \textbf{Human Phenotype Ontology (HPO)} and \textbf{Orphanet Rare Disease Ontology (ORDO)} support structured phenotyping and disease mapping, while the \textbf{Beacon protocol} enables federated search across distributed datasets without sharing raw data.
-
-Using such standards ensures long-term compatibility, supports automation, and improves accuracy through consistent validation and version control. Tools such as \textit{Exomiser}, \textit{LIRICAL}, and \textit{PhenIX} show how ontology-based approaches enable automated, phenotype-driven variant prioritisation. For cloud analysis, platforms like \textbf{Terra} and pipelines such as \textbf{GATK} provide transparent, reproducible environments aligned with GA4GH and international data-sharing frameworks.
-
-
-
-
-
+\section{Preference for established standards} 
+% Justifies use of global standards for files (VCF, BAM/CRAM), phenotyping (HPO/ORDO), exchange (Phenopackets, Beacon), and reproducible compute (GA4GH-aligned tools and platforms)
+   
 %
 %
 %
@@ -249,7 +163,20 @@ Using such standards ensures long-term compatibility, supports automation, and i
 %
 %Anything beyond these would largely repeat or contextualise rather than expand the standards argument.
 
-\section{Structured variant annotation and automation of interpretation}
+% See \url{https://www.ncpi-acc.org} for NIH Cloud Platform Interoperability.
+
+Automation, interoperability, and reproducibility in genomics rely on the use of internationally recognised standards rather than isolated or proprietary tools. Validated frameworks enable traceable, comparable, and scalable handling of genomic and phenotypic data across research and clinical contexts \cite{2024duyzendImprovingPrenatalDiagnosis}.
+
+Core standards include the \textbf{Variant Call Format (VCF)}, \textbf{Binary Alignment Map (BAM/CRAM)}, and the \textbf{Phenopacket Schema} from the \textbf{Global Alliance for Genomics and Health (GA4GH)}. The \textbf{Human Phenotype Ontology (HPO)} and \textbf{Orphanet Rare Disease Ontology (ORDO)} support structured phenotyping and disease mapping, while the \textbf{Beacon protocol} enables federated search across distributed datasets without sharing raw data.
+
+Using such standards ensures long-term compatibility, supports automation, and improves accuracy through consistent validation and version control. Tools such as \textit{Exomiser}, \textit{LIRICAL}, and \textit{PhenIX} show how ontology-based approaches enable automated, phenotype-driven variant prioritisation. For cloud analysis, platforms like \textbf{Terra} and pipelines such as \textbf{GATK} provide transparent, reproducible environments aligned with GA4GH and international data-sharing frameworks.
+
+
+
+
+
+\section{Structured variant annotation and automation of interpretation} 
+% Introduces machine-interpretable evidence models (GA4GH VA), linking variant, condition, and evidence to support quantitative, updateable inference beyond manual ACMG categories
 
 % See \url{https://va-spec.ga4gh.org/en/latest/examples/acmg-variant-pathogenicity-statement-with-evidence.html} for example. 
 
@@ -264,7 +191,228 @@ Tools such as \textit{Exomiser} and \textit{LIRICAL} illustrate early automation
 By representing all evidence as structured, machine-interpretable data with defined provenance, the GA4GH framework provides a foundation for fully automatable, transparent, and continuously updatable variant interpretation.
 
 
-\section{Qualifying variant protocol design and standardised approaches}
+
+\section{Variant annotation specification}
+
+We will examples of YAML/JSON and figures - see \url{https://va-spec.ga4gh.org/en/latest/examples/acmg-variant-pathogenicity-statement-with-evidence.html}.
+
+
+GA4GH VA-Spec provides a structured, interoperable framework for representing variant interpretations, evidence lines, provenance, and clinical assertions using shared semantics. It allows algorithmic outputs, literature evidence, cohort data, functional studies, and clinical propositions to be encoded in a transparent, traceable format that different laboratories and software providers can exchange without loss of meaning. This makes it highly suitable for improving variant interpretation reporting, particularly when combining automated tool outputs with manual clinical review, while ensuring that each evidence source, method, and agent is explicitly recorded. It also aligns with established frameworks such as ACMG/AMP, enabling rule-based evidence to be represented in a consistent, computable form.
+
+However, VA-Spec is not itself a method for deciding pathogenicity or clinical actionability. It does not score or weight evidence, validate sequencing quality, enforce inheritance logic, detect biologically implausible results, resolve contradictory evidence, or judge whether the total evidence meets a clinical threshold. It cannot determine whether allele frequency conflicts with disease prevalence, whether zygosity matches the disorder model, whether phenotype congruence is sufficient, or whether alternative diagnoses were adequately excluded. A VA-Spec record can be structurally valid yet clinically incomplete if it contains only algorithmic predictions without essential genetic and diagnostic checks.
+
+For this reason, VA-Spec should be used as the evidence representation and exchange layer, while the clinical interpretation framework must sit above it. This additional layer must provide explicit evidence weighting, quality thresholds, segregation validation, phenotype matching logic, mechanism-of-disease assessment, differential diagnosis tracking, and clear delineation between algorithmic inference and expert clinical judgement. When combined, VA-Spec enables standardised, auditable reporting, but the clinical decision model must supply the reasoning, safeguards, and quantitative evaluation required for patient-grade variant assessment.
+
+
+Example content. The example omits full representations of these VRS and CatVRS Variation objects - as these are large structures that are the remit of other GKS Specifications.
+
+
+\begin{tcolorbox}[
+    colback=white!0,
+    colframe=black,
+    boxrule=1pt,
+    arc=1mm,
+    outer arc=1mm,
+    title=\textbf{\refstepcounter{myboxcounter}\label{box:ga4gh_va_example}Box \themyboxcounter: GA4GH variant annotation example}
+]
+\begin{verbatim}
+{
+  "SCV000778434.1": {
+    "id": "SCV000778434.1",
+    "type": "Statement",
+    // ClinVar assertion describing pathogenicity claim for a single variant-disease pair
+    "proposition": {
+      "id": "ex:Proposition001",
+      "type": "VariantPathogenicityProposition",
+      "subjectVariant": "clinvar/208366",
+      "predicate": "isCausalFor",
+      "objectCondition": {
+        "id": "clinvar.trait/939",
+        "conceptType": "Disease",
+        "name": "Autosomal dominant nonsyndromic hearing loss 2A",
+        "primaryCoding": {
+          "code": "C2677637",
+          "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+          "iris": ["http://identifiers.org/medgen/C2677637"]
+        }
+      },
+      // Qualifier for degree of penetrance (here stated as high)
+      "penetranceQualifier": {
+        "primaryCoding": { "code": "high", "system": "local:pathogenicity-penetrance-qualifier" },
+        "name": "high"
+      }
+    },
+    "direction": "supports",
+    // Overall assertion strength assigned by submitter/guideline
+    "strength": {
+      "primaryCoding": { "code": "established", "system": "ImplementerSystem1" }
+    },
+    // Final classification label applied under a guideline (e.g. ACMG 2015)
+    "classification": {
+      "primaryCoding": { "code": "disease-causing", "system": "ACMG-2015" }
+    },
+    // Provenance: who evaluated/submitted and when
+    "contributions": [
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/500139",
+          "type": "Agent",
+          "name": "ClinVar Staff, National Center for Biotechnology Information (NCBI)"
+        },
+        "activityType": { "name": "evaluated" },
+        "date": "2015-08-20"
+      },
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/500139",
+          "type": "Agent",
+          "name": "ClinVar Staff, National Center for Biotechnology Information (NCBI)"
+        },
+        "activityType": { "name": "submitted" },
+        "date": "2018-06-12"
+      }
+    ],
+    // Guideline or method used to derive the claim
+    "specifiedBy": {
+      "type": "Method",
+      "reportedIn": {
+        "type": "Document",
+        "name": "Alternate guidelines and terminology for variant pathogenicity classification"
+      }
+    },
+    // Structured evidence supporting the proposition
+    "evidenceLines": [
+      {
+        "id": "ex:EvidenceLine001",
+        "type": "EvidenceLine",
+        "supportsProposition": "ex:Proposition001",
+        "direction": "supports",
+        "strength": {
+          "primaryCoding": { "code": "moderate", "system": "ACMG" }
+        },
+        "evidenceSource": {
+          // Population frequency evidence; very low AF supports rarity criterion
+          "type": "StudyResult",
+          "id": "ex:AlleleFreq001",
+          "studyType": "CohortAlleleFrequencyStudyResult",
+          "studyDescription": "Allele frequency in gnomAD v4.0 EUR cohort",
+          "variant": "ex:Variant001",
+          "alleleFrequency": 0.0000021,
+          "cohortSize": 60234,
+          "reportedIn": {
+            "type": "DataSet",
+            "name": "gnomAD v4.0"
+          }
+        }
+      },
+      {
+        "id": "ex:EvidenceLine002",
+        "type": "EvidenceLine",
+        "supportsProposition": "ex:Proposition001",
+        "direction": "supports",
+        "strength": {
+          "primaryCoding": { "code": "strong", "system": "ACMG" }
+        },
+        "evidenceSource": {
+          // Functional data block supporting deleterious effect
+          "type": "Statement",
+          "id": "ex:FunctionalStatement001",
+          "proposition": {
+            "id": "ex:Proposition002",
+            "type": "ExperimentalVariantFunctionalImpactProposition",
+            "subjectVariant": "ex:Variant001",
+            "predicate": "hasFunctionalImpact"
+          },
+          "direction": "supports",
+          "strength": {
+            "primaryCoding": { "code": "strong", "system": "MAVE" }
+          },
+          "evidenceLines": [
+            {
+              "id": "ex:EvidenceLine003",
+              "type": "EvidenceLine",
+              "supportsProposition": "ex:Proposition002",
+              "direction": "supports",
+              "strength": {
+                "primaryCoding": { "code": "high", "system": "MAVE" }
+              },
+              "evidenceSource": {
+                "type": "StudyResult",
+                "id": "ex:FuncStudy001",
+                "studyType": "ExperimentalVariantFunctionalImpactStudyResult",
+                "variant": "ex:Variant001",
+                // Functional outcome demonstrating disrupted protein activity
+                "result": "reduced channel conductance",
+                "assay": "automated patch clamp",
+                "reportedIn": {
+                  "type": "Document",
+                  "name": "MAVE DB: KCNQ4 functional screen"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+\end{verbatim}
+\end{tcolorbox}
+
+
+\section{Data provenance and sample quality control} % Missing; should cover genome build, sequencing platform, alignment, sample identity, contamination, sex check, coverage
+
+\section{Variant representation and normalisation} % Missing; should specify HGVS, VCF normalisation, reference builds, allele consistency, transcript rules
+
+
+
+\subsection{Nomenclatures}
+
+Accurate variant description depends on consistent use of internationally recognised nomenclature systems. The \ac{hgvs} nomenclature provides the authoritative standard for describing sequence variants at the DNA, RNA, and protein levels. It ensures that each variant is expressed unambiguously and reproducibly across clinical reports, publications, and databases.  
+
+The \ac{hgvs} Nomenclature is maintained by the \ac{hgvs}   \ac{hvnc} under the H \ac{hugo}  and is widely implemented across major genomic resources and clinical interpretation platforms. Current recommendations are detailed in \citet{2024hartHGVSNomenclature2024} and \citet{2016dendunnenHGVSRecommendationsDescription}, which formalise the syntax, reference sequence alignment, and conventions for variant expression.  
+
+Within this guideline, all variants should be reported according to the most recent \ac{hgvs}  Nomenclature release, aligned to an approved reference sequence (RefSeq or Ensembl transcript). Both coding (\texttt{c.}) and protein (\texttt{p.}) level annotations should be provided where possible. Genomic coordinates should follow the \ac{grch38} reference assembly.  
+
+Using standardised nomenclature ensures interoperability between laboratories, software tools, and public databases, reducing ambiguity in variant exchange and supporting precise traceability in both research and clinical reporting.  
+
+
+\section{Functional evidence databases}
+
+Functional evidence from UniProt is integrated by detecting positional overlap between variant amino acid coordinates and annotated protein features recorded in UniProt GFF files. Each UniProt entry provides structured annotations describing biochemical, structural, and functional properties of the protein. For each variant, the affected residue position is compared against these annotated intervals, and any intersection is recorded as supporting evidence in the QV interpretation framework. This approach ensures that experimental and curated protein-level information contributes directly to variant interpretation and reporting (\textbf{Figure ~\ref{fig:tnfaip3_evidence_tracks}}).
+
+The annotated features used as evidence sources include catalytic and binding sites, metal and nucleotide binding regions, and other experimentally defined functional motifs. Structural features such as helices, beta strands, and coiled coils provide spatial context for potential conformational disruption. Domain- and family-level annotations, including domains, motifs, and topological regions, capture conserved structural organisation and functional domains. Additional layers include post-translational modification sites, mutagenesis data, and known sequence variants curated in UniProt. Processing and localisation signals (such as signal peptides, transit peptides, and cleavage products) and cautionary sequence annotations (for example, frameshifts or sequence uncertainty) are also recorded.
+
+By systematically linking these feature classes to variant coordinates, the framework records not only where functional or structural evidence exists, but also the type of information present—whether experimental, inferred, or computational. This enables each variant interpretation to transparently reflect the available molecular evidence supporting its classification.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.85\textwidth]{functional_evidence_uniprot.pdf}
+\caption{
+\textbf{Functional evidence tracks from UniProt annotations.}
+The example illustrates how protein-level features such as domains, motifs, and catalytic sites provide structured evidence supporting interpretation of coding variants. 
+Overlaps between variant positions and curated functional regions indicate potential mechanistic relevance, while the absence of overlap suggests limited or indirect evidence. 
+This evidence framework guides the strength of interpretation in clinical reporting, ensuring that well-supported variants are highlighted and uncertain findings are transparently qualified.
+}
+\label{fig:tnfaip3_evidence_tracks}
+\end{figure}
+
+
+\section{Automated QV (qualifying variant) framework} % YAML rules, filters, traceability, reproducible query logic, conditional evidence
+
+
+\subsection{QV file guideline content}
+
+\lstinputlisting[
+  style=qvstyle,
+ caption={Excerpt from the QV interpretation prompt used with the QV Builder app. Line wrapping is shown for display only. For actual use, refer to the original source file or the corresponding official QV set release.},
+  label={lst:qv_variant_interpretation}
+]{../qv_variant_interpretaion.txt}
+
+
+\subsection{Qualifying variant protocol design and standardised approaches}
 
 Variant interpretation depends on how whole genome data are prepared and analysed. Each step, from sequencing and variant calling to annotation and filtering, defines what can be detected or missed. A qualifying variant (QV) protocol makes these steps explicit by describing the rules that determine variant inclusion and interpretation \cite{2025lawlessApplicationQualifyingVariants}.
 
@@ -272,25 +420,133 @@ A standard QV protocol should specify the sequencing method, genome build, and t
 
 This standardisation ensures that variant findings are traceable and comparable across studies. It also supports automated pipelines that integrate multiple evidence sources, such as population, functional, and multiomic data, in line with frameworks like the GA4GH Variant Annotation model. The result is consistent, transparent, and quantifiable variant interpretation.
 
-\section{Compliance and accreditation framework}
+\subsection{QV set preparation} % Present; describes rule structure and builder tool
 
-Genomic data processing and analysis in Switzerland are governed by national and international legal standards designed to ensure data protection, traceability, and clinical reliability. The primary legal framework is the \textbf{Federal Act on Data Protection (FADP, SR~235.1)}, which regulates the processing of personal and sensitive data, including genetic information. Key obligations under the FADP include lawful processing (Arts.~6, 31), the establishment of Data Processing Agreements between controllers and processors (Art.~9), the implementation of technical and organisational safeguards such as encryption and access logging (Art.~8), maintenance of records of processing activities (Art.~12), breach notification procedures (Art.~24), and regulated cross-border data transfers requiring adequacy decisions or safeguards (Arts.~16–18).  
+Qualifying Variant (QV) sets define structured, reproducible variant interpretation rules using a transparent, machine-readable YAML format. Each QV file specifies metadata, filters, and evidence-based criteria in a simple key–value syntax, enabling precise replication of variant selection and interpretation logic across studies. QV sets can be composed interactively using the online \url{https://switzerlandomics.ch/pages/qv_builder/}, which provides an intuitive interface for defining rules, previewing YAML output, and ensuring consistency with established standards. This framework promotes FAIR data principles and harmonised variant interpretation for both research and clinical applications.
 
-Under Swiss law, platforms that store or share genomic data are typically considered \textit{data processors}, not \textit{medical devices}, unless marketed for diagnostic, therapeutic, or monitoring purposes. In such cases, the regulatory scope shifts from the FADP to the \textbf{Medical Devices Ordinance (MedDO, SR~812.213)} or the \textbf{In Vitro Diagnostic Medical Devices Ordinance (IvDO, SR~812.219)}, corresponding to the EU’s \textbf{MDR~2017/745} and \textbf{IVDR~2017/746}. Medical device classification is determined by intended use and requires conformity assessment, a Technical File, risk management under \textbf{ISO~14971}, and registration in \textbf{swissdamed}.
+\subsection{QV sets for reporting} % Present; introduces YAML-based qualifying variant framework
 
-For non-medical genomic infrastructure, compliance with FADP and, where applicable, the \textbf{General Data Protection Regulation (GDPR)} is sufficient. GDPR may apply when data from EU subjects are processed (Art.~3). Voluntary alignment with international standards such as \textbf{ISO~27001} for information security and \textbf{ISO~15189} for quality management in medical laboratories is recommended to enhance transparency and interoperability across research, clinical, and industrial settings.
-
-\subsection{Accreditation standards}
-
-Accreditation provides verifiable assurance that laboratory and computational processes meet international quality benchmarks. The \textbf{ISO~15189} standard defines competence and quality management requirements for medical laboratories, encompassing both wet-lab and analytical bioinformatics activities. Laboratories accredited under ISO~15189 operate with validated procedures, documented workflows, and reproducible performance metrics suitable for clinical-grade diagnostics.
-
-Within Switzerland, the \textit{Health~2030~Genome~Center} represents a reference implementation. Its ISO~15189-accredited Diagnostic Sequencing Platform (DSP) delivers whole-genome, whole-exome, and RNA-seq services under a certified quality system, including validated fast-turnaround workflows capable of data delivery within seven days of sample receipt. This demonstrates that high-quality accreditation and rapid clinical response can be achieved concurrently.
-
-Accreditation should extend beyond laboratory sequencing to cover computational analysis, data management, and quality assurance frameworks. Validation, reproducibility testing, version control, and full documentation of pipelines must form part of the accredited quality management system. Laboratories and institutions that align with ISO~15189 or equivalent frameworks ensure that genomic data in Switzerland remain verifiable, comparable, and suitable for both clinical and research integration at national and international levels.
+\subsection{Conditional evidence rules and source-dependent quality checks} % Present; covers conditional database flags (gnomAD example)
 
 
+Reference databases and the case sample may share variant-calling or sequencing biases. Therefore, databases which carry flagged variants should be examined through conditional automation or manual review. 
+For instance, GnomAD is a key reference for interpreting variants in single-case analyses.
+The \texttt{gnomad\_flags} rule ensures that flagged variants are reviewed rather than excluded. Variants without a flag (\texttt{NA}) pass directly, while those with recognised gnomAD flags pass with review status.
 
-\section{Recommendations for bioinformatics in clinical practice}
+Common flags include \texttt{AS-VQSR} (allele-specific quality recalibration), \texttt{RF} (random forest outlier), \texttt{LC pLoF} (low-confidence loss-of-function), and \texttt{SEGDUP} (segmental duplication). These indicate potential technical or annotation uncertainty rather than confirmed artefacts.
+We recommend that variants are retained in reporting but require justification or comment to ensure transparency and traceability.
+
+
+\begin{table}[H]
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\centering
+\begin{tabularx}{\linewidth}{l l l X}
+\hline
+\textbf{variant\_id} & \textbf{gnomad\_flag} & \textbf{outcome} & \textbf{report\_action} \\
+\hline
+1 & NA & pass & include normally \\
+2 & LC pLoF & pass (flagged) & include with note: ``gnomAD LC pLoF; review interpretation.'' \\
+3 & UnknownFlag & fail & hold for manual review \\
+\hline
+\end{tabularx}
+\caption{Example application of the \texttt{gnomad\_flags} rule to patient variants. Entries automatically wrap within the column width for compact layout.}
+\label{tab:gnomad_flags}
+\end{table}
+
+\subsection{ACMG criteria with counter-factual evidence} % Present but incomplete; should later define explicit additions for contradictory evidence handling
+
+% By aggregating variant sets beyond single-gene analyses, the framework complements established rare variant association tests such as \ac{skat} and \ac{acat} \cite{liu2019acat,li2020dynamic,wu2011rare,lee2012optimal} and aligns with multi-omics integration methods \cite{kong2018nature,howe2021within}. It is compatible with \ac{acmg} guidelines \cite{richards2015standards}, related interpretation frameworks \cite{tavtigian2020fitting,li2017intervar}, and current \ac{qc} standards \cite{pedersen2021effective,anderson2010data}. Standardised systems, including \ac{acmg} Secondary Findings v3.2 \cite{miller2023acmg}, allow integration of these probabilistic results into clinical workflows. Comparison with AlphaMissense scores showed that pathogenicity predictors estimate molecular effect rather than probability of occurrence. Integrating variant-level priors with predictors like AlphaMissense could improve disease relevance by incorporating gene-disease associations  and \ac{moi} for applications in AI/ML.
+
+
+The \texttt{acmg\_criteria} rule interprets the condensed ACMG criteria column for each variant and flags variants that carry benign evidence. When a variant has passed upstream prioritisation tools such as Exomiser, the ACMG criteria are typically recorded in a single column as a list of applied evidence codes (for example, \texttt{PVS1, PM2, PP3}, or \texttt{BA1}). The downstream rule inspects this condensed string to determine whether it contains any benign evidence codes, recognised by the presence of the letter ``B'' (for example, \texttt{BA1}, \texttt{BS1--BS4}, or \texttt{BP1--BP8}). Variants with such codes are retained but marked for review, similar to those carrying gnomAD quality flags. This ensures that variants with benign evidence are not automatically excluded but instead require explicit assessment or justification in the final clinical interpretation.
+
+Rank based scoring such as that from Tavanian offers benefits but similarly can miss the presence of counter-factual evidence that a variant might be considered benign but remain prioritised by the presence of other pathogenic flags.
+
+\begin{table}[H]
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\centering
+\begin{tabularx}{\linewidth}{l l l X}
+\hline
+\textbf{variant\_id} & \textbf{ACMG\_criteria} & \textbf{outcome} & \textbf{report\_action} \\
+\hline
+1 & PVS1, PM2, PP3 & pass & include normally \\
+2 & PVS1, PM2, BA1 & pass (flagged) & include with note: ``contains benign ACMG evidence (BA1); review interpretation.'' \\
+3 & BP4 & pass (flagged) & include with note: ``benign supporting evidence; verify consistency with phenotype.'' \\
+4 & PS2, PM5 & pass & include normally \\
+\hline
+\end{tabularx}
+\caption{Example application of the \texttt{acmg\_criteria} rule to patient variants. Variants containing benign ACMG evidence codes are retained but flagged for explicit review in the final report.}
+\label{tab:acmg_criteria}
+\end{table}
+
+
+\subsection{Pedigree and inheritance information}
+
+When pedigree data are available, \ac{wgs} enables direct evaluation of inheritance models for each variant. Genotypes are interpreted across proband and parents using standard representations such as \texttt{REF}, \texttt{HET}, and \texttt{HOM}, or equivalent encodings used in variant data formats (\texttt{0,1,2} in PLINK, \texttt{0/0}, \texttt{0/1}, \texttt{1/1}, or phased forms such as \texttt{0|1} in VCF). From these data, the inheritance pattern for each variant is determined, such as de novo, homozygous, heterozygous, or compound heterozygous, and this information is then evaluated in relation to the known gene–disease relationship.
+For example, the observed segregation pattern may provide supporting or contradictory evidence for an\ac{ad}, \ac{ar}, or \ac{xl} disease mechanism.
+
+Where genotype data are incomplete, inheritance may be inferred from clinical features, family history, or segregation information, but such cases are explicitly flagged as uncertain. Scenarios of incomplete penetrance, such as a heterozygous variant inherited from an unaffected parent, are also recorded because they influence the strength of causal interpretation.
+ Each inheritance assessment includes both the inferred pattern and the type of supporting evidence, ensuring that interpretative conclusions in the genetic report transparently reflect the available data and its confidence level.
+
+\subsection{Pedigree and inheritance information}
+
+Accurate interpretation of inheritance requires integrating two complementary sources of evidence:  
+(1) the \textit{\ac{moi}} defined by curated reference datasets that describe known gene–disease mechanisms, and  
+(2) the \textit{observed inheritance pattern} derived from family genotype or clinical data.  
+
+The reference \ac{moi} defines the expected transmission mechanism for a gene–disease pair, typically \ac{ad}, \ac{ar}, or \ac{xl}. Structured datasets such as PanelAppRex \cite{lawless_panelapprex_2025} harmonise these annotations across thousands of curated panels. Foundational sources including Genomics England’s PanelApp and PanelApp Australia \cite{martin_panelapp_2019} provide continuously updated expert curation underpinning national infrastructures such as the NHS National Genomic Test Directory and the 100,000 Genomes Project. The \ac{moi} field thus serves as an evidence-based prior — a quantitative expectation of how pathogenic variants in a given gene are likely to segregate.
+
+The observed inheritance pattern, by contrast, is determined from the case data. When trio or family \ac{wgs} is available, inheritance can be assessed directly from genotype encodings (\texttt{REF}, \texttt{HET}, \texttt{HOM}, or \texttt{0/1}, \texttt{1/1}, \texttt{0|1}). This pattern may confirm or contradict the reference \ac{moi}. For example, a de novo heterozygous variant in an \ac{ad} gene supports causality, whereas biallelic variants in an \ac{ar} gene are expected.  
+
+Cases with incomplete genotype data require inference from clinical or segregation information and must be explicitly flagged as uncertain. Incomplete penetrance, mosaicism, or unaffected carriers (e.g. heterozygous variants in \ac{ar} genes) should be documented, as they influence the posterior probability of pathogenicity \cite{lawless_quantifying_2025}.  
+
+To ensure consistency, each variant interpretation should record both the reference \ac{moi} (from curated databases) and the observed inheritance pattern (from patient data). This dual recording enables probabilistic interpretation frameworks, such as Quant \cite{lawless_quantifying_2025}, to integrate population frequencies, genotype configurations, and inheritance priors under Hardy–Weinberg equilibrium. Together, these components quantify diagnostic confidence and prevent misclassification of variants arising from uncertain or incomplete pedigree information.
+
+
+
+
+
+
+
+
+\section{Population frequency and cohort context} % Missing; allele frequency thresholds, ancestry context, founder effects, max credible AF, subpopulation structure
+
+\section{Inheritance and segregation evidence} % Missing; zygosity, phasing, de novo status, compound heterozygosity, segregation strength
+
+\section{Phenotype matching and gene-disease validity} % Missing; HPO specificity, mechanism fit, locus validity, phenotype overlap, differential diagnosis logic
+
+\section{Counter-evidence and conflict resolution} % Missing; rules for handling benign signals, phenotype mismatch, conflicting databases, contradictory evidence
+
+\section{Manual clinical genetics review checkpoints} % Missing; explicit checklist of non-algorithmic expert review steps (phenotype, mechanism, segregation, artefacts, differential diagnoses)
+
+\section{Semi-quantitative scoring rubric} % Missing; numeric weighting system mapping clinical evidence and checks to interpretable scores
+
+\section{End-to-end WGS interpretation workflow} % Missing; stepwise process from raw data, QC, annotation, QV filtering, evidence synthesis to reporting
+
+
+\section{Patient and public representation}
+
+Patient and public representation (\ac{ppie}) applies across clinical, research, and commercial contexts.  
+The framework should record whether, and how, the duty of representation was fulfilled in each setting.  
+
+For clinical or hospital-based cases, the record should indicate whether the patient or guardian had the opportunity to discuss findings with a qualified genetics expert and whether follow-up support was offered.  
+
+For commercial services where results are delivered online, the record should state whether the customer was informed about the availability of expert consultation, explanatory materials, or optional counselling.  
+
+For research or large cohort studies without individual feedback, documentation should confirm that participants were informed about the nature of data use and that no individual result return was planned.  
+
+Recording these details ensures consistent accountability and transparency in all contexts without storing identifiable or sensitive personal information.
+
+
+
+
+
+
+\section{Recommendations for bioinformatics in clinical practice} % Defines operational, validation, infrastructure, staffing, accreditation, and testing standards required for clinical bioinformatics pipelines to generate trusted evidence
 
 Clinical bioinformatics forms the analytical backbone of genomic medicine. It bridges raw sequencing data and clinical interpretation, and its reliability determines the accuracy of every downstream result. To maintain national consistency and international credibility, Switzerland should adopt a harmonised framework for sequencing-based clinical bioinformatics aligned with the recommendations of the Nordic Alliance for Clinical Genomics (NACG)
 \cite{2025lavrichenkoRecommendationsBioinformaticsClinical}. While the NACG framework was developed for the Nordic region, its principles provide an appropriate foundation for Swiss implementation. The key recommendations, summarised in their Table~1, outline the operational, technical, and quality criteria expected of any accredited clinical bioinformatics unit.
@@ -306,10 +562,12 @@ Finally, the Association emphasises that clinical bioinformatics is not solely a
 Together, these principles define the expected Swiss standard for clinical bioinformatics: evidence-based, reproducible, securely managed, and accredited under frameworks equivalent to ISO~15189. Adhering to these practices will ensure that genomic analysis in Switzerland remains accurate, auditable, and of enduring public value.
 
 
-\begin{table}[ht]
+\begin{table}[H]
+\small
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{6pt}
 \centering
-\caption{Recommendations for sequencing-based clinical bioinformatics. Reproduced based on \citet{2025lavrichenkoRecommendationsBioinformaticsClinical}
-.}
+\caption{Recommendations for sequencing-based clinical bioinformatics, based on \citet{2025lavrichenkoRecommendationsBioinformaticsClinical}.}
 \label{tab:bioinformatics_recommendations}
 \begin{tabular}{p{0.95\linewidth}}
 \toprule
@@ -335,7 +593,45 @@ Together, these principles define the expected Swiss standard for clinical bioin
 
 
 
+\section{Clinical report structure and minimum requirements} % Missing; defines mandatory sections for a clinical-grade genomic report
 
+\section{Presenting an evidence synthesis statement} % Missing; final clinical interpretation summary combining evidence into a justified conclusion
+
+\section{Implementation, interoperability, and tooling} % Missing; APIs, automation, portability, reproducibility, software compatibility
+
+\section{Limitations and scope} % Missing; clarify boundary of claims, non-replacement of clinical judgement, evidential scope
+
+\section{Auditability, versioning, and compliance} % Missing; logs, decision provenance, version control, reproducibility requirements
+
+\section{Future directions} % Missing; evolution of standards, research extensions, AI integration boundaries
+
+\section{Acknowledgements} % Missing but expected in manuscripts
+
+\section{References} % Missing but expected in manuscripts
+
+\appendix
+\section{Appendix} % Missing; example QV YAML files, scoring tables, clinical report templates, worked examples
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% It focuses primarily on \ac{snv}s and does not yet incorporate structural variants, de novo mutations, hypomorphic alleles, overdominance, variable penetrance, tissue-specific effects, or phenomena such as the Wahlund effect and pleiotropy \cite{zschocke_mendelian_2023}.
 
 \section{Conclusion}
 
@@ -393,6 +689,8 @@ The data used in this manuscript is derived from open sources which are cited in
  \acro{grch38}[GRCh38]{Genome Reference Consortium Human Build 38}
 \acro{gvcf}[gVCF]{genomic variant call format}
  \acro{hgvs}[HGVS]{Human Genome Variation Society}
+\acro{hvnc}[HVNC]{HGVS Variant Nomenclature Committee}
+\acro{hugo}[HUGO]{Human Genome Organisation}
  \acro{hpc}[HPC]{High-Performance Computing}
  \acro{hsd}[HSD]{Honestly Significant Difference}
  \acro{hwe}[HWE]{Hardy-Weinberg Equilibrium}

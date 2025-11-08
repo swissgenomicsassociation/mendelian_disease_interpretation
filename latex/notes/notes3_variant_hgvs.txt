@@ -1,0 +1,37 @@
+Example
+
+https://www.ncbi.nlm.nih.gov/clinvar/RCV000630575/
+
+Allele description [Variation Report for NM_004006.3(DMD):c.1724T>C (p.Leu575Pro)]
+
+NM_004006.3(DMD):c.1724T>C (p.Leu575Pro)
+
+Gene:DMD:dystrophin [Gene - OMIM - HGNC]Variant type:single nucleotide variantCytogenetic location: Xp21.1Genomic location:
+ChrX: 32573618 (on Assembly GRCh38)
+ChrX: 32591735 (on Assembly GRCh37)
+Preferred name:NM_004006.3(DMD):c.1724T>C (p.Leu575Pro)Other names:p.L575P:CTT>CCTHGVS:
+NC_000023.11:g.32573618A>G
+NG_012232.1:g.770992T>C
+NM_000109.4:c.1700T>C
+NM_004006.3:c.1724T>CMANE SELECT
+NM_004009.3:c.1712T>C
+NM_004010.3:c.1355T>C
+NP_000100.3:p.Leu567Pro
+NP_003997.1:p.Leu575Pro
+NP_003997.2:p.Leu575Pro
+NP_004000.1:p.Leu571Pro
+NP_004001.1:p.Leu452Pro
+LRG_199t1:c.1724T>C
+LRG_199:g.770992T>C
+LRG_199p1:p.Leu575Pro
+NC_000023.10:g.32591735A>G
+NM_000109.3:c.1700T>C
+NM_004006.2:c.1724T>C
+...more
+Protein change:L452PLinks:dbSNP: rs370644567NCBI 1000 Genomes Browser:rs370644567Molecular consequence:
+NM_000109.4:c.1700T>C - missense variant - [Sequence Ontology: SO:0001583]
+NM_004006.3:c.1724T>C - missense variant - [Sequence Ontology: SO:0001583]
+NM_004009.3:c.1712T>C - missense variant - [Sequence Ontology: SO:0001583]
+NM_004010.3:c.1355T>C - missense variant - [Sequence Ontology: SO:0001583]
+
+

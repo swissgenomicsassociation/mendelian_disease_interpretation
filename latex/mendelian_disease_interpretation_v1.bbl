@@ -1,0 +1,77 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Hart et~al.(2024)Hart, Fokkema, DiStefano, Hastings, Laros, Taylor,
+  Wagner, and Den~Dunnen]{2024hartHGVSNomenclature2024}
+Reece~K. Hart, Ivo F. A.~C. Fokkema, Marina DiStefano, Ros Hastings, Jeroen
+  F.~J. Laros, Rachel Taylor, Alex~H. Wagner, and Johan~T. Den~Dunnen.
+\newblock {{HGVS Nomenclature}} 2024: Improvements to community engagement,
+  usability, and computability.
+\newblock \emph{Genome Medicine}, 16\penalty0 (1):\penalty0 149, December 2024.
+\newblock ISSN 1756-994X.
+\newblock \doi{10.1186/s13073-024-01421-5}.
+
+\bibitem[Den~Dunnen et~al.(2016)Den~Dunnen, Dalgleish, Maglott, Hart,
+  Greenblatt, {McGowan-Jordan}, Roux, Smith, Antonarakis, Taschner, and {on
+  behalf of the Human Genome Variation Society (HGVS), the Human Variome
+  Project (HVP), and the Human Genome Organisation
+  (HUGO)}]{2016dendunnenHGVSRecommendationsDescription}
+Johan~T. Den~Dunnen, Raymond Dalgleish, Donna~R. Maglott, Reece~K. Hart,
+  Marc~S. Greenblatt, Jean {McGowan-Jordan}, Anne-Francoise Roux, Timothy
+  Smith, Stylianos~E. Antonarakis, Peter~E.M. Taschner, and {on behalf of the
+  Human Genome Variation Society (HGVS), the Human Variome Project (HVP), and
+  the Human Genome Organisation (HUGO)}.
+\newblock {{HGVS Recommendations}} for the {{Description}} of {{Sequence
+  Variants}}: 2016 {{Update}}.
+\newblock \emph{Human Mutation}, 37\penalty0 (6):\penalty0 564--569, June 2016.
+\newblock ISSN 10597794.
+\newblock \doi{10.1002/humu.22981}.
+
+\bibitem[Duyzend et~al.(2024)Duyzend, Cacheiro, Jacobsen, Giordano, Brand,
+  Wapner, Talkowski, Robinson, and
+  Smedley]{2024duyzendImprovingPrenatalDiagnosis}
+Michael~H. Duyzend, Pilar Cacheiro, Julius O.~B. Jacobsen, Jessica Giordano,
+  Harrison Brand, Ronald~J. Wapner, Michael~E. Talkowski, Peter~N. Robinson,
+  and Damian Smedley.
+\newblock Improving prenatal diagnosis through standards and aggregation.
+\newblock \emph{Prenatal Diagnosis}, 44\penalty0 (4):\penalty0 454--464, April
+  2024.
+\newblock ISSN 0197-3851, 1097-0223.
+\newblock \doi{10.1002/pd.6522}.
+
+\bibitem[Lawless et~al.(2025)Lawless, Saadat, Oumelloul, Boutry, Stadler,
+  {\"O}sterle, Armida, Haerry, Froese, Schlapbach, and
+  Fellay]{2025lawlessApplicationQualifyingVariants}
+Dylan Lawless, Ali Saadat, Mariam~Ait Oumelloul, Simon Boutry, Veronika
+  Stadler, Sabine {\"O}sterle, Jan Armida, David Haerry, D.~Sean Froese,
+  Luregn~J. Schlapbach, and Jacques Fellay.
+\newblock Application of qualifying variants for genomic analysis.
+\newblock May 2025.
+\newblock \doi{10.1101/2025.05.09.25324975}.
+
+\bibitem[Lavrichenko et~al.(2025)Lavrichenko, Engdal, Marvig, Jemt, Vignes,
+  Almusa, Saether, Briem, Caceres, Elvarsd{\'o}ttir, G{\'i}slason,
+  Haanp{\"a}{\"a}, Henmyr, Hotakainen, Kaasinen, Kanninga, Khan, {Lie-Nielsen},
+  Madsen, M{\"a}hler, Maqbool, Neethiraj, Nyr{\'e}n, Paavola, Pruisscher,
+  Sheng, Singh, Srivastava, Stautland, Andreasen, De~Boer, Vang, Wirta, and
+  Bagger]{2025lavrichenkoRecommendationsBioinformaticsClinical}
+Ksenia Lavrichenko, Emilie~Sofie Engdal, Rasmus~L. Marvig, Anders Jemt,
+  Jone~Marius Vignes, Henrikki Almusa, Kristine~Bilgrav Saether, Eir{\'i}kur
+  Briem, Eva Caceres, Edda~Mar{\'i}a Elvarsd{\'o}ttir, Magn{\'u}s~Halld{\'o}r
+  G{\'i}slason, Maria~K. Haanp{\"a}{\"a}, Viktor Henmyr, Ronja Hotakainen, Eevi
+  Kaasinen, Roan Kanninga, Sofia Khan, Mary~Gertrude {Lie-Nielsen},
+  Majbritt~Busk Madsen, Niklas M{\"a}hler, Khurram Maqbool, Ramprasad
+  Neethiraj, Karl Nyr{\'e}n, Minna Paavola, Peter Pruisscher, Ying Sheng,
+  Ashish~Kumar Singh, Aashish Srivastava, Thomas~K. Stautland, Daniel~T.
+  Andreasen, Esmee Ten~Berk De~Boer, S{\o}ren Vang, Valtteri Wirta, and
+  Frederik~Otzen Bagger.
+\newblock Recommendations for bioinformatics in clinical practice.
+\newblock \emph{Genome Medicine}, 17\penalty0 (1):\penalty0 124, October 2025.
+\newblock ISSN 1756-994X.
+\newblock \doi{10.1186/s13073-025-01543-4}.
+
+\end{thebibliography}

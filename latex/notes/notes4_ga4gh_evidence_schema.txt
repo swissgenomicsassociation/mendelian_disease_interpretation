@@ -1,0 +1,156 @@
+We will examples of YAML/JSON and figures - see \url{https://va-spec.ga4gh.org/en/latest/examples/acmg-variant-pathogenicity-statement-with-evidence.html}.
+
+
+GA4GH VA-Spec provides a structured, interoperable framework for representing variant interpretations, evidence lines, provenance, and clinical assertions using shared semantics. It allows algorithmic outputs, literature evidence, cohort data, functional studies, and clinical propositions to be encoded in a transparent, traceable format that different laboratories and software providers can exchange without loss of meaning. This makes it highly suitable for improving variant interpretation reporting, particularly when combining automated tool outputs with manual clinical review, while ensuring that each evidence source, method, and agent is explicitly recorded. It also aligns with established frameworks such as ACMG/AMP, enabling rule-based evidence to be represented in a consistent, computable form.
+
+However, VA-Spec is not itself a method for deciding pathogenicity or clinical actionability. It does not score or weight evidence, validate sequencing quality, enforce inheritance logic, detect biologically implausible results, resolve contradictory evidence, or judge whether the total evidence meets a clinical threshold. It cannot determine whether allele frequency conflicts with disease prevalence, whether zygosity matches the disorder model, whether phenotype congruence is sufficient, or whether alternative diagnoses were adequately excluded. A VA-Spec record can be structurally valid yet clinically incomplete if it contains only algorithmic predictions without essential genetic and diagnostic checks.
+
+For this reason, VA-Spec should be used as the evidence representation and exchange layer, while the clinical interpretation framework must sit above it. This additional layer must provide explicit evidence weighting, quality thresholds, segregation validation, phenotype matching logic, mechanism-of-disease assessment, differential diagnosis tracking, and clear delineation between algorithmic inference and expert clinical judgement. When combined, VA-Spec enables standardised, auditable reporting, but the clinical decision model must supply the reasoning, safeguards, and quantitative evaluation required for patient-grade variant assessment.
+
+
+Example content. The example omits full representations of these VRS and CatVRS Variation objects - as these are large structures that are the remit of other GKS Specifications.
+
+```
+{
+  "SCV000778434.1": {
+    "id": "SCV000778434.1",
+    "type": "Statement",
+    // ClinVar assertion describing pathogenicity claim for a single variant-disease pair
+    "proposition": {
+      "id": "ex:Proposition001",
+      "type": "VariantPathogenicityProposition",
+      "subjectVariant": "clinvar/208366",
+      "predicate": "isCausalFor",
+      "objectCondition": {
+        "id": "clinvar.trait/939",
+        "conceptType": "Disease",
+        "name": "Autosomal dominant nonsyndromic hearing loss 2A",
+        "primaryCoding": {
+          "code": "C2677637",
+          "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+          "iris": ["http://identifiers.org/medgen/C2677637"]
+        }
+      },
+      // Qualifier for degree of penetrance (here stated as high)
+      "penetranceQualifier": {
+        "primaryCoding": { "code": "high", "system": "local:pathogenicity-penetrance-qualifier" },
+        "name": "high"
+      }
+    },
+    "direction": "supports",
+    // Overall assertion strength assigned by submitter/guideline
+    "strength": {
+      "primaryCoding": { "code": "established", "system": "ImplementerSystem1" }
+    },
+    // Final classification label applied under a guideline (e.g. ACMG 2015)
+    "classification": {
+      "primaryCoding": { "code": "disease-causing", "system": "ACMG-2015" }
+    },
+    // Provenance: who evaluated/submitted and when
+    "contributions": [
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/500139",
+          "type": "Agent",
+          "name": "ClinVar Staff, National Center for Biotechnology Information (NCBI)"
+        },
+        "activityType": { "name": "evaluated" },
+        "date": "2015-08-20"
+      },
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/500139",
+          "type": "Agent",
+          "name": "ClinVar Staff, National Center for Biotechnology Information (NCBI)"
+        },
+        "activityType": { "name": "submitted" },
+        "date": "2018-06-12"
+      }
+    ],
+    // Guideline or method used to derive the claim
+    "specifiedBy": {
+      "type": "Method",
+      "reportedIn": {
+        "type": "Document",
+        "name": "Alternate guidelines and terminology for variant pathogenicity classification"
+      }
+    },
+    // Structured evidence supporting the proposition
+    "evidenceLines": [
+      {
+        "id": "ex:EvidenceLine001",
+        "type": "EvidenceLine",
+        "supportsProposition": "ex:Proposition001",
+        "direction": "supports",
+        "strength": {
+          "primaryCoding": { "code": "moderate", "system": "ACMG" }
+        },
+        "evidenceSource": {
+          // Population frequency evidence; very low AF supports rarity criterion
+          "type": "StudyResult",
+          "id": "ex:AlleleFreq001",
+          "studyType": "CohortAlleleFrequencyStudyResult",
+          "studyDescription": "Allele frequency in gnomAD v4.0 EUR cohort",
+          "variant": "ex:Variant001",
+          "alleleFrequency": 0.0000021,
+          "cohortSize": 60234,
+          "reportedIn": {
+            "type": "DataSet",
+            "name": "gnomAD v4.0"
+          }
+        }
+      },
+      {
+        "id": "ex:EvidenceLine002",
+        "type": "EvidenceLine",
+        "supportsProposition": "ex:Proposition001",
+        "direction": "supports",
+        "strength": {
+          "primaryCoding": { "code": "strong", "system": "ACMG" }
+        },
+        "evidenceSource": {
+          // Functional data block supporting deleterious effect
+          "type": "Statement",
+          "id": "ex:FunctionalStatement001",
+          "proposition": {
+            "id": "ex:Proposition002",
+            "type": "ExperimentalVariantFunctionalImpactProposition",
+            "subjectVariant": "ex:Variant001",
+            "predicate": "hasFunctionalImpact"
+          },
+          "direction": "supports",
+          "strength": {
+            "primaryCoding": { "code": "strong", "system": "MAVE" }
+          },
+          "evidenceLines": [
+            {
+              "id": "ex:EvidenceLine003",
+              "type": "EvidenceLine",
+              "supportsProposition": "ex:Proposition002",
+              "direction": "supports",
+              "strength": {
+                "primaryCoding": { "code": "high", "system": "MAVE" }
+              },
+              "evidenceSource": {
+                "type": "StudyResult",
+                "id": "ex:FuncStudy001",
+                "studyType": "ExperimentalVariantFunctionalImpactStudyResult",
+                "variant": "ex:Variant001",
+                // Functional outcome demonstrating disrupted protein activity
+                "result": "reduced channel conductance",
+                "assay": "automated patch clamp",
+                "reportedIn": {
+                  "type": "Document",
+                  "name": "MAVE DB: KCNQ4 functional screen"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+```

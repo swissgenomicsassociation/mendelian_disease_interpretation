@@ -1,0 +1,97 @@
+**problem with using tool outputs without independent review**
+
+Modern variant interpretation tools, including commercial clinical reporting platforms, apply sophisticated scoring models that prioritise candidates using population data, predicted molecular impact and phenotype similarity. These scores enable efficient triage, but they are not a clinical conclusion. A high rank does not by itself confirm analytical validity, inheritance accuracy, mechanism concordance, phenotypic fit, or clinical actionability. Accepting the top output without structured review can propagate errors from sequencing artefacts, incorrect zygosity assumptions, misaligned disease models, frequency misinterpretation, library- or caller-specific biases, or incompletely matched patient phenotypes, even when the software is performing as designed.
+
+**core clinical checks required across any variant interpretation workflow**
+
+1. **analytical validity**
+
+   * sufficient read depth and mapping quality
+   * strand-balanced support without systematic artefact signatures
+   * genotype and allelic ratio consistent with expected state (heterozygous, homozygous, hemizygous)
+
+2. **population frequency and disease-model fit**
+
+   * allele frequency compatible with disorder prevalence, penetrance and inheritance mode
+   * frequency assessed in appropriate ancestral context and filtered for flagged or low-confidence population entries
+
+3. **molecular consequence and mechanism alignment**
+
+   * consequence class supports the disease mechanism for the gene (loss of function, gain of function, dominant negative, splice disruption)
+   * variant falls within validated functional domains or clinically relevant regions when applicable
+   * computational evidence used as supporting, not defining, criteria
+
+4. **inheritance and segregation consistency**
+
+   * zygosity and inheritance model match the disorder paradigm
+   * segregation data assessed where available (de novo status, parental phase, co-segregation in relatives)
+
+5. **phenotype and penetrance concordance**
+
+   * patient features align with the known clinical spectrum and core diagnostic hallmarks of the condition
+   * absence of essential phenotypes or conflicting features is explicitly resolved or justified
+   * alternative diagnoses, genetic and non-genetic, are reasonably excluded
+
+6. **gene-disease evidence strength**
+
+   * gene-disease relationship supported by curated clinical frameworks or consensus resources
+   * evidence goes beyond positional proximity or cross-species inference alone
+
+7. **variant-level precedent and functional support**
+
+   * prior reports of pathogenic variation at the same residue, domain, or mechanism
+   * experimental or biochemical evidence evaluated when available, interpreted in mechanism-relevant context
+
+8. **differential prioritisation beyond rank order**
+
+   * review confirms the lead finding is the best-supported explanation, not simply the highest scoring output
+   * competing candidates are assessed transparently rather than implicitly dismissed
+
+Clinical-grade variant interpretation therefore integrates algorithmic prioritisation with systematic validation, mechanistic reasoning, phenotype-led correlation and critical evidence appraisal. This framework complements existing software outputs and strengthens consistency, transparency and clinical confidence, supporting continued collaboration between clinical practice and industry to advance reporting standards.
+
+
+
+Genomics in Switzerland is advancing rapidly, but without shared technical standards for how variants are described, evidenced, and reported, genomic data cannot be reliably compared, aggregated, or reused across clinical care, research, and industry. National investment has accelerated sequencing, yet protocols for variant identity, provenance, and evidence accounting remain inconsistent, leading to irreproducible results and fragmented knowledge. Simplified protein notations without full reference traceability, inconsistent transcript and genome versioning, and increasing reliance on AI-derived scores compound the problem. Clinical interpretation is further challenged by limited standards for quantifying evidence strength, uncertainty, false positives, and bias. Without coordinated infrastructure and minimal compulsory reporting standards, Switzerland risks scaling incompatible systems that erode precision, transparency, and clinical trust.
+
+Variant interpretation in clinical genomics lacks a standard for quantifying and reporting why a variant is considered relevant, risky, or causal. Current practice often prioritises variants based on simplified heuristics such as population rarity, tool scores, or database lookups, without systematically accounting for the limitations, biases, and quality flags of the underlying evidence sources. Critical contextual signals, such as gnomad quality flags, sequencing artefact risks, annotation uncertainty, or database-specific caveats, are frequently ignored or hidden by tooling rather than evaluated and recorded. As a result, the evidential basis for clinical decisions is inconsistently assessed, rarely audited, and often impossible to reproduce. A common standard is needed that requires evidence to be explicitly checked, conditionally qualified, quantified where possible, and retained in the final report so that every variant classification carries a transparent, reviewable, and technically traceable justification.
+
+Clinical evidence labels, such as pathogenic assertions in clinvar, are often interpreted as definitive despite originating from heterogeneous submissions with variable evidence quality, review status, conflicts, and unexamined counter-evidence. Variants can accumulate pathogenic codes while simultaneously meeting benign ACMG criteria or carrying disqualifying contextual signals, yet this contradictory evidence is frequently collapsed into a single label by tools and interpreted without scrutiny. The absence of a structured requirement to capture, surface, and reconcile supporting and opposing evidence leads to overconfidence in asserted labels, hides uncertainty, and obscures cases where prioritised variants may be clinically unlikely despite strong pathogenic flags. A reporting standard is needed that mandates inspection of both affirming and counter-factual evidence, records it explicitly, and ensures that variant classification is justified as a balance of evidence rather than a consensus label.
+
+
+
+
+
+
+
+A very rough preliminary example of a scoring methods is given here for though to critically assess as an expert in genomics and genetic disease.
+
+
+### 1. scoring rubric (quantifiable clinical genetics checks)
+
+| evidence category         | specific check                                                  | score if present | notes                                    |
+| ------------------------- | --------------------------------------------------------------- | ---------------: | ---------------------------------------- |
+| **variant quality**       | PASS flag, no major artefact flags                              |             +1.0 | subtract 1.0 if low depth or strand bias |
+|                           | read depth >20x and alt fraction 0.3 to 0.7 (het) or >0.8 (hom) |             +0.5 |                                          |
+| **population frequency**  | absent from gnomAD                                              |             +1.5 |                                          |
+|                           | gnomAD AF < 0.0001 (AD) or < 0.001 (AR)                         |             +1.0 | subtract 2.0 if above disease threshold  |
+| **predicted impact**      | LoF in LoF disease mechanism                                    |             +2.0 |                                          |
+|                           | damaging missense (≥3 concordant predictors)                    |             +1.0 |                                          |
+|                           | splice ±1/2 canonical                                           |             +1.5 |                                          |
+| **segregation**           | de novo confirmed                                               |             +2.0 | +1.0 if presumed but unconfirmed         |
+|                           | segregates with disease (family)                                |             +1.5 |                                          |
+| **phenotype match**       | strong HPO overlap (phenoscore >0.7)                            |             +2.0 |                                          |
+|                           | moderate HPO overlap (0.4 to 0.7)                               |             +1.0 |                                          |
+| **MOI fit**               | matches known MOI                                               |             +1.5 |                                          |
+| **gene-disease validity** | definitive/strong ClinGen                                       |             +2.0 | moderate = +1.0, limited = +0.5          |
+| **prior reports**         | same variant reported pathogenic                                |             +1.5 |                                          |
+| **functional evidence**   | published functional disruption                                 |             +2.0 |                                          |
+| **constraint**            | high gene constraint (pLI > 0.9 or missense Z > 3)              |             +0.5 |                                          |
+
+**total interpretation**
+
+* **≥8** high confidence causal
+* **5 to 7.5** probable causal
+* **3 to 4.5** possible, needs validation
+* **<3** insufficient evidence
+
+---

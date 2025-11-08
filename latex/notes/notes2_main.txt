@@ -1,0 +1,129 @@
+Here is a generalised framework draft that aligns your goals into a guideline manifesto and technical scope for the **Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease**:
+
+---
+
+## purpose of the guideline
+
+The Swiss Genomics Association guideline establishes a national standard for **how variants are identified, described, evidenced, evaluated, and reported** in Mendelian disease.
+Its goal is not to replace existing tools or clinical expertise, but to ensure that **all genomic conclusions are technically traceable, clinically reasoned, and reproducible across institutions, software platforms and industry partners**.
+
+---
+
+## the challenge we address
+
+Genomic interpretation has advanced faster than the standards governing **evidence transparency, variant traceability, and clinical justification**. This has created systemic risks:
+
+* **variant descriptions lack durable identity**, often missing transcript, genome build, coordinate provenance, and versioning
+* **evidence is unequally weighted**, with pathogenicity labels or algorithmic scores treated as conclusions rather than inputs for review
+* **counter-evidence is not routinely captured**, even when it directly contradicts prioritised results
+* **uncertainty, quality flags, population biases, and false-positive risk are inconsistently reported**
+* **clinical decisions cannot always be reconstructed**, audited, or compared across datasets, laboratories, or software pipelines
+
+Without shared standards, genomic medicine risks operating on results that **cannot be reliably traced, compared, or re-evaluated**, limiting clinical confidence and long-term data value.
+
+---
+
+## core principles of the guideline
+
+The guideline requires that **every reported variant interpretation must satisfy these principles**:
+
+1. **identity**
+   The variant must be described with persistent and unique genomic coordinates, reference sequence, transcript, versioning and allelic state.
+
+2. **provenance**
+   The analytical origin must be traceable, including sequencing technology, caller, quality metrics, filters, transcript source, and annotation datasets.
+
+3. **evidence traceability**
+   Supporting and contradicting evidence must both be recorded with source, date, method, confidence, and limitations.
+
+4. **mechanistic reasoning**
+   Variant effect must be interpreted in the context of the **known disease mechanism for that gene**, not inferred from consequence class alone.
+
+5. **inheritance validation**
+   Zygosity, segregation, and mode of inheritance must be explicitly evaluated, not assumed from frequency or ranking.
+
+6. **phenotype alignment**
+   Clinical interpretation must demonstrate concordance with the patient phenotype and document where it does not.
+
+7. **evidence balancing, not label inheritance**
+   Pathogenicity assertions (e.g. clinvar) are evidence signals, not verdicts, and must be reconciled with population data, mechanism, and counter-evidence.
+
+8. **quantified uncertainty**
+   Reports must express confidence, ambiguity and disproving signals, rather than collapsing to a single unqualified label.
+
+9. **algorithm-aware reporting**
+   Tools may prioritise, score, or summarise, but their outputs require structured clinical validation before clinical use.
+
+---
+
+## what must be true before a variant is considered clinically actionable
+
+No variant may be considered diagnostic or causal without explicit evaluation of:
+
+| domain                   | required evaluation                                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------- |
+| analytical validity      | depth, allelic balance, strand support, artefact risk, mapping reliability              |
+| population compatibility | frequency consistent with prevalence, penetrance, ancestry and inheritance              |
+| mechanism alignment      | effect matches the established disease mechanism for that gene                          |
+| inheritance evidence     | zygosity fits disease model, segregation evaluated if possible                          |
+| phenotype coherence      | patient presentation fits gene-disease spectrum without unresolved contradictions       |
+| gene-disease validity    | supported by curated clinical evidence, not proximity or model organism inference alone |
+| variant precedence       | domain, residue, or mechanism supported by prior observations or functional data        |
+| differential review      | competing explanations evaluated, not masked by rank order or scoring                   |
+
+---
+
+## outcomes the guideline enables
+
+* **reproducible interpretation** across clinical and research environments
+* **structured evidence accounting** that supports audit, dispute resolution and reanalysis
+* **safe integration of AI and commercial tools** by requiring transparent evidence mapping rather than opaque conclusions
+* **interoperable national data** suitable for clinical reuse, data federation and longitudinal patient evaluation
+* **improved reporting standards** developed collaboratively with clinical, academic and industry partners
+
+---
+
+## position on software tools and commercial platforms
+
+Variant interpretation platforms, scoring models, and AI systems are **essential accelerants** in modern genomics.
+This guideline does not challenge their utility, but establishes that:
+
+* **tool output is triage, not clinical justification**
+* **ranking is not evidence**
+* **pathogenicity labels are assertions, not proof**
+* **automation must expose evidence, not replace it**
+* **clinical interpretation requires structured human adjudication supported by algorithmic insight**
+
+Our goal is **software-agnostic elevation of reporting standards**, co-developed with industry to support safer, clearer and more interoperable clinical genomics.
+
+---
+
+## scoring and evidence quantification (initial reference proposal)
+
+Interpretation frameworks may optionally use structured scoring approaches to standardise evidence weighting and highlight confidence gaps.
+A preliminary reference rubric is supplied for expert review, to support transparent evidence composition rather than replace clinical reasoning.
+
+---
+
+## summary
+
+The Swiss Genomics Association guideline will:
+
+* define the minimum technical and clinical evidence required to interpret a variant
+* enforce traceable provenance for variant identity and supporting data
+* mandate explicit review of supporting and opposing evidence
+* establish reproducible standards for reporting certainty, uncertainty and clinical relevance
+* enable software, laboratories and clinicians to operate using a shared evidential contract
+* strengthen national infrastructure for genomic care, research and innovation
+
+---
+
+If you want, next I can produce:
+
+1. a policy-ready 1-page executive summary
+2. a longer manuscript introduction for journal submission
+3. a figure or schematic of the evidence flow
+4. a polished version of the scoring rubric with rationale
+5. a draft reporting template for clinical results
+
+Which one should we build next?
