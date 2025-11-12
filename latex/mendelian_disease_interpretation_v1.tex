@@ -63,9 +63,14 @@ Content is provided for transparency and collaborative development and may be re
 %  \linenumbers
 \begin{abstract}
 \noindent
-This document aims to bridge clinical, research, and commercial domains by defining transparent, reproducible standards for genomic data interpretation and reporting. The framework integrates structured variant annotation, inheritance assessment, and functional evidence to support consistent and traceable decisions in clinical genomics. Emphasis is placed on automation, interoperability, and adherence to international standards to ensure that genomic interpretation remains accurate, reproducible, and aligned with both scientific and regulatory expectations. While more advanced analytical frameworks, including those using artificial intelligence or probabilistic inference, can build upon this foundation, this guideline defines the minimum technical and procedural standard required to ensure accuracy and transferability across domains.
-%\vspace{1em}
-\noindent \textbf{Conclusions}:
+% \vspace{1em}
+Genomic medicine programmes across the world are advancing rapidly, especially with AI, but variant interpretation remains implemented differently across national, institutional and commercial efforts, with no shared agreement on how supporting evidence should be structured, recorded or exchanged. As a result, equivalent data are repeatedly recomputed, manually curated or privately remodelled, while shared learning, verification and reuse remain limited. Key evidence including inheritance, provenance, population context, functional data and conflicting observations is inconsistently captured, reducing transparency and interoperability and slowing collective progress.
+
+\vspace{1em}
+We define a harmonised, tool-agnostic specification that establishes a shared data architecture and scientific approach for variant interpretation in Mendelian disease. The guideline sets minimum requirements for representing, linking and auditing evidence, including sequence and sample provenance, variant normalisation, segregation logic, phenotype alignment, evidence grading, conflict handling and versioned synthesis statements. It emphasises structured, reviewable reasoning rather than fixed classification labels and is designed to complement, not replace, existing standards, tools and workflows.
+
+\vspace{1em}
+By formalising a standardised approach to quantifying interpretation, this framework enables distributed groups to solve genomics problems in alignment rather than in parallel isolation. It reduces duplication, supports independent validation, improves automation and ensures that advances in one sector directly strengthen others. The model establishes a shared, exchangeable foundation for interpretation that remains transparent, interoperable and evolvable, strengthening cooperation between national initiatives, healthcare, research and industry.
 \footnote{
 \noindent * Addresses for correspondence: \href{mailto:Dylan.Lawless@uzh.ch}{Dylan.Lawless@uzh.ch}.\\
 % \noindent  \textsuperscript{† }These authors contributed equally and are listed alphabetically.\\
@@ -178,7 +183,10 @@ Using such standards ensures long-term compatibility, supports automation, and i
 \section{Structured variant annotation and automation of interpretation} 
 % Introduces machine-interpretable evidence models (GA4GH VA), linking variant, condition, and evidence to support quantitative, updateable inference beyond manual ACMG categories
 
-% See \url{https://va-spec.ga4gh.org/en/latest/examples/acmg-variant-pathogenicity-statement-with-evidence.html} for example. 
+See \url{https://va-spec.ga4gh.org/en/latest/examples/acmg-variant-pathogenicity-statement-with-evidence.html} for example. 
+
+
+
 
 Variant interpretation has traditionally relied on expert review and rule-based systems such as the ACMG/AMP criteria, where evidence is manually classified into discrete levels (e.g. “strong”, “moderate”, “supporting”). While this provides clinical transparency, it limits scalability and does not easily incorporate quantitative or experimental data generated outside the sequencing pipeline.  
 
@@ -190,6 +198,9 @@ Tools such as \textit{Exomiser} and \textit{LIRICAL} illustrate early automation
 
 By representing all evidence as structured, machine-interpretable data with defined provenance, the GA4GH framework provides a foundation for fully automatable, transparent, and continuously updatable variant interpretation.
 
+
+The Variation Representation Specification (VRS) is development by the GA4GH in the Genomic Knowledge Standards (GKS) Work stream;
+\url{https://www.ga4gh.org/product/variation-representation/}.
 
 
 \section{Variant annotation specification}

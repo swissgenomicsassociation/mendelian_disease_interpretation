@@ -4,11 +4,13 @@ meta title="Rare variant single case interpretation"
 meta created="2025-11-05"
 meta authors=DylanLawless
 
+# GnomAD flags
 criteria gnomad_flags logic=or desc="Variant has no gnomAD flags or will be reviewed in report generation"
 criteria gnomad_flags field=gnomad_flag operator==" value=NA
 criteria gnomad_flags field=gnomad_flag operator="in" value="AC0,AS-VQSR,InbreedingCoeff,RF,Not in exomes,Not in genomes,No data,Discrepant Frequencies,CHIP,Monoallelic,Only heterozygous,MNV,LCR,LC pLoF,pLoF Flag,NC Transcript,SEGDUP,Common low heteroplasmy"
 note "gnomad: gnomAD flags are retained for review; presence of any flag requires explicit mention or justification in final causal report. For information see https://gnomad.broadinstitute.org/help"
 
+# ACMG flags
 criteria acmg_criteria logic=or desc="Variant has no benign ACMG evidence or will be reviewed in report generation"
 criteria acmg_criteria field=ACMG_criteria operator="not_contains" value="B"
 criteria acmg_criteria field=ACMG_criteria operator="contains" value="BA1,BS1,BS2,BS3,BS4,BP1,BP2,BP3,BP4,BP5,BP6,BP7,BP8"
@@ -22,3 +24,45 @@ note "PPIE: For each case, record whether patient or public representation requi
 note "PPIE: Minimum record includes: opportunity for expert consultation, whether discussion occurred, and whether non-actionable findings were addressed."
 note "PPIE: In commercial contexts, the report itself may satisfy this requirement if it conveys the relevant information clearly and accessibly without requiring direct consultation."
 note "PPIE: In research or cohort studies, record whether participants were informed about data use and whether individual feedback was planned."
+
+
+# Inheritance pattern
+
+criteria gt_valid field="proband_geno" operator="in" value="HET,HOM,HEMI"
+
+criteria comp_het group_by="sample,SYMBOL" count=">=2" desc="Two distinct variants in one gene"
+
+criteria not_hom_parent field="proband_geno" operator="==" value="HOM"
+criteria not_hom_parent field="mother_geno" operator="!=" value="HOM"
+criteria not_hom_parent field="father_geno" operator="!=" value="HOM"
+
+criteria not_hemi_parent field="proband_geno" operator="==" value="HEMI"
+criteria not_hemi_parent field="father_geno" operator="!=" value="HEMI"
+
+criteria not_same_parent field="PARENT_GENOTYPE_MATCH" operator="==" value="false"
+
+criteria phase_ok field="PHASE" operator="in" value="TRANS,UNKNOWN"
+
+criteria allow_dn field="DE_NOVO" operator="==" value="true" logic="or"
+
+note "inheritance priority ordering applied downstream: compound_het > biallelic_hom > de_novo > possible_compound_het > single_het_parent > proband_geno"
+note "compound_het includes inherited, inherited+de novo, and dual de novo in trans (phasing required downstream)"
+note "missing parent genotypes allow de_novo and possible_compound_het, and may still support compound_het depending on counts"
+note "genotype mapping applied upstream: 00=REF, 01=HET, 10=HET, 11=HOM"
+
+
+# RNA transcript support from controls
+
+criteria rna_in_controls field="RNA_TPM_controls_median" operator=">" value=0.1 desc="Transcript detected in controls"
+criteria rna_in_any_control field="RNA_TPM_controls_max" operator=">" value=0.0 desc="Transcript seen in at least one control"
+criteria rna_patient_quantifiable field="RNA_TPM_patient" operator=">" value=0 desc="Patient transcript quantified"
+
+criteria rna_pass logic="and" desc="RNA quant suitable for interpretation"
+criteria rna_pass field="RNA_TPM_controls_max" operator=">" value=0
+criteria rna_pass field="RNA_TPM_patient" operator=">" value=0
+
+criteria rna_fail logic="and" desc="Transcript not seen in any control, quantification unreliable"
+criteria rna_fail field="RNA_TPM_controls_max" operator="==" value=0
+
+note "RNA filter: transcript must be observed in at least one control sample to consider patient quantification reliable"
+note "RNA FAIL indicates no expression in all controls, patient value should not be interpreted quantitatively"
