@@ -116,8 +116,6 @@ By formalising a standardised approach to quantifying interpretation, this frame
 
 \tableofcontents
 
-
-
 % \section{Introduction}
 % Set the motivation, problem definition, and need for a national evidence architecture.
 %Genome sequencing is now routine in research, diagnostics, and commercial genomics, but the evidence supporting variant interpretations is recorded, structured, and justified in widely different ways. Algorithmic scores, proprietary rankings, or pathogenicity labels are often treated as conclusions rather than evidence, while key determinants of validity including sequence provenance, variant identity, inheritance logic, mechanism fit, population context, phenotype alignment, and contradictory observations are inconsistently captured or reported. This fragmentation limits reproducibility, weakens cumulative knowledge, and slows safe integration of AI-driven and cross-sector genomic innovation.
@@ -126,35 +124,57 @@ By formalising a standardised approach to quantifying interpretation, this frame
 %
 %This effort strengthens national coordination where common standards are still underdefined, ensuring genomic data remains clinically meaningful, scientifically reusable, and technically compatible with future care models, analytical innovation and AI-supported interpretation.
 
+%\section{Introduction}
+%
+%Genome sequencing is widely used in clinical and research settings, yet the evidence used to justify variant interpretations is recorded and applied inconsistently. Many systems treat algorithmic scores or proprietary rankings as conclusions rather than inputs, and key evidence such as provenance, variant identity, inheritance fit, population context, phenotype alignment, and contradictory signals is often incomplete or incomparable across institutions. This limits reproducibility, complicates verification, and restricts the safe use of automated or AI supported interpretation.
+%
+%The Swiss Genomics Association is developing a national evidence architecture that supports consistent interpretation across healthcare, research, and industry. The objective is not to replace existing pipelines or tools, but to define the minimal evidential contract they depend on. This contract specifies how evidence is structured, how uncertainty is recorded, and how falsification tests are applied to every proposed variant. It provides a transparent, computable basis for reasoning that can be traced, audited, and exchanged across systems.
+%
+%By establishing shared expectations for variant identity, provenance, and evidence evaluation, the guideline enables interoperability, supports automation, and ensures that genomic data remain clinically meaningful and reusable across future analytical frameworks.
+%
+%\section{Purpose and scope of the guideline}
+%
+%This guideline defines the recommended minimum requirements for evidence based interpretation of variants in Mendelian disease. It sets out the computable rules and evidence flags that form the uniform evidence state for each variant. These rules apply falsification tests to all upstream outputs and record the presence, absence, or contradiction of supporting evidence.
+%
+%The guideline focuses on how evidence is represented, computed, and interpreted. It does not prescribe sequencing workflows, vendors, prioritisation tools, or clinical reporting formats. Any institution may use its own pipelines, provided it supplies the minimal identifiers and evidence required for interoperability and reproducibility across the national system.
+%
+%
+%\section{Architectural context and national motivation}
+%
+%A national genomics system must balance durability with adaptability. Clinical records, identifiers, and audit trails require structures that remain stable over decades, while biological knowledge, phenotype models, and interpretive resources evolve continuously. The guideline is designed for this mixed environment. It defines the stable elements needed for long term interoperability, including variant identity, provenance fields, and the structure of evidence states, while allowing evidence rules, knowledge sources, and computational logic to be updated without invalidating past interpretations. This separation ensures that new annotations, ontologies, or analytical frameworks can be incorporated as they mature, and that historical decisions remain traceable to the evidence that supported them at the time. The approach reflects the broader national strategy to build genomic infrastructure that is open, verifiable, and compatible with both public and private systems.
+
 \section{Introduction}
 
-Genome sequencing is widely used in clinical and research settings, yet the evidence used to justify variant interpretations is recorded and applied inconsistently. Many systems treat algorithmic scores or proprietary rankings as conclusions rather than inputs, and key evidence such as provenance, variant identity, inheritance fit, population context, phenotype alignment, and contradictory signals is often incomplete or incomparable across institutions. This limits reproducibility, complicates verification, and restricts the safe use of automated or AI supported interpretation.
+Genome sequencing is used across clinical, research, and commercial settings, yet the evidence supporting variant interpretation is recorded and applied in incompatible ways. Many systems treat algorithmic scores or proprietary rankings as conclusions rather than inputs, and key information such as provenance, variant identity, inheritance fit, population context, phenotype alignment, and contradictory signals is often incomplete or not directly comparable. This limits reproducibility and prevents reliable exchange of results across institutions.
 
-The Swiss Genomics Association is developing a national evidence architecture that supports consistent interpretation across healthcare, research, and industry. The objective is not to replace existing pipelines or tools, but to define the minimal evidential contract they depend on. This contract specifies how evidence is structured, how uncertainty is recorded, and how falsification tests are applied to every proposed variant. It provides a transparent, computable basis for reasoning that can be traced, audited, and exchanged across systems.
+A related difficulty is that public research projects, clinical programmes, and commercial services often rely on their own formats and internal conventions. These differences create structural barriers that prevent data from moving between sectors, even when the underlying science is identical. As a result, large numbers of sequenced genomes cannot be reanalysed, cross checked, or shared, not because the data are technically unusable, but because the evidential structure is incompatible. Valuable public investment is lost when clinically relevant data produced in research settings cannot be integrated with industry pipelines, and commercial interpretations cannot be verified or reused by academic or hospital partners.
 
-By establishing shared expectations for variant identity, provenance, and evidence evaluation, the guideline enables interoperability, supports automation, and ensures that genomic data remain clinically meaningful and reusable across future analytical frameworks.
+The Swiss Genomics Association is developing a national evidence architecture to address this gap. 
+The aim is not to replace existing tools or pipelines, nor to expose private data to external parties, but to define a minimal evidential contract that allows independently developed systems to remain compatible and to collaborate when appropriate. This avoids the repeated remapping of semantics and complex data structures that currently separates clinical, research, and industrial workflows and prevents a shared ecosystem from forming.
 
-\section{Purpose and scope of the guideline}
+A shared contract specifies how variant identity, provenance, and evidence states are represented, and how falsification tests are applied to every proposed variant. It provides a computable basis for reasoning that can be traced, audited, and exchanged across clinical services, research groups, and commercial providers.
 
-This guideline defines the national minimum requirements for evidence based interpretation of variants in Mendelian disease. It sets out the computable rules and evidence flags that form the uniform evidence state for each variant. These rules apply falsification tests to all upstream outputs and record the presence, absence, or contradiction of supporting evidence.
+This guideline defines the recommended minimum requirements for evidence based interpretation of variants in Mendelian disease. It sets out the rules and evidence flags that form the uniform evidence state for each variant. These rules evaluate all upstream outputs and record the presence, absence, or contradiction of supporting evidence. Any institution may use its own sequencing workflow or prioritisation tools, provided it supplies the identifiers and evidence required for interoperability.
 
-The guideline focuses on how evidence is represented, computed, and interpreted. It does not prescribe sequencing workflows, vendors, prioritisation tools, or clinical reporting formats. Any institution may use its own pipelines, provided it supplies the minimal identifiers and evidence required for interoperability and reproducibility across the national system.
-
-
-\section{Architectural context and national motivation}
-
-A national genomics system must balance durability with adaptability. Clinical records, identifiers, and audit trails require structures that remain stable over decades, while biological knowledge, phenotype models, and interpretive resources evolve continuously. The guideline is designed for this mixed environment. It defines the stable elements needed for long term interoperability, including variant identity, provenance fields, and the structure of evidence states, while allowing evidence rules, knowledge sources, and computational logic to be updated without invalidating past interpretations. This separation ensures that new annotations, ontologies, or analytical frameworks can be incorporated as they mature, and that historical decisions remain traceable to the evidence that supported them at the time. The approach reflects the broader national strategy to build genomic infrastructure that is open, verifiable, and compatible with both public and private systems.
+A national genomics system must remain durable while adapting to scientific change. Clinical records and audit trails require stable structures, whereas biological knowledge and interpretive resources evolve continuously. The guideline reflects this balance by defining the stable elements needed for long term interoperability while allowing evidence rules and knowledge sources to be updated without invalidating past interpretations. This approach supports integration with new annotations and analytical frameworks and aligns with the broader national strategy to build genomic infrastructure that is open, verifiable, and compatible with clinical, academic, and industrial use.
 
 \section{Design principles for evidence-based variant interpretation}
 
 The guideline is grounded in principles that support clarity, reproducibility, and transparent reasoning. Each evaluative step is defined as computable logic rather than as narrative instruction, ensuring that results can be reproduced exactly across institutions. Uncertainty is recorded explicitly so that missing or partial evidence is visible rather than inferred. Provenance links each flag to the rule, resource, and input that produced it, allowing complete reconstruction of decisions. The framework prioritises consistency across time and across analytic environments, enabling automation while maintaining clinical traceability. By treating variant interpretation as a set of falsification tests applied to each candidate, the system provides a stable evidential foundation that can be used reliably in clinical care, research, and industry without prescribing any particular workflow or toolchain.
 
+%\section{Data provenance and sample quality requirements}
+%
+%Reliable interpretation depends on clear documentation of how each variant was generated. The system therefore requires a minimal set of provenance fields that describe the sample, the sequencing method, the reference build, and the primary variant calling pipeline. These identifiers do not constrain laboratories to specific technologies but ensure that downstream evaluation can be traced to defined inputs. Provenance is recorded as structured fields rather than free text so that evidence rules can reference them directly and so that analyses remain comparable across time and institutions.  
+%
+%Sample quality must also be sufficient to support interpretation. Basic indicators such as coverage, call completeness, and genotype quality are required for the core falsification tests to operate correctly. Where quality or provenance information is missing, the system records explicit flags rather than inferring validity. This approach ensures that downstream conclusions reflect the trustworthiness of the inputs and that gaps in evidence remain visible to clinical reviewers and automated systems alike.
+
 \section{Data provenance and sample quality requirements}
 
-Reliable interpretation depends on clear documentation of how each variant was generated. The system therefore requires a minimal set of provenance fields that describe the sample, the sequencing method, the reference build, and the primary variant calling pipeline. These identifiers do not constrain laboratories to specific technologies but ensure that downstream evaluation can be traced to defined inputs. Provenance is recorded as structured fields rather than free text so that evidence rules can reference them directly and so that analyses remain comparable across time and institutions.  
+Reliable variant interpretation requires a minimal level of trust in how each variant was generated. The guideline therefore assumes a small set of provenance fields that describe the sample, the sequencing assay, the reference build, and the primary calling pipeline. These identifiers do not constrain laboratories to specific technologies, but they ensure that evidence rules can be applied consistently and that interpretation remains traceable to defined inputs. Provenance must be represented using structured fields rather than free text so that downstream systems can reference them deterministically.
 
-Sample quality must also be sufficient to support interpretation. Basic indicators such as coverage, call completeness, and genotype quality are required for the core falsification tests to operate correctly. Where quality or provenance information is missing, the system records explicit flags rather than inferring validity. This approach ensures that downstream conclusions reflect the trustworthiness of the inputs and that gaps in evidence remain visible to clinical reviewers and automated systems alike.
+Sample quality must also meet basic thresholds for coverage, call completeness, and genotype confidence. Where provenance or quality information is missing, the system records explicit flags rather than inferring validity. This ensures that all downstream conclusions reflect the trustworthiness of the underlying data and that gaps remain visible to both clinical reviewers and automated pipelines.
 
+A fuller description of the provenance framework is provided in the companion pillar on semantic sample-to-sequence lineage (SGA 2026). That framework uses SPHN-aligned semantic models and include but are not limited to RDF-based representations of sequencing events, assay metadata, instruments, files, and quality metrics, building on established work in semantic clinical-genomic harmonisation \cite{2023vanderhorstBridgingClinicalGenomic} and FAIR data principles \cite{wilkinson2016fair,van2023bridging,toure2023fairification}. The present guideline requires only the minimal provenance contract necessary for interpretable variant-level evidence, while remaining compatible with the full semantic model for institutions that implement it.
 
 \section{Evidence rule framework}
 % Explain the structure of rules and how they generate flags.
@@ -170,8 +190,7 @@ Each evidence rule is defined as a small, independent logical unit. In implement
 
 Inputs include normalised variant identifiers, population frequencies, inheritance information, functional annotations, phenotype mappings, and any necessary provenance or quality indicators. The rule then evaluates a clearly defined predicate, for example whether the allele frequency is incompatible with a rare Mendelian disorder given a reference dataset, or whether the observed segregation pattern contradicts the expected mode of inheritance. The result is one or more discrete flags that describe the evidence state, including counter evidence, uncertainty, or missing data.
 
-Rules are designed to be composable and pipeline independent. Any laboratory or company can compute the same evidence state provided it supplies the required inputs and executes the rules as specified. This separation of logic from implementation allows the national standard to evolve without dictating local software choices.
-
+Rules are designed to be composable and independent of any specific pipeline. Laboratories and companies may use proprietary methods or detection algorithms, but the evidence supporting their outputs must be expressible through the standardised rule set. This ensures that downstream users can verify key elements of the result, such as inheritance fit or population context, without visibility into the underlying intellectual property. By supplying the minimal inputs required for the rules to execute, providers enable a transparent and reproducible evidence state, giving users confidence that a result meets the expectations of clinical, research, and regulatory stakeholders.
 
 \subsection{Versioning and audit trace}
 
@@ -191,46 +210,29 @@ This versioning model applies equally to national recommendations and to local e
 %
 %This standardisation ensures that variant findings are traceable and comparable across studies. It also supports automated pipelines that integrate multiple evidence sources, such as population, functional, and multiomic data, in line with frameworks like the GA4GH Variant Annotation model. The result is consistent, transparent, and quantifiable variant interpretation.
 
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Optional reference implementation (QV framework)}
 % Old: QV file guideline content, Implemented rule set, Rules under development
 
-The guideline is accompanied by an optional reference implementation based on Qualifying Variant (QV) protocols \cite{2025lawlessApplicationQualifyingVariants}. A QV protocol encodes the complete evidence rule set in a single, machine readable file. It specifies the sequencing method, reference build, analysis tools, coverage and quality thresholds, genomic regions or panels, and the evidence rules applied to each variant. This configuration separates interpretive logic from software execution and allows identical workflows to be reproduced across sites.
+The guideline is accompanied by an optional reference implementation based on \ac{qv} protocols \cite{2025lawlessApplicationQualifyingVariants}. A \ac{qv} protocol encodes the complete evidence rule set in a single, machine readable file. It specifies the sequencing method, reference build, analysis tools, coverage and quality thresholds, genomic regions or panels, and the evidence rules applied to each variant. This configuration separates interpretive logic from software execution and allows identical workflows to be reproduced across sites.
 
-QV files are expressed in YAML, with a simple key value structure that can be parsed by any modern programming environment. Each file includes metadata, version identifiers, and a checksum so that downstream outputs can be linked unambiguously to the protocol used. The same file can be used to drive both clinical and research analyses, ensuring that evidence rules are applied consistently and that any changes are transparent.
+\ac{qv} files are expressed in YAML, with a simple key value structure that can be parsed by any modern programming environment. Each file includes metadata, version identifiers, and a checksum so that downstream outputs can be linked unambiguously to the protocol used. The same file can be used to drive both clinical and research analyses, ensuring that evidence rules are applied consistently and that any changes are transparent.
 
-An excerpt from a QV interpretation prompt is shown in Listing~\ref{lst:qv_variant_interpretation}. In practice, full QV sets are constructed using a public builder tool and released with the corresponding rule set versions. Laboratories and companies are free to implement the national rules directly or to adopt the QV framework as a ready to use reference.
-
-\lstinputlisting[
-  style=qvstyle,
- caption={Excerpt from the QV interpretation prompt used with the QV Builder app. Line wrapping is shown for display only. For actual use, refer to the original source file or the corresponding official QV set release.},
-  label={lst:qv_variant_interpretation}
-]{../qv_variant_interpretaion.txt}
-
+An excerpt from a \ac{qv} interpretation prompt is shown in Listing~\ref{lst:qv_variant_interpretation}. In practice, full \ac{qv} sets are 
+% constructed using a public builder tool and 
+released with the corresponding rule set versions. Laboratories and companies are free to implement the our rules directly or to adopt the \ac{qv} framework as a ready to use reference.
 
 % \subsection{Implemented rule set}
-% \subsection{QV set preparation} % Present; describes rule structure and builder tool
+% \subsection{\ac{qv} set preparation} % Present; describes rule structure and builder tool
 
-% Qualifying Variant (QV) sets define structured, reproducible variant interpretation rules using a transparent, machine-readable YAML format. Each QV file specifies metadata, filters, and evidence-based criteria in a simple key–value syntax, enabling precise replication of variant selection and interpretation logic across studies. QV sets can be composed interactively using the online \url{https://switzerlandomics.ch/pages/qv_builder/}, which provides an intuitive interface for defining rules, previewing YAML output, and ensuring consistency with established standards. This framework promotes FAIR data principles and harmonised variant interpretation for both research and clinical applications.
+% Qualifying Variant (\ac{qv}) sets define structured, reproducible variant interpretation rules using a transparent, machine-readable YAML format. Each \ac{qv} file specifies metadata, filters, and evidence-based criteria in a simple key–value syntax, enabling precise replication of variant selection and interpretation logic across studies. \ac{qv} sets can be composed interactively using the online \url{https://switzerlandomics.ch/pages/qv_builder/}, which provides an intuitive interface for defining rules, previewing YAML output, and ensuring consistency with established standards. This framework promotes FAIR data principles and harmonised variant interpretation for both research and clinical applications.
 
 \subsection{Implemented rule set}
 
 The implemented rule set defines the current national minimum contract for computable evidence. Each rule is encoded in a stable YAML structure and operates independently of any specific sequencing or annotation pipeline. The rules cover population frequency, inheritance and segregation, functional annotation, genotype validity, and quality related provenance checks. Together they produce the complete evidence state represented by the flag set defined in this guideline.
 
-Qualifying Variant (QV) sets provide a practical reference implementation of these rules. A QV file specifies the rule versions, required inputs, and the conditions under which each flag is generated. The format is simple and machine readable, enabling consistent execution across institutions and software environments. QV sets can be assembled using the public builder at \url{https://switzerlandomics.ch/pages/qv_builder/}, which validates rule definitions, ensures correct structure, and allows users to preview the resulting YAML. This promotes transparent, reproducible configuration and supports FAIR principles by separating interpretive logic from local pipelines.
+\ac{qv} sets provide a practical reference implementation of these rules. A \ac{qv} file specifies the rule versions, required inputs, and the conditions under which each flag is generated. The format is simple and machine readable, enabling consistent execution across institutions and software environments. \ac{qv} sets can be assembled using the public builder at \url{https://switzerlandomics.ch/pages/qv_builder/} (NOTE: we can host this QV builder separately so that there is no conflict - open source and available on Zenodo), which validates rule definitions, ensures correct structure, and allows users to preview the resulting YAML. This promotes transparent, reproducible configuration and supports FAIR principles by separating interpretive logic from local pipelines.
 
 The implemented rule set is updated through versioned public releases. Older versions remain available for audit, comparison, and reconstruction of historical interpretation states. This ensures that interpretations can always be traced to the exact rules applied at the time and that changes to the national standard remain transparent and reviewable.
-
 
 \section{Evidence flags}
 % Introduce the complete flag set and their role in the framework.
@@ -285,20 +287,18 @@ flag_uniprot_truncates_feature
 \end{verbatim}
 \end{tcolorbox}
 
-
-
 \subsection{Interpretation of flag combinations}
 
 Individual flags describe the behaviour of specific evidence domains, but interpretation depends on their combined pattern. A variant may carry flags indicating missing evidence, technical uncertainty, biological inconsistency, or direct contradiction of an expected disease mechanism. The aggregation of these signals defines the overall evidential state used in Pillar 3 probabilistic reasoning.
 
-Combinations are not reduced to a single classification. Instead, they form a transparent summary of all falsification attempts across domains. This preserves nuance, allows systematic reanalysis as new knowledge or rule versions emerge, and ensures that clinical interpretation remains grounded in explicit evidence rather than implicit assumptions.
+Combinations need not be reduced to a single classification. Instead, they can form a transparent summary of all falsification attempts across domains. This preserves nuance, allows systematic reanalysis as new knowledge or rule versions emerge, and ensures that clinical interpretation remains grounded in explicit evidence rather than implicit assumptions.
 
+We do not prescribe how institutions should convert flag patterns into final reports or classifications. Each laboratory or pipeline may apply its own decision logic, provided that the full evidence state is preserved. The guideline ensures that all users, regardless of workflow, have access to the same verifiable evidential signals from which their conclusions are derived.
 
 \section{Structured representation and interoperability}
 % Describe how evidence is encoded for exchange across systems.
 
 Interoperability is essential for a national evidence framework that must operate across laboratories, hospitals, research groups, and commercial systems. The guideline therefore relies on established, internationally recognised data standards rather than bespoke formats. These standards ensure that variant identity, phenotypic descriptions, and evidence statements can be exchanged without loss of meaning and that automated systems can interpret and recompute evidence consistently across environments.
-
 
 %\subsection{Alignment with GA4GH Variant Representation and Variant Annotation models}
 %% Clarify how the framework aligns with GA4GH VRS and VA without duplicating their remit.
@@ -388,28 +388,28 @@ The \ac{vrs}, developed within the \ac{gks} work stream, complements this by def
 \subsection{Exchange formats and machine readable outputs}
 % Define JSON, YAML, or other outputs that ensure interoperability.
 
-The evidence framework is designed so that every output can be exchanged and reused without custom transformation. All rule definitions are distributed in \texttt{YAML} so that logic remains readable, versioned, and portable across programming environments. Variant level evidence states are produced as structured \texttt{JSON} objects that mirror the identifiers and semantics defined in \ac{vrs} and the \ac{va} specification. This ensures that flags, provenance fields, and supporting metadata can be consumed directly by clinical systems, research pipelines, registries, or future decision support tools.
+The evidence framework is designed so that every output can be exchanged and reused without custom transformation. Our rule definitions are distributed in \texttt{YAML} so that logic remains readable, versioned, and portable across programming environments. Variant level evidence states are produced as structured \texttt{JSON} objects that mirror the identifiers and semantics defined in \ac{vrs} and the \ac{va} specification. This ensures that flags, provenance fields, and supporting metadata can be consumed directly by clinical systems, research pipelines, registries, or future decision support tools.
 
 The same representation applies across institutions. Each variant receives a stable identifier, a complete flag set, and a minimal provenance record encoded as machine readable fields rather than free text. Historical interpretations can be reconstructed by replaying the rule version associated with each output. This approach avoids fragmentation, supports long term compatibility, and allows independent implementations to reach identical conclusions from the same inputs.
 
-\section{Probabilistic interpretation in Pillar 3}
-  % Clarifies that current document is foundation for Pillar 3 logic
-% Frame this work as the foundation for the probabilistic model used in Pillar 3.
+%\section{Probabilistic interpretation in Pillar 3}
+%  % Clarifies that current document is foundation for Pillar 3 logic
+%% Frame this work as the foundation for the probabilistic model used in Pillar 3.
+%
+%\subsection{Relationship to Pillar 1 and Pillar 2 inputs}
+%% Clarify dependencies on provenance and normalised analysis variables.
+%
+%\subsection{Evidence aggregation logic}
+%% Describe at a high level how evidence states will feed into probabilistic interpretation.
 
-\subsection{Relationship to Pillar 1 and Pillar 2 inputs}
-% Clarify dependencies on provenance and normalised analysis variables.
+\section{Three pillar framework}
 
-\subsection{Evidence aggregation logic}
-% Describe at a high level how evidence states will feed into probabilistic interpretation.
+The national evidence architecture consists of three coordinated pillars that together support reproducible, interoperable genomic interpretation. Pillar 1 provides standardised sample to sequence provenance, using technologies such as SQL based clinical records and RDF based semantic metadata to ensure that every genome has an auditable and technology independent lineage. Pillar 2 defines a workflow agnostic representation of analysis variables through \ac{qv} sets, allowing different pipelines, callers, and vendors to produce equivalent evidence inputs.
 
-\section{Clinical review checkpoints}
-% Define what automated rules cannot do and where expert review must occur.
+The present guideline specifies the core of Pillar 3. It formalises how variant level evidence is verified, recorded, and represented so that downstream interpretation is grounded in explicit computable signals rather than implicit assumptions.  The evidence model follows reverse reasoning, testing each variant for any signal that contradicts or weakens the causal hypothesis and encoding these results as reproducible evidence flags that form a uniform, auditable evidence state.
 
-\subsection{Required manual assessments}
-% Provide a concise checklist of mandatory clinical oversight steps.
-
-\subsection{Boundary of automated reasoning}
-% State clear limits to prevent over-interpretation of algorithmic evidence.
+% This paragraph summarise a major long term goal well, I believe.
+Together, the three pillars create a coherent foundation for national genomics. Pillar 1 supports those who generate data, Pillar 2 supports those who process it, and Pillar 3 enables everyone who relies on the results to trust the evidence behind them. This alignment allows industry, clinical teams, researchers, and public services to work independently yet remain compatible, giving a shared and dependable genomic environment.
 
 \section{Reporting and synthesis statements}
 % Define the structure and content of final variant reports based on flags and evidence.
@@ -417,17 +417,37 @@ The same representation applies across institutions. Each variant receives a sta
 \section{Auditability, versioning, and reproducibility}
 % Describe logging, provenance, versioning, and how decisions can be reconstructed.
 
-\section{Limitations and scope}
+\section{Clinical review checkpoints}
+% Define what automated rules cannot do and where expert review must occur.
+% I am in favour of explicitly removing expert opinion-based review. We would rather a quantifiable system that is reproducible and predictable an encourage an explicit move here before a broad range of AI tools do the same but without a clear path. 
+
+The framework is designed to minimise reliance on subjective or opinion-based review. Automated rules provide a complete, reproducible evidence state for each variant, ensuring that all falsification tests are applied consistently and transparently. Clinical review is therefore limited to tasks that cannot be resolved from available data, such as clarifying phenotype information, confirming clinical relevance, or determining whether additional investigations are warranted.
+
+Interpretation should not depend on discretionary judgments that vary between experts. Instead, conclusions should follow directly from the structured evidence state and, where applicable, quantitative reasoning in Pillar 3. This approach promotes reproducibility, reduces unexplained variability, and prepares the ecosystem for future AI-assisted interpretation by ensuring that all downstream reasoning is grounded in explicit, computable evidence rather than informal appraisal.
+
+% \section{Limitations and scope}
 % Explicitly state what falls outside this guideline.
+% Boundary of automated reasoning.
+% State clear limits to prevent over-interpretation of algorithmic evidence.
+
+
+\section{Limitations and scope}
+
+This guideline defines the evidence rules and flag structures used to test whether observable data contradict the hypothesis that a variant causes disease. Its strength lies in detecting counterfactual evidence when it is present. Its limitation is the converse: counterfactual signals that are not recorded, not measurable, or not available to the system cannot be identified. Important sources of contradiction may therefore remain undetected, as is the case in all current practice.
+
+The guideline does not compensate for absent pedigree data, incomplete phenotype information, limited functional evidence, or gaps in external resources. It also does not define sequencing workflows, variant calling methods, or clinical decision pathways. All outputs should be understood as the result of systematic falsification applied to the available data, not as guarantees that all relevant counter-evidence has been observed.
+
+A central limitation arises from what we call the \textit{non-falsification fallacy}: the mistaken assumption that the absence of counterfactual evidence implies the presence of supporting evidence. A complete absence of flags does not indicate that a variant is causal or pathogenic; it only shows that, within the minimal evidential contract, no contradictions were detected. This is a baseline state, not a conclusion.
+In the long term, we aim for an evidence model where truly causal variants have a recognisable flag profile, but such completeness is not achievable today.
+Our initial  aim is to meet the standard of the best current clinical genetics in a reproducible and transparent way.
+
+Unmeasured, unrecorded, or unavailable evidence may still contradict the causal hypothesis even when all checks pass. Interpreting a clean flag profile as confirmation of causality risks conflating non-falsification with proof. The framework therefore reports only what can be ruled out, providing the baseline upon which quantitative inference in Pillar 3 can be constructed.
+
 
 \section{Future extensions}
 % Outline expected expansions without committing to specific timelines.
 
-
-
-
 \section{Conclusion}
-
 
 \section*{Acknowledgements}
 
@@ -466,9 +486,11 @@ The data used in this manuscript is derived from open sources which are cited in
  \acro{aid}[AID]{Autoinflammatory Disorders}
  \acro{anova}[ANOVA]{Analysis of Variance}
  \acro{ar}[AR]{Autosomal Recessive}
+ \acro{bam}[BAM]{Binary Alignment Map}
  \acro{bmf}[BMF]{Bone Marrow Failure}
  \acro{cd}[CD]{Complement Deficiencies}
  \acro{ci}[CI]{Confidence Interval}
+ \acro{cram}[CRAM]{Compressed Reference Oriented Alignment Map}
  \acro{cri}[CrI]{Credible Interval}
  \acro{cid}[CID]{Immunodeficiencies affecting Cellular and Humoral Immunity}
  \acro{cid+}[CID+]{Combined Immunodeficiencies with Associated or Syndromic Features}
@@ -477,14 +499,16 @@ The data used in this manuscript is derived from open sources which are cited in
  \acro{cvid}[CVID]{Common Variable Immunodeficiency}
   \acro{dclre1c}[\textit{DCLRE1C}]{DNA Cross-Link Repair 1C}
  \acro{dbnsfp}[dbNSFP]{database for Non-Synonymous Functional Predictions}
+ \acro{ga4gh}[GA4GH]{Global Alliance for Genomics and Health}
  \acro{ge}[GE]{Genomics England} 
  \acro{gnomad}[gnomAD]{Genome Aggregation Database}
  \acro{grch38}[GRCh38]{Genome Reference Consortium Human Build 38}
 \acro{gvcf}[gVCF]{genomic variant call format}
  \acro{hgvs}[HGVS]{Human Genome Variation Society}
+ \acro{hpc}[HPC]{High-Performance Computing} 
+ \acro{hpo}[HPO]{Human Phenotype Ontology}
 \acro{hvnc}[HVNC]{HGVS Variant Nomenclature Committee}
 \acro{hugo}[HUGO]{Human Genome Organisation}
- \acro{hpc}[HPC]{High-Performance Computing}
  \acro{hsd}[HSD]{Honestly Significant Difference}
  \acro{hwe}[HWE]{Hardy-Weinberg Equilibrium}
  \acro{iei}[IEI]{Inborn Errors of Immunity}
@@ -498,12 +522,14 @@ The data used in this manuscript is derived from open sources which are cited in
  \acro{moi}[MOI]{Mode of Inheritance}
  \acro{nfkb1}[\textit{NFKB1}]{Nuclear Factor Kappa B Subunit 1}
  \acro{omim}[OMIM]{Online Mendelian Inheritance in Man}
+ \acro{ordo}[ORDO]{Orphanet Rare Disease Ontology}
  \acro{pad}[PAD]{Predominantly Antibody Deficiencies}
  \acro{pid}[PID]{Primary Immunodeficiency}
  \acro{pird}[PIRD]{Diseases of Immune Dysregulation}
  \acro{ppi}[PPI]{Protein-Protein Interaction}
  \acro{pli}[pLI]{Probability of being Loss-of-function Intolerant}
  \acro{qc}[QC]{Quality Control}
+  \acro{qv}[QV]{Qualifying Variant}
  \acro{rag1}[\textit{RAG1}]{Recombination activating gene 1}
  \acro{scid}[SCID]{Severe Combined Immunodeficiency}
  \acro{snv}[SNV]{Single Nucleotide Variant}
@@ -516,6 +542,8 @@ The data used in this manuscript is derived from open sources which are cited in
 \acro{tnfaip3}[\textit{TNFAIP3}]{Tumor necrosis factor, alpha-induced protein 3}
  \acro{umap}[UMAP]{Uniform Manifold Approximation and Projection}
  \acro{uniprot}[UniProt]{Universal Protein Resource} 
+ \acro{va}[VA]{Variant Annotation}
+ \acro{vrs}[VRS]{Variation Representation Specification}
  \acro{vcf}[VCF]{variant call format}
  \acro{vep}[VEP]{Variant Effect Predictor}
  \acro{vre}[VRE]{variant risk estimate}
@@ -536,6 +564,12 @@ Supplemental data are presented under the same headings that correspond to their
 \subsection{Example rule files}
 % Provide minimal YAML examples to clarify rule syntax.
 
+\lstinputlisting[
+  style=qvstyle,
+ caption={Excerpt from the \ac{qv} interpretation prompt used with the \ac{qv} Builder app. Line wrapping is shown for display only. For actual use, refer to the original source file or the corresponding official \ac{qv} set release.},
+  label={lst:qv_variant_interpretation}
+]{../qv_variant_interpretaion.txt}
+
 \subsection{Example YAML or JSON evidence objects}
 % Show how evidence flags appear in machine readable outputs.
 
@@ -554,7 +588,7 @@ Supplemental data are presented under the same headings that correspond to their
 
 \subsubsection{Normalised variant representation and nomenclature}
     % National minimum input requirements
-    % In QV these become flags such as flag_hgvs_valid
+    % In \ac{qv} these become flags such as flag_hgvs_valid
 % Describe HGVS conventions, genome build, normalisation, and how variant identity is stabilised.
 % Missing; should specify HGVS, VCF normalisation, reference builds, allele consistency, transcript rules
 
@@ -657,7 +691,7 @@ To ensure consistency, each variant interpretation should record both the refere
 \subsubsection{Functional and molecular evidence}
 % Describe UniProt feature mapping, domain overlap, truncation patterns, and molecular consequence rules.
 
-Functional evidence from UniProt is integrated by detecting positional overlap between variant amino acid coordinates and annotated protein features recorded in UniProt GFF files. Each UniProt entry provides structured annotations describing biochemical, structural, and functional properties of the protein. For each variant, the affected residue position is compared against these annotated intervals, and any intersection is recorded as supporting evidence in the QV interpretation framework. This approach ensures that experimental and curated protein-level information contributes directly to variant interpretation and reporting (\textbf{Figure ~\ref{fig:tnfaip3_evidence_tracks}}).
+Functional evidence from UniProt is integrated by detecting positional overlap between variant amino acid coordinates and annotated protein features recorded in UniProt GFF files. Each UniProt entry provides structured annotations describing biochemical, structural, and functional properties of the protein. For each variant, the affected residue position is compared against these annotated intervals, and any intersection is recorded as supporting evidence in the \ac{qv} interpretation framework. This approach ensures that experimental and curated protein-level information contributes directly to variant interpretation and reporting (\textbf{Figure ~\ref{fig:tnfaip3_evidence_tracks}}).
 
 The annotated features used as evidence sources include catalytic and binding sites, metal and nucleotide binding regions, and other experimentally defined functional motifs. Structural features such as helices, beta strands, and coiled coils provide spatial context for potential conformational disruption. Domain- and family-level annotations, including domains, motifs, and topological regions, capture conserved structural organisation and functional domains. Additional layers include post-translational modification sites, mutagenesis data, and known sequence variants curated in UniProt. Processing and localisation signals (such as signal peptides, transit peptides, and cleavage products) and cautionary sequence annotations (for example, frameshifts or sequence uncertainty) are also recorded.
 

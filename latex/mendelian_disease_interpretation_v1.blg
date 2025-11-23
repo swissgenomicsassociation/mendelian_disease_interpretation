@@ -6,46 +6,47 @@ Database file #1: references.bib
 Warning--I didn't find a database entry for "lawless_panelapprex_2025"
 Warning--I didn't find a database entry for "martin_panelapp_2019"
 Warning--I didn't find a database entry for "lawless_quantifying_2025"
+Warning--empty journal in van2023bridging
 Warning--empty journal in 2025lawlessApplicationQualifyingVariants
-You've used 5 entries,
+You've used 7 entries,
             2481 wiz_defined-function locations,
-            597 strings with 7302 characters,
-and the built_in function-call counts, 3542 in all, are:
-= -- 178
-> -- 453
+            604 strings with 7484 characters,
+and the built_in function-call counts, 3834 in all, are:
+= -- 206
+> -- 441
 < -- 0
-+ -- 156
-- -- 146
-* -- 419
-:= -- 690
-add.period$ -- 24
-call.type$ -- 5
-change.case$ -- 10
-chr.to.int$ -- 5
-cite$ -- 6
-duplicate$ -- 94
-empty$ -- 173
-format.name$ -- 151
-if$ -- 649
++ -- 154
+- -- 140
+* -- 411
+:= -- 722
+add.period$ -- 25
+call.type$ -- 7
+change.case$ -- 14
+chr.to.int$ -- 7
+cite$ -- 9
+duplicate$ -- 126
+empty$ -- 227
+format.name$ -- 147
+if$ -- 723
 int.to.chr$ -- 1
-int.to.str$ -- 6
-missing$ -- 5
-newline$ -- 42
-num.names$ -- 15
-pop$ -- 30
+int.to.str$ -- 8
+missing$ -- 6
+newline$ -- 47
+num.names$ -- 21
+pop$ -- 58
 preamble$ -- 1
-purify$ -- 5
+purify$ -- 7
 quote$ -- 0
-skip$ -- 46
+skip$ -- 68
 stack$ -- 0
-substring$ -- 78
-swap$ -- 14
+substring$ -- 70
+swap$ -- 16
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 35
-warning$ -- 1
-while$ -- 16
+type$ -- 49
+warning$ -- 2
+while$ -- 20
 width$ -- 0
-write$ -- 88
-(There were 4 warnings)
+write$ -- 101
+(There were 5 warnings)
