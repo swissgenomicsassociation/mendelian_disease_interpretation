@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  8 NOV 2025 11:54
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  23 NOV 2025 11:15
  restricted system commands enabled.
 **mendelian_disease_interpretation_v1.tex
 (./mendelian_disease_interpretation_v1.tex
@@ -1369,251 +1369,143 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [4]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 173.
 
-[5]
+
+[5] (../qv_variant_interpretaion.txt
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 13.
+
 
 [6]
 
 [7]
-Overfull \hbox (72.69214pt too wide) in paragraph at lines 234--234
-[]    \TU/lmtt/m/n/12 // ClinVar assertion describing pathogenicity claim for a single variant-
- []
 
-
-Overfull \hbox (4.71222pt too wide) in paragraph at lines 243--243
-[]        \TU/lmtt/m/n/12 "name": "Autosomal dominant nonsyndromic hearing loss 2A",[] 
- []
-
-
-Overfull \hbox (54.15216pt too wide) in paragraph at lines 252--252
-[]        \TU/lmtt/m/n/12 "primaryCoding": { "code": "high", "system": "local:pa
-thogenicity-
- []
-
-
-Overfull \hbox (91.23212pt too wide) in paragraph at lines 259--259
-[]      \TU/lmtt/m/n/12 "primaryCoding": { "code": "established", "system": "Imp
-lementerSystem1" }[] 
- []
-
-
-Overfull \hbox (66.51215pt too wide) in paragraph at lines 261--261
-[]    \TU/lmtt/m/n/12 // Final classification label applied under a guideline (e
-.g. ACMG 2015)[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--263
-[]      \TU/lmtt/m/n/12 "primaryCoding": { "code": "disease-
- []
-
-
-Overfull \hbox (134.49207pt too wide) in paragraph at lines 272--272
-[]          \TU/lmtt/m/n/12 "name": "ClinVar Staff, National Center for Biotechn
-ology Information (NCBI)"[] 
- []
-
-
-Overfull \hbox (134.49207pt too wide) in paragraph at lines 282--282
-[]          \TU/lmtt/m/n/12 "name": "ClinVar Staff, National Center for Biotechn
-ology Information (NCBI)"[] 
- []
-
-
-Overfull \hbox (183.932pt too wide) in paragraph at lines 293--293
-[]        \TU/lmtt/m/n/12 "name": "Alternate guidelines and terminology for vari
-ant pathogenicity classification"[] 
- []
-
-
-Overfull \hbox (10.89221pt too wide) in paragraph at lines 304--304
-[]          \TU/lmtt/m/n/12 "primaryCoding": { "code": "moderate", "system": "AC
-MG" }[] 
- []
-
-
-Overfull \hbox (97.41211pt too wide) in paragraph at lines 307--307
-[]          \TU/lmtt/m/n/12 // Population frequency evidence; very low AF suppor
-ts rarity criterion[] 
- []
-
-
-Overfull \hbox (60.33215pt too wide) in paragraph at lines 311--311
-[]          \TU/lmtt/m/n/12 "studyDescription": "Allele frequency in gnomAD v4.0
- EUR cohort",[] 
- []
-
-
-Overfull \hbox (23.2522pt too wide) in paragraph at lines 335--335
-[]            \TU/lmtt/m/n/12 "type": "ExperimentalVariantFunctionalImpactPropos
-ition",[] 
- []
-
-
-Overfull \hbox (10.89221pt too wide) in paragraph at lines 341--341
-[]            \TU/lmtt/m/n/12 "primaryCoding": { "code": "strong", "system": "MA
-VE" }[] 
- []
-
-
-Overfull \hbox (23.2522pt too wide) in paragraph at lines 350--350
-[]                \TU/lmtt/m/n/12 "primaryCoding": { "code": "high", "system": 
-"MAVE" }[] 
- []
-
-
-Overfull \hbox (78.87213pt too wide) in paragraph at lines 355--355
-[]                \TU/lmtt/m/n/12 "studyType": "ExperimentalVariantFunctionalImp
-actStudyResult",[] 
- []
-
-
-Overfull \hbox (78.87213pt too wide) in paragraph at lines 357--357
-[]                \TU/lmtt/m/n/12 // Functional outcome demonstrating disrupted protein activity[] 
- []
-
-
-
-[8]
-Overfull \vbox (2005.38412pt too high) has occurred while \output is active []
-
-
+[8])
 
 [9]
-Package acronym Info: Label `acro:hgvs' newly defined as it shall be overridden
-
-although it is yet undefined on input line 384.
-Package acronym Info: Label `acro:hvnc' newly defined as it shall be overridden
-
-although it is yet undefined on input line 386.
-Package acronym Info: Label `acro:hugo' newly defined as it shall be overridden
-
-although it is yet undefined on input line 386.
-Package acronym Info: Label `acro:grch38' newly defined as it shall be overridd
-en
-although it is yet undefined on input line 388.
-
 
 [10]
-<../images/functional_evidence_uniprot.pdf, id=314, 578.16pt x 505.89pt>
-File: ../images/functional_evidence_uniprot.pdf Graphic file (type pdf)
-<use ../images/functional_evidence_uniprot.pdf>
-Package luatex.def Info: ../images/functional_evidence_uniprot.pdf  used on inp
-ut line 403.
-(luatex.def)             Requested size: 368.57964pt x 322.50253pt.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 423.
- (../qv_variant_interpretaion.txt
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 9.
-
 
 [11]
 
-[12<../images/functional_evidence_uniprot.pdf>])
+[12]
 
 [13]
 
-[14]
+[14] (./mendelian_disease_interpretation_v1.bbl
 
-[15]
-Package acronym Info: Label `acro:wgs' newly defined as it shall be overridden
-although it is yet undefined on input line 500.
-Package acronym Info: Label `acro:ad' newly defined as it shall be overridden
-although it is yet undefined on input line 501.
-Package acronym Info: Label `acro:ar' newly defined as it shall be overridden
-although it is yet undefined on input line 501.
-Package acronym Info: Label `acro:xl' newly defined as it shall be overridden
-although it is yet undefined on input line 501.
-Package acronym Info: Label `acro:moi' newly defined as it shall be overridden
-although it is yet undefined on input line 509.
-
+[15])
 
 [16]
+Package acronym Info: Label `acro:hgvs' newly defined as it shall be overridden
 
-Package natbib Warning: Citation `lawless_panelapprex_2025' on page 17 undefine
-d on input line 512.
+although it is yet undefined on input line 490.
+Package acronym Info: Label `acro:hvnc' newly defined as it shall be overridden
 
+although it is yet undefined on input line 492.
+Package acronym Info: Label `acro:hugo' newly defined as it shall be overridden
 
-Package natbib Warning: Citation `martin_panelapp_2019' on page 17 undefined on
- input line 512.
-
-
-Package natbib Warning: Citation `lawless_quantifying_2025' on page 17 undefine
-d on input line 516.
-
-
-Package natbib Warning: Citation `lawless_quantifying_2025' on page 17 undefine
-d on input line 518.
-
-Package acronym Info: Label `acro:ppie' newly defined as it shall be overridden
-
-although it is yet undefined on input line 544.
-
-Package acronym Warning: Acronym ppie is not defined on input line 544.
-
-
-Package acronym Warning: Acronym ppie is not defined on input line 544.
-
+although it is yet undefined on input line 492.
+Package acronym Info: Label `acro:grch38' newly defined as it shall be overridd
+en
+although it is yet undefined on input line 494.
 
 
 [17]
 
 [18]
+Package acronym Info: Label `acro:wgs' newly defined as it shall be overridden
+although it is yet undefined on input line 564.
+Package acronym Info: Label `acro:ad' newly defined as it shall be overridden
+although it is yet undefined on input line 565.
+Package acronym Info: Label `acro:ar' newly defined as it shall be overridden
+although it is yet undefined on input line 565.
+Package acronym Info: Label `acro:xl' newly defined as it shall be overridden
+although it is yet undefined on input line 565.
+
 
 [19]
+Package acronym Info: Label `acro:moi' newly defined as it shall be overridden
+although it is yet undefined on input line 573.
+
+
+Package natbib Warning: Citation `lawless_panelapprex_2025' on page 20 undefine
+d on input line 576.
+
+
+Package natbib Warning: Citation `martin_panelapp_2019' on page 20 undefined on
+ input line 576.
+
+
+Package natbib Warning: Citation `lawless_quantifying_2025' on page 20 undefine
+d on input line 580.
+
+
+Package natbib Warning: Citation `lawless_quantifying_2025' on page 20 undefine
+d on input line 582.
+
+
 
 [20]
+<../images/functional_evidence_uniprot.pdf, id=440, 578.16pt x 505.89pt>
+File: ../images/functional_evidence_uniprot.pdf Graphic file (type pdf)
+<use ../images/functional_evidence_uniprot.pdf>
+Package luatex.def Info: ../images/functional_evidence_uniprot.pdf  used on inp
+ut line 597.
+(luatex.def)             Requested size: 368.57964pt x 322.50253pt.
 
-[21] (./mendelian_disease_interpretation_v1.bbl
-
-[22])
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[23] (./mendelian_disease_interpretation_v1.aux)
+[21]
+
+[22<../images/functional_evidence_uniprot.pdf>]
+(./mendelian_disease_interpretation_v1.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `mendelian_disease_interpretation_v1.out' has
  not changed.
-(rerunfilecheck)             Checksum: F382BD9A40152897B0C8D8C13D536DB7;8720.
+(rerunfilecheck)             Checksum: AE1DDB9261DF3C4F5616C9BF16728505;7537.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39348 strings out of 475506
- 597285,1648299 words of node,token memory allocated
- 1664 words of node memory still in use:
-   31 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 2 glyph, 
-84 attribute, 115 glue_spec, 84 attribute_list, 2 write, 24 pdf_literal, 2 pdf_a
+ 39478 strings out of 475506
+ 597292,1648299 words of node,token memory allocated
+ 1675 words of node memory still in use:
+   31 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 3 glyph, 
+85 attribute, 115 glue_spec, 85 attribute_list, 2 write, 24 pdf_literal, 2 pdf_a
 ction, 24 pdf_colorstack nodes
-   avail lists: 1:3,2:8410,3:3648,4:14517,5:12489,6:290,7:14548,8:100,9:28156,10
-:32,11:1094
- 61303 multiletter control sequences out of 65536+600000
- 112 fonts using 8029119 bytes
- 121i,10n,117p,1059b,1731s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.otf
-></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.o
-tf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic
-.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regul
-ar.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-reg
-ular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-
-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-
-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-
-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman
-8-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmrom
-an12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lm
-roman17-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb>
-Output written on mendelian_disease_interpretation_v1.pdf (23 pages, 148258 byte
+   avail lists: 1:10,2:8876,3:350,4:14671,5:12596,6:82,7:15381,8:100,9:28522,10:
+32,11:1048
+ 61382 multiletter control sequences out of 65536+600000
+ 113 fonts using 8155207 bytes
+ 121i,10n,117p,1059b,1730s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.ot
+f></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.
+otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold
+.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-itali
+c.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regu
+lar.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-re
+gular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10
+-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12
+-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10
+-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroma
+n8-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmro
+man12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/l
+mroman17-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb>
+Output written on mendelian_disease_interpretation_v1.pdf (22 pages, 143659 byte
 s).
 
-PDF statistics: 512 PDF objects out of 1000 (max. 8388607)
- 420 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 131072)
- 568 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 549 PDF objects out of 1000 (max. 8388607)
+ 456 compressed objects within 5 object streams
+ 160 named destinations out of 1000 (max. 131072)
+ 544 words of extra memory for PDF output out of 10000 (max. 100000000)
 

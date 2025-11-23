@@ -4,130 +4,41 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \AC@reset@newl@bel
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{4}{section.1}\protected@file@percent }
-\citation{2024duyzendImprovingPrenatalDiagnosis}
-\citation{2024duyzendImprovingPrenatalDiagnosis}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{5}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Principles of evidence-based variant interpretation}{5}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Preference for established standards}{5}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Structured variant annotation and automation of interpretation}{6}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Variant annotation specification}{7}{section.6}\protected@file@percent }
-\newlabel{box:ga4gh_va_example}{{1}{9}{Variant annotation specification}{myboxcounter.1}{}}
-\citation{2024hartHGVSNomenclature2024}
-\citation{2024hartHGVSNomenclature2024}
-\citation{2016dendunnenHGVSRecommendationsDescription}
-\citation{2016dendunnenHGVSRecommendationsDescription}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Data provenance and sample quality control}{10}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Variant representation and normalisation}{10}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Nomenclatures}{10}{subsection.8.1}\protected@file@percent }
-\AC@undonewlabel{acro:hgvs}
-\newlabel{acro:hgvs}{{8.1}{10}{Nomenclatures}{subsection.8.1}{}}
-\acronymused{hgvs}
-\acronymused{hgvs}
-\acronymused{hgvs}
-\AC@undonewlabel{acro:hvnc}
-\newlabel{acro:hvnc}{{8.1}{10}{Nomenclatures}{subsection.8.1}{}}
-\acronymused{hvnc}
-\AC@undonewlabel{acro:hugo}
-\newlabel{acro:hugo}{{8.1}{10}{Nomenclatures}{subsection.8.1}{}}
-\acronymused{hugo}
-\acronymused{hgvs}
-\AC@undonewlabel{acro:grch38}
-\newlabel{acro:grch38}{{8.1}{10}{Nomenclatures}{subsection.8.1}{}}
-\acronymused{grch38}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Functional evidence databases}{10}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Automated QV (qualifying variant) framework}{11}{section.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}QV file guideline content}{11}{subsection.10.1}\protected@file@percent }
-\newlabel{lst:qv_variant_interpretation}{{1}{11}{Excerpt from the QV interpretation prompt used with the QV Builder app. Line wrapping is shown for display only. For actual use, refer to the original source file or the corresponding official QV set release}{lstlisting.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Excerpt from the QV interpretation prompt used with the QV Builder app. Line wrapping is shown for display only. For actual use, refer to the original source file or the corresponding official QV set release.}{11}{lstlisting.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  \textbf  {Functional evidence tracks from UniProt annotations.} The example illustrates how protein-level features such as domains, motifs, and catalytic sites provide structured evidence supporting interpretation of coding variants. Overlaps between variant positions and curated functional regions indicate potential mechanistic relevance, while the absence of overlap suggests limited or indirect evidence. This evidence framework guides the strength of interpretation in clinical reporting, ensuring that well-supported variants are highlighted and uncertain findings are transparently qualified. }}{12}{figure.1}\protected@file@percent }
-\newlabel{fig:tnfaip3_evidence_tracks}{{1}{12}{\textbf {Functional evidence tracks from UniProt annotations.} The example illustrates how protein-level features such as domains, motifs, and catalytic sites provide structured evidence supporting interpretation of coding variants. Overlaps between variant positions and curated functional regions indicate potential mechanistic relevance, while the absence of overlap suggests limited or indirect evidence. This evidence framework guides the strength of interpretation in clinical reporting, ensuring that well-supported variants are highlighted and uncertain findings are transparently qualified}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Purpose and scope of the guideline}{5}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Architectural context and national motivation}{5}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Design principles for evidence-based variant interpretation}{5}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Data provenance and sample quality requirements}{5}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Evidence rule framework}{5}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Structure of evidence rules}{5}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Versioning and audit trace}{5}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Optional reference implementation (QV framework)}{5}{subsection.6.3}\protected@file@percent }
+\newlabel{lst:qv_variant_interpretation}{{1}{6}{Excerpt from the QV interpretation prompt used with the QV Builder app. Line wrapping is shown for display only. For actual use, refer to the original source file or the corresponding official QV set release}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Excerpt from the QV interpretation prompt used with the QV Builder app. Line wrapping is shown for display only. For actual use, refer to the original source file or the corresponding official QV set release.}{6}{lstlisting.1}\protected@file@percent }
 \citation{2025lawlessApplicationQualifyingVariants}
 \citation{2025lawlessApplicationQualifyingVariants}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Qualifying variant protocol design and standardised approaches}{13}{subsection.10.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}QV set preparation}{14}{subsection.10.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}QV sets for reporting}{14}{subsection.10.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}Conditional evidence rules and source-dependent quality checks}{14}{subsection.10.5}\protected@file@percent }
-\gdef \LT@i {\LT@entry 
-    {1}{66.41824pt}\LT@entry 
-    {1}{80.12767pt}\LT@entry 
-    {1}{73.82048pt}\LT@entry 
-    {1}{213.2536pt}}
-\gdef \LT@ii {\LT@entry 
-    {1}{66.41824pt}\LT@entry 
-    {1}{97.38481pt}\LT@entry 
-    {1}{73.82048pt}\LT@entry 
-    {1}{195.99646pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Example application of the \texttt  {gnomad\_flags} rule to patient variants. Entries automatically wrap within the column width for compact layout.}}{15}{table.2}\protected@file@percent }
-\newlabel{tab:gnomad_flags}{{2}{15}{Example application of the \texttt {gnomad\_flags} rule to patient variants. Entries automatically wrap within the column width for compact layout}{table.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.6}ACMG criteria with counter-factual evidence}{15}{subsection.10.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Example application of the \texttt  {acmg\_criteria} rule to patient variants. Variants containing benign ACMG evidence codes are retained but flagged for explicit review in the final report.}}{16}{table.4}\protected@file@percent }
-\newlabel{tab:acmg_criteria}{{4}{16}{Example application of the \texttt {acmg\_criteria} rule to patient variants. Variants containing benign ACMG evidence codes are retained but flagged for explicit review in the final report}{table.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.7}Pedigree and inheritance information}{16}{subsection.10.7}\protected@file@percent }
-\AC@undonewlabel{acro:wgs}
-\newlabel{acro:wgs}{{10.7}{16}{Pedigree and inheritance information}{subsection.10.7}{}}
-\acronymused{wgs}
-\AC@undonewlabel{acro:ad}
-\newlabel{acro:ad}{{10.7}{16}{Pedigree and inheritance information}{subsection.10.7}{}}
-\acronymused{ad}
-\AC@undonewlabel{acro:ar}
-\newlabel{acro:ar}{{10.7}{16}{Pedigree and inheritance information}{subsection.10.7}{}}
-\acronymused{ar}
-\AC@undonewlabel{acro:xl}
-\newlabel{acro:xl}{{10.7}{16}{Pedigree and inheritance information}{subsection.10.7}{}}
-\acronymused{xl}
-\citation{lawless_panelapprex_2025}
-\citation{lawless_panelapprex_2025}
-\citation{martin_panelapp_2019}
-\citation{martin_panelapp_2019}
-\citation{lawless_quantifying_2025}
-\citation{lawless_quantifying_2025}
-\citation{lawless_quantifying_2025}
-\citation{lawless_quantifying_2025}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.8}Pedigree and inheritance information}{17}{subsection.10.8}\protected@file@percent }
-\AC@undonewlabel{acro:moi}
-\newlabel{acro:moi}{{10.8}{17}{Pedigree and inheritance information}{subsection.10.8}{}}
-\acronymused{moi}
-\acronymused{moi}
-\acronymused{ad}
-\acronymused{ar}
-\acronymused{xl}
-\acronymused{moi}
-\acronymused{wgs}
-\acronymused{moi}
-\acronymused{ad}
-\acronymused{ar}
-\acronymused{ar}
-\acronymused{moi}
-\citation{2025lavrichenkoRecommendationsBioinformaticsClinical}
-\citation{2025lavrichenkoRecommendationsBioinformaticsClinical}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Population frequency and cohort context}{18}{section.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12}Inheritance and segregation evidence}{18}{section.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {13}Phenotype matching and gene-disease validity}{18}{section.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {14}Counter-evidence and conflict resolution}{18}{section.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {15}Manual clinical genetics review checkpoints}{18}{section.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {16}Semi-quantitative scoring rubric}{18}{section.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {17}End-to-end WGS interpretation workflow}{18}{section.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {18}Patient and public representation}{18}{section.18}\protected@file@percent }
-\AC@undonewlabel{acro:ppie}
-\newlabel{acro:ppie}{{18}{18}{Patient and public representation}{section.18}{}}
-\acronymused{ppie}
-\@writefile{toc}{\contentsline {section}{\numberline {19}Recommendations for bioinformatics in clinical practice}{19}{section.19}\protected@file@percent }
-\citation{2025lavrichenkoRecommendationsBioinformaticsClinical}
-\citation{2025lavrichenkoRecommendationsBioinformaticsClinical}
-\citation{2025lavrichenkoRecommendationsBioinformaticsClinical}
-\citation{2025lavrichenkoRecommendationsBioinformaticsClinical}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Recommendations for sequencing-based clinical bioinformatics, based on \citet  {2025lavrichenkoRecommendationsBioinformaticsClinical}.}}{20}{table.5}\protected@file@percent }
-\newlabel{tab:bioinformatics_recommendations}{{5}{20}{Recommendations for sequencing-based clinical bioinformatics, based on \citet {2025lavrichenkoRecommendationsBioinformaticsClinical}}{table.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {20}Clinical report structure and minimum requirements}{21}{section.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {21}Presenting an evidence synthesis statement}{21}{section.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {22}Implementation, interoperability, and tooling}{21}{section.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {23}Limitations and scope}{21}{section.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {24}Auditability, versioning, and compliance}{21}{section.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {25}Future directions}{21}{section.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {26}Acknowledgements}{21}{section.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {27}References}{21}{section.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix}{21}{appendix.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Conclusion}{21}{appendix.B}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Implemented rule set}{9}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Evidence flags}{10}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Evidence domains}{10}{subsection.7.1}\protected@file@percent }
+\citation{2024duyzendImprovingPrenatalDiagnosis}
+\citation{2024duyzendImprovingPrenatalDiagnosis}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Final flag set}{11}{subsection.7.2}\protected@file@percent }
+\newlabel{box:ga4gh_va_example}{{1}{11}{Final flag set}{myboxcounter.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Interpretation of flag combinations}{12}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Structured representation and interoperability}{12}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Alignment with GA4GH Variant Representation and Variant Annotation models}{12}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}GA4GH Variant Annotation model}{12}{subsection.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Exchange formats and machine readable outputs}{14}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Probabilistic interpretation in Pillar 3}{14}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Relationship to Pillar 1 and Pillar 2 inputs}{14}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Evidence aggregation logic}{14}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Clinical review checkpoints}{14}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Required manual assessments}{14}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Boundary of automated reasoning}{14}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Reporting and synthesis statements}{14}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}Auditability, versioning, and reproducibility}{14}{section.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Limitations and scope}{14}{section.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {14}Future extensions}{14}{section.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {15}Conclusion}{14}{section.15}\protected@file@percent }
 \bibstyle{unsrtnat}
 \bibdata{references}
 \bibcite{2024duyzendImprovingPrenatalDiagnosis}{{1}{2024}{{Duyzend et~al.}}{{Duyzend, Cacheiro, Jacobsen, Giordano, Brand, Wapner, Talkowski, Robinson, and Smedley}}}
@@ -197,6 +108,89 @@
 \newacro{vre}[\AC@hyperlink{vre}{VRE}]{variant risk estimate}
 \newacro{wgs}[\AC@hyperlink{wgs}{WGS}]{Whole Genome Sequencing}
 \newacro{xl}[\AC@hyperlink{xl}{XL}]{X-Linked}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Supplemental}{23}{appendix.C}\protected@file@percent }
-\newlabel{Supplemental_text}{{C}{23}{Supplemental}{appendix.C}{}}
-\gdef \@abspage@last{23}
+\citation{2024hartHGVSNomenclature2024}
+\citation{2024hartHGVSNomenclature2024}
+\citation{2016dendunnenHGVSRecommendationsDescription}
+\citation{2016dendunnenHGVSRecommendationsDescription}
+\@writefile{toc}{\contentsline {section}{\numberline {16}Supplemental}{17}{section.16}\protected@file@percent }
+\newlabel{Supplemental_text}{{16}{17}{Supplemental}{section.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {17}Appendix}{17}{section.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {17.1}Example rule files}{17}{subsection.17.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {17.2}Example YAML or JSON evidence objects}{17}{subsection.17.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {17.3}Worked examples of flagged variants}{17}{subsection.17.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {18}Evidence flags}{17}{section.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {18.1}Evidence domains}{17}{subsection.18.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.1}Counter-evidence and conflict handling}{17}{subsubsection.18.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.2}Normalised variant representation and nomenclature}{17}{subsubsection.18.1.2}\protected@file@percent }
+\AC@undonewlabel{acro:hgvs}
+\newlabel{acro:hgvs}{{18.1.2}{17}{Normalised variant representation and nomenclature}{subsubsection.18.1.2}{}}
+\acronymused{hgvs}
+\acronymused{hgvs}
+\acronymused{hgvs}
+\AC@undonewlabel{acro:hvnc}
+\newlabel{acro:hvnc}{{18.1.2}{17}{Normalised variant representation and nomenclature}{subsubsection.18.1.2}{}}
+\acronymused{hvnc}
+\AC@undonewlabel{acro:hugo}
+\newlabel{acro:hugo}{{18.1.2}{17}{Normalised variant representation and nomenclature}{subsubsection.18.1.2}{}}
+\acronymused{hugo}
+\acronymused{hgvs}
+\gdef \LT@i {\LT@entry 
+    {1}{66.41824pt}\LT@entry 
+    {1}{97.38481pt}\LT@entry 
+    {1}{73.82048pt}\LT@entry 
+    {1}{195.99646pt}}
+\AC@undonewlabel{acro:grch38}
+\newlabel{acro:grch38}{{18.1.2}{18}{Normalised variant representation and nomenclature}{subsubsection.18.1.2}{}}
+\acronymused{grch38}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.3}ACMG criteria with counter-factual evidence}{18}{subsubsection.18.1.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {S2}{\ignorespaces Example application of the \texttt  {acmg\_criteria} rule to patient variants. Variants containing benign ACMG evidence codes are retained but flagged for explicit review in the final report.}}{18}{table.2}\protected@file@percent }
+\newlabel{tab:acmg_criteria}{{S2}{18}{Example application of the \texttt {acmg\_criteria} rule to patient variants. Variants containing benign ACMG evidence codes are retained but flagged for explicit review in the final report}{table.2}{}}
+\gdef \LT@ii {\LT@entry 
+    {1}{66.41824pt}\LT@entry 
+    {1}{80.12767pt}\LT@entry 
+    {1}{73.82048pt}\LT@entry 
+    {1}{213.2536pt}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.4}Population frequency evidence}{19}{subsubsection.18.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.5}Conditional evidence rules and source-dependent quality checks}{19}{subsubsection.18.1.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {S4}{\ignorespaces Example application of the \texttt  {gnomad\_flags} rule to patient variants. Entries automatically wrap within the column width for compact layout.}}{19}{table.4}\protected@file@percent }
+\newlabel{tab:gnomad_flags}{{S4}{19}{Example application of the \texttt {gnomad\_flags} rule to patient variants. Entries automatically wrap within the column width for compact layout}{table.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.6}Inheritance and segregation evidence}{19}{subsubsection.18.1.6}\protected@file@percent }
+\AC@undonewlabel{acro:wgs}
+\newlabel{acro:wgs}{{18.1.6}{19}{Inheritance and segregation evidence}{subsubsection.18.1.6}{}}
+\acronymused{wgs}
+\citation{lawless_panelapprex_2025}
+\citation{lawless_panelapprex_2025}
+\citation{martin_panelapp_2019}
+\citation{martin_panelapp_2019}
+\citation{lawless_quantifying_2025}
+\citation{lawless_quantifying_2025}
+\citation{lawless_quantifying_2025}
+\citation{lawless_quantifying_2025}
+\AC@undonewlabel{acro:ad}
+\newlabel{acro:ad}{{18.1.6}{20}{Inheritance and segregation evidence}{subsubsection.18.1.6}{}}
+\acronymused{ad}
+\AC@undonewlabel{acro:ar}
+\newlabel{acro:ar}{{18.1.6}{20}{Inheritance and segregation evidence}{subsubsection.18.1.6}{}}
+\acronymused{ar}
+\AC@undonewlabel{acro:xl}
+\newlabel{acro:xl}{{18.1.6}{20}{Inheritance and segregation evidence}{subsubsection.18.1.6}{}}
+\acronymused{xl}
+\AC@undonewlabel{acro:moi}
+\newlabel{acro:moi}{{18.1.6}{20}{Inheritance and segregation evidence}{subsubsection.18.1.6}{}}
+\acronymused{moi}
+\acronymused{moi}
+\acronymused{ad}
+\acronymused{ar}
+\acronymused{xl}
+\acronymused{moi}
+\acronymused{wgs}
+\acronymused{moi}
+\acronymused{ad}
+\acronymused{ar}
+\acronymused{ar}
+\acronymused{moi}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.7}Functional and molecular evidence}{21}{subsubsection.18.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {18.1.8}Phenotype and gene–disease validity evidence}{21}{subsubsection.18.1.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces  \textbf  {Functional evidence tracks from UniProt annotations.} The example illustrates how protein-level features such as domains, motifs, and catalytic sites provide structured evidence supporting interpretation of coding variants. Overlaps between variant positions and curated functional regions indicate potential mechanistic relevance, while the absence of overlap suggests limited or indirect evidence. This evidence framework guides the strength of interpretation in clinical reporting, ensuring that well-supported variants are highlighted and uncertain findings are transparently qualified. }}{22}{figure.1}\protected@file@percent }
+\newlabel{fig:tnfaip3_evidence_tracks}{{S1}{22}{\textbf {Functional evidence tracks from UniProt annotations.} The example illustrates how protein-level features such as domains, motifs, and catalytic sites provide structured evidence supporting interpretation of coding variants. Overlaps between variant positions and curated functional regions indicate potential mechanistic relevance, while the absence of overlap suggests limited or indirect evidence. This evidence framework guides the strength of interpretation in clinical reporting, ensuring that well-supported variants are highlighted and uncertain findings are transparently qualified}{figure.1}{}}
+\gdef \@abspage@last{22}

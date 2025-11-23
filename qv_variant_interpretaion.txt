@@ -1,3 +1,6 @@
+draft style of prompts used to make the variant interpretation flagging rules before converting to YAML/JSON:
+
+```
 meta qv_set_id="qv_rare_singlecase_interpretation_v1_20251105"
 meta version="1.0.0"
 meta title="Rare variant single case interpretation"
@@ -66,3 +69,4 @@ criteria rna_fail field="RNA_TPM_controls_max" operator="==" value=0
 
 note "RNA filter: transcript must be observed in at least one control sample to consider patient quantification reliable"
 note "RNA FAIL indicates no expression in all controls, patient value should not be interpreted quantitatively"
+````

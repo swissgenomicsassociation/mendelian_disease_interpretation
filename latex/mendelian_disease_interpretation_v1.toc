@@ -1,39 +1,44 @@
 \contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
-\contentsline {section}{\numberline {2}Background}{5}{section.2}%
-\contentsline {section}{\numberline {3}Principles of evidence-based variant interpretation}{5}{section.3}%
-\contentsline {section}{\numberline {4}Preference for established standards}{5}{section.4}%
-\contentsline {section}{\numberline {5}Structured variant annotation and automation of interpretation}{6}{section.5}%
-\contentsline {section}{\numberline {6}Variant annotation specification}{7}{section.6}%
-\contentsline {section}{\numberline {7}Data provenance and sample quality control}{10}{section.7}%
-\contentsline {section}{\numberline {8}Variant representation and normalisation}{10}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Nomenclatures}{10}{subsection.8.1}%
-\contentsline {section}{\numberline {9}Functional evidence databases}{10}{section.9}%
-\contentsline {section}{\numberline {10}Automated QV (qualifying variant) framework}{11}{section.10}%
-\contentsline {subsection}{\numberline {10.1}QV file guideline content}{11}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Qualifying variant protocol design and standardised approaches}{13}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}QV set preparation}{14}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}QV sets for reporting}{14}{subsection.10.4}%
-\contentsline {subsection}{\numberline {10.5}Conditional evidence rules and source-dependent quality checks}{14}{subsection.10.5}%
-\contentsline {subsection}{\numberline {10.6}ACMG criteria with counter-factual evidence}{15}{subsection.10.6}%
-\contentsline {subsection}{\numberline {10.7}Pedigree and inheritance information}{16}{subsection.10.7}%
-\contentsline {subsection}{\numberline {10.8}Pedigree and inheritance information}{17}{subsection.10.8}%
-\contentsline {section}{\numberline {11}Population frequency and cohort context}{18}{section.11}%
-\contentsline {section}{\numberline {12}Inheritance and segregation evidence}{18}{section.12}%
-\contentsline {section}{\numberline {13}Phenotype matching and gene-disease validity}{18}{section.13}%
-\contentsline {section}{\numberline {14}Counter-evidence and conflict resolution}{18}{section.14}%
-\contentsline {section}{\numberline {15}Manual clinical genetics review checkpoints}{18}{section.15}%
-\contentsline {section}{\numberline {16}Semi-quantitative scoring rubric}{18}{section.16}%
-\contentsline {section}{\numberline {17}End-to-end WGS interpretation workflow}{18}{section.17}%
-\contentsline {section}{\numberline {18}Patient and public representation}{18}{section.18}%
-\contentsline {section}{\numberline {19}Recommendations for bioinformatics in clinical practice}{19}{section.19}%
-\contentsline {section}{\numberline {20}Clinical report structure and minimum requirements}{21}{section.20}%
-\contentsline {section}{\numberline {21}Presenting an evidence synthesis statement}{21}{section.21}%
-\contentsline {section}{\numberline {22}Implementation, interoperability, and tooling}{21}{section.22}%
-\contentsline {section}{\numberline {23}Limitations and scope}{21}{section.23}%
-\contentsline {section}{\numberline {24}Auditability, versioning, and compliance}{21}{section.24}%
-\contentsline {section}{\numberline {25}Future directions}{21}{section.25}%
-\contentsline {section}{\numberline {26}Acknowledgements}{21}{section.26}%
-\contentsline {section}{\numberline {27}References}{21}{section.27}%
-\contentsline {section}{\numberline {A}Appendix}{21}{appendix.A}%
-\contentsline {section}{\numberline {B}Conclusion}{21}{appendix.B}%
-\contentsline {section}{\numberline {C}Supplemental}{23}{appendix.C}%
+\contentsline {section}{\numberline {2}Purpose and scope of the guideline}{5}{section.2}%
+\contentsline {section}{\numberline {3}Architectural context and national motivation}{5}{section.3}%
+\contentsline {section}{\numberline {4}Design principles for evidence-based variant interpretation}{5}{section.4}%
+\contentsline {section}{\numberline {5}Data provenance and sample quality requirements}{5}{section.5}%
+\contentsline {section}{\numberline {6}Evidence rule framework}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Structure of evidence rules}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Versioning and audit trace}{5}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Optional reference implementation (QV framework)}{5}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Implemented rule set}{9}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Evidence flags}{10}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Evidence domains}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Final flag set}{11}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Interpretation of flag combinations}{12}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Structured representation and interoperability}{12}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Alignment with GA4GH Variant Representation and Variant Annotation models}{12}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}GA4GH Variant Annotation model}{12}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Exchange formats and machine readable outputs}{14}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Probabilistic interpretation in Pillar 3}{14}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Relationship to Pillar 1 and Pillar 2 inputs}{14}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Evidence aggregation logic}{14}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Clinical review checkpoints}{14}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Required manual assessments}{14}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Boundary of automated reasoning}{14}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Reporting and synthesis statements}{14}{section.11}%
+\contentsline {section}{\numberline {12}Auditability, versioning, and reproducibility}{14}{section.12}%
+\contentsline {section}{\numberline {13}Limitations and scope}{14}{section.13}%
+\contentsline {section}{\numberline {14}Future extensions}{14}{section.14}%
+\contentsline {section}{\numberline {15}Conclusion}{14}{section.15}%
+\contentsline {section}{\numberline {16}Supplemental}{17}{section.16}%
+\contentsline {section}{\numberline {17}Appendix}{17}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Example rule files}{17}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Example YAML or JSON evidence objects}{17}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Worked examples of flagged variants}{17}{subsection.17.3}%
+\contentsline {section}{\numberline {18}Evidence flags}{17}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Evidence domains}{17}{subsection.18.1}%
+\contentsline {subsubsection}{\numberline {18.1.1}Counter-evidence and conflict handling}{17}{subsubsection.18.1.1}%
+\contentsline {subsubsection}{\numberline {18.1.2}Normalised variant representation and nomenclature}{17}{subsubsection.18.1.2}%
+\contentsline {subsubsection}{\numberline {18.1.3}ACMG criteria with counter-factual evidence}{18}{subsubsection.18.1.3}%
+\contentsline {subsubsection}{\numberline {18.1.4}Population frequency evidence}{19}{subsubsection.18.1.4}%
+\contentsline {subsubsection}{\numberline {18.1.5}Conditional evidence rules and source-dependent quality checks}{19}{subsubsection.18.1.5}%
+\contentsline {subsubsection}{\numberline {18.1.6}Inheritance and segregation evidence}{19}{subsubsection.18.1.6}%
+\contentsline {subsubsection}{\numberline {18.1.7}Functional and molecular evidence}{21}{subsubsection.18.1.7}%
+\contentsline {subsubsection}{\numberline {18.1.8}Phenotype and gene–disease validity evidence}{21}{subsubsection.18.1.8}%
