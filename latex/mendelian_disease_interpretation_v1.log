@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  23 NOV 2025 11:15
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.9)  23 NOV 2025 11:59
  restricted system commands enabled.
 **mendelian_disease_interpretation_v1.tex
 (./mendelian_disease_interpretation_v1.tex
@@ -1369,91 +1369,205 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [4]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 173.
 
-
-[5] (../qv_variant_interpretaion.txt
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 13.
-
+[5]
 
 [6]
 
 [7]
 
-[8])
+[8]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 218.
+ (../qv_variant_interpretaion.txt
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 13.
+
 
 [9]
 
 [10]
 
-[11]
+[11])
 
 [12]
 
 [13]
 
-[14] (./mendelian_disease_interpretation_v1.bbl
+[14]
+Package acronym Info: Label `acro:ga4gh' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 353.
 
-[15])
+
+Package acronym Warning: Acronym ga4gh is not defined on input line 353.
+
+
+Package acronym Warning: Acronym ga4gh is not defined on input line 353.
+
+Package acronym Info: Label `acro:vrs' newly defined as it shall be overridden
+although it is yet undefined on input line 353.
+
+Package acronym Warning: Acronym vrs is not defined on input line 353.
+
+
+Package acronym Warning: Acronym vrs is not defined on input line 353.
+
+Package acronym Info: Label `acro:va' newly defined as it shall be overridden
+although it is yet undefined on input line 353.
+
+Package acronym Warning: Acronym va is not defined on input line 353.
+
+
+Package acronym Warning: Acronym va is not defined on input line 353.
+
+
+Package acronym Warning: Acronym vrs is not defined on input line 355.
+
+
+Package acronym Warning: Acronym va is not defined on input line 355.
+
+Package acronym Info: Label `acro:vcf' newly defined as it shall be overridden
+although it is yet undefined on input line 357.
+Package acronym Info: Label `acro:bam' newly defined as it shall be overridden
+although it is yet undefined on input line 357.
+
+Package acronym Warning: Acronym bam is not defined on input line 357.
+
+
+Package acronym Warning: Acronym bam is not defined on input line 357.
+
+Package acronym Info: Label `acro:cram' newly defined as it shall be overridden
+
+although it is yet undefined on input line 357.
+
+Package acronym Warning: Acronym cram is not defined on input line 357.
+
+
+Package acronym Warning: Acronym cram is not defined on input line 357.
+
+Package acronym Info: Label `acro:hpo' newly defined as it shall be overridden
+although it is yet undefined on input line 357.
+
+Package acronym Warning: Acronym hpo is not defined on input line 357.
+
+
+Package acronym Warning: Acronym hpo is not defined on input line 357.
+
+Package acronym Info: Label `acro:ordo' newly defined as it shall be overridden
+
+although it is yet undefined on input line 357.
+
+Package acronym Warning: Acronym ordo is not defined on input line 357.
+
+
+Package acronym Warning: Acronym ordo is not defined on input line 357.
+
+
+
+[15]
+
+Package acronym Warning: Acronym va is not defined on input line 380.
+
+
+Package acronym Warning: Acronym va is not defined on input line 380.
+
+
+Package acronym Warning: Acronym va is not defined on input line 384.
+
+
+Package acronym Warning: Acronym va is not defined on input line 384.
+
+
+Package acronym Warning: Acronym vrs is not defined on input line 386.
+
+Package acronym Info: Label `acro:gks' newly defined as it shall be overridden
+although it is yet undefined on input line 386.
+
+Package acronym Warning: Acronym gks is not defined on input line 386.
+
+
+Package acronym Warning: Acronym gks is not defined on input line 386.
+
+
+Package acronym Warning: Acronym vrs is not defined on input line 386.
+
+
+Package acronym Warning: Acronym va is not defined on input line 386.
+
+
+Package acronym Warning: Acronym vrs is not defined on input line 391.
+
+
+Package acronym Warning: Acronym va is not defined on input line 391.
+
+
 
 [16]
-Package acronym Info: Label `acro:hgvs' newly defined as it shall be overridden
-
-although it is yet undefined on input line 490.
-Package acronym Info: Label `acro:hvnc' newly defined as it shall be overridden
-
-although it is yet undefined on input line 492.
-Package acronym Info: Label `acro:hugo' newly defined as it shall be overridden
-
-although it is yet undefined on input line 492.
-Package acronym Info: Label `acro:grch38' newly defined as it shall be overridd
-en
-although it is yet undefined on input line 494.
-
 
 [17]
 
-[18]
-Package acronym Info: Label `acro:wgs' newly defined as it shall be overridden
-although it is yet undefined on input line 564.
-Package acronym Info: Label `acro:ad' newly defined as it shall be overridden
-although it is yet undefined on input line 565.
-Package acronym Info: Label `acro:ar' newly defined as it shall be overridden
-although it is yet undefined on input line 565.
-Package acronym Info: Label `acro:xl' newly defined as it shall be overridden
-although it is yet undefined on input line 565.
+[18] (./mendelian_disease_interpretation_v1.bbl
 
+[19])
+Package acronym Info: Label `acro:hgvs' newly defined as it shall be overridden
 
-[19]
-Package acronym Info: Label `acro:moi' newly defined as it shall be overridden
-although it is yet undefined on input line 573.
-
-
-Package natbib Warning: Citation `lawless_panelapprex_2025' on page 20 undefine
-d on input line 576.
-
-
-Package natbib Warning: Citation `martin_panelapp_2019' on page 20 undefined on
- input line 576.
-
-
-Package natbib Warning: Citation `lawless_quantifying_2025' on page 20 undefine
-d on input line 580.
-
-
-Package natbib Warning: Citation `lawless_quantifying_2025' on page 20 undefine
-d on input line 582.
-
+although it is yet undefined on input line 561.
 
 
 [20]
-<../images/functional_evidence_uniprot.pdf, id=440, 578.16pt x 505.89pt>
+Package acronym Info: Label `acro:hvnc' newly defined as it shall be overridden
+
+although it is yet undefined on input line 563.
+Package acronym Info: Label `acro:hugo' newly defined as it shall be overridden
+
+although it is yet undefined on input line 563.
+Package acronym Info: Label `acro:grch38' newly defined as it shall be overridd
+en
+although it is yet undefined on input line 565.
+
+
+[21]
+
+[22]
+Package acronym Info: Label `acro:wgs' newly defined as it shall be overridden
+although it is yet undefined on input line 635.
+Package acronym Info: Label `acro:ad' newly defined as it shall be overridden
+although it is yet undefined on input line 636.
+Package acronym Info: Label `acro:ar' newly defined as it shall be overridden
+although it is yet undefined on input line 636.
+Package acronym Info: Label `acro:xl' newly defined as it shall be overridden
+although it is yet undefined on input line 636.
+
+
+[23]
+Package acronym Info: Label `acro:moi' newly defined as it shall be overridden
+although it is yet undefined on input line 644.
+
+
+Package natbib Warning: Citation `lawless_panelapprex_2025' on page 24 undefine
+d on input line 647.
+
+
+Package natbib Warning: Citation `martin_panelapp_2019' on page 24 undefined on
+ input line 647.
+
+
+Package natbib Warning: Citation `lawless_quantifying_2025' on page 24 undefine
+d on input line 651.
+
+
+Package natbib Warning: Citation `lawless_quantifying_2025' on page 24 undefine
+d on input line 653.
+
+
+
+[24]
+<../images/functional_evidence_uniprot.pdf, id=453, 578.16pt x 505.89pt>
 File: ../images/functional_evidence_uniprot.pdf Graphic file (type pdf)
 <use ../images/functional_evidence_uniprot.pdf>
 Package luatex.def Info: ../images/functional_evidence_uniprot.pdf  used on inp
-ut line 597.
+ut line 668.
 (luatex.def)             Requested size: 368.57964pt x 322.50253pt.
 
 
@@ -1461,31 +1575,35 @@ Package natbib Warning: There were undefined citations.
 
 
 
-[21]
+[25]
 
-[22<../images/functional_evidence_uniprot.pdf>]
+[26<../images/functional_evidence_uniprot.pdf>]
 (./mendelian_disease_interpretation_v1.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `mendelian_disease_interpretation_v1.out' has
  not changed.
 (rerunfilecheck)             Checksum: AE1DDB9261DF3C4F5616C9BF16728505;7537.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39478 strings out of 475506
- 597292,1648299 words of node,token memory allocated
- 1675 words of node memory still in use:
+ 39534 strings out of 475506
+ 597315,1648299 words of node,token memory allocated
+ 1665 words of node memory still in use:
    31 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 3 glyph, 
-85 attribute, 115 glue_spec, 85 attribute_list, 2 write, 24 pdf_literal, 2 pdf_a
+84 attribute, 115 glue_spec, 84 attribute_list, 2 write, 24 pdf_literal, 1 pdf_a
 ction, 24 pdf_colorstack nodes
-   avail lists: 1:10,2:8876,3:350,4:14671,5:12596,6:82,7:15381,8:100,9:28522,10:
-32,11:1048
- 61382 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:8883,3:390,4:15195,5:12994,6:83,7:14894,8:45,9:29512,10:32
+,11:1043
+ 61434 multiletter control sequences out of 65536+600000
  113 fonts using 8155207 bytes
- 121i,10n,117p,1059b,1730s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,10n,117p,1059b,1728s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.ot
 f></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.
 otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold
@@ -1501,11 +1619,11 @@ man12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/l
 mroman17-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb>
-Output written on mendelian_disease_interpretation_v1.pdf (22 pages, 143659 byte
+Output written on mendelian_disease_interpretation_v1.pdf (26 pages, 153554 byte
 s).
 
-PDF statistics: 549 PDF objects out of 1000 (max. 8388607)
- 456 compressed objects within 5 object streams
- 160 named destinations out of 1000 (max. 131072)
+PDF statistics: 562 PDF objects out of 1000 (max. 8388607)
+ 465 compressed objects within 5 object streams
+ 164 named destinations out of 1000 (max. 131072)
  544 words of extra memory for PDF output out of 10000 (max. 100000000)
 
