@@ -57,7 +57,10 @@ This document is a \textbf{live public working draft} and does not represent a c
 All statements, analyses, and opinions are those of the authors and have not yet undergone joint committee review or external peer review.  
 Content is provided for transparency and collaborative development and may be revised substantially prior to publication.
 \end{tcolorbox}
-%\vspace{1em}
+\vspace{1em}
+
+\textbf{Aim.} 
+To agree a shared minimum evidence standard that any service provider can satisfy, ensuring that variant interpretation results are verifiable, comparable, and trusted across clinical, research, and commercial settings. By adopting a common set of computable rules and flags, independently developed pipelines can demonstrate that their outputs meet the national evidence format, reducing fragmentation and supporting reliable use of genomics in everyday practice.
 \clearpage
 
 %  \linenumbers
@@ -142,6 +145,30 @@ By formalising a standardised approach to quantifying interpretation, this frame
 %\section{Architectural context and national motivation}
 %
 %A national genomics system must balance durability with adaptability. Clinical records, identifiers, and audit trails require structures that remain stable over decades, while biological knowledge, phenotype models, and interpretive resources evolve continuously. The guideline is designed for this mixed environment. It defines the stable elements needed for long term interoperability, including variant identity, provenance fields, and the structure of evidence states, while allowing evidence rules, knowledge sources, and computational logic to be updated without invalidating past interpretations. This separation ensures that new annotations, ontologies, or analytical frameworks can be incorporated as they mature, and that historical decisions remain traceable to the evidence that supported them at the time. The approach reflects the broader national strategy to build genomic infrastructure that is open, verifiable, and compatible with both public and private systems.
+
+
+\section{Executive summary}
+
+In genetic analysis, any number of service providers may detect the same variant using their own proprietary or public pipelines. Regardless of how the variant is called or prioritised, each provider can generate the national minimum evidence state by supplying the required inputs and computing the standard flags.
+Consider the missense variant \texttt{NM\_000546.6:c.215C>G (TP53 p.Pro72Arg)}.
+A valid minimal evidence profile might include:
+
+\begin{itemize}
+    \item \texttt{flag\_gt\_valid}: Genotype is well formed and passes basic QC.
+    \item \texttt{flag\_popfreq\_common}: The variant is common in gnomAD, indicating strong counterfactual evidence against causality for a rare Mendelian disorder.
+    \item \texttt{flag\_moi\_parent\_gt\_missing\_any}: Parental genotypes are not available, so inheritance cannot be assessed.
+    \item \texttt{flag\_uniprot\_hits\_any\_feature} The variant lies within a UniProt-annotated region.
+\end{itemize}
+
+Even this short list is sufficient to show that:
+\begin{enumerate}
+    \item the variant identity is correct,
+    \item upstream calling is technically valid,
+    \item population evidence contradicts a rare disease hypothesis, and
+    \item all required checks have been applied consistently.
+\end{enumerate}
+
+The specific pipeline does not matter. Proprietary and public systems can keep their internal methods private while still supplying the factual inputs needed for verification. What matters is that the \emph{same} flags emerge from any compliant system, ensuring transparent, reproducible checks and a shared basis for trust across clinical, research, and commercial settings.
 
 \section{Introduction}
 
